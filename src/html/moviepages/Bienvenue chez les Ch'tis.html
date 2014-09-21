@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="PICS-Label" content='(PICS-1.1 "http://www.icra.org/ratingsv02.html" l gen true for "http://www.the-numbers.com/" r (cb 1 lz 1 nz 1 oz 1 vz 1) "http://www.rsac.org/ratingsv01.html" l gen true for "http://www.the-numbers.com/" r (n 0 s 0 v 0 l 0))'>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" >
+<meta name="format-detection" content="telephone=no">   <!-- for apple mobile --> 
+<meta property="fb:admins" content="521546213" />
+<meta name="description" content="The Numbers provides detailed movie financial analysis, including box office, DVD  and Blu-ray sales reports, and release schedules">
+<meta name="robots" content="NOODP">
+<meta keywords="keywords" content="movies, box office, The Numbers, Numbers, daily box office, weekly box office, movie stars, dvd sales, Blu-ray sales, release schedule">
+<title>Bienvenue chez les Ch'tis - Box Office Data, DVD and Blu-ray Sales, Movie News, Cast and Crew Information - The Numbers</title>
+<link rel=StyleSheet href="/live/the-numbers.css" TYPE="text/css" TITLE="Numbers Standard Style">
+<script type="text/javascript" src="https://www.google.com/jsapi"></script> 
+<script async type="text/javascript">
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-1343128-1']);
+_gaq.push(['_trackPageview']);
+(function() {
+ var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+ ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+ })();
+</script>
+<!-- Begin comScore Tag -->
+<script async>
+var _comscore = _comscore || [];
+_comscore.push({ c1: "2", c2: "9873768" });
+(function() {
+ var s = document.createElement("script"), el = document.getElementsByTagName("script")[0]; s.async = true;
+ s.src = (document.location.protocol == "https:" ? "https://sb" : "http://b") + ".scorecardresearch.com/beacon.js";
+ el.parentNode.insertBefore(s, el);
+ })();
+</script>
+<noscript>
+<img src="http://b.scorecardresearch.com/p?c1=2&c2=9873768&cv=2.0&cj=1" />
+</noscript>
+<!-- End comScore Tag -->
+</head>
+<body>
+<div id="wrap">
+<div id="header">
+<a href="/"><img src="/images/the-numbers-banner.png" alt="The Numbers - Where Data and Movies Meet" width=524 height=67 border=0>&reg;
+<br>&nbsp;&nbsp;&nbsp;&nbsp;Where Data and the Movie Business Meet
+</a>
+</div>
+<div id="header_right" style="background: #663366; width:200px; height: 96px;">
+</div>
+<div id="nav">
+<ul>
+<li><a href="/news">News</a>
+	<ul>
+	<li><a href="/news">Latest News</a></li>
+	<li><a href="/movies/release-schedule">Release Schedule</a></li>
+	</ul>
+</li>
+</li>
+<li><a href="/box-office">Box Office</a>
+	<ul>
+	<li><a href="/daily-box-office-chart">Daily Chart</a></li>
+	<li><a href="/weekend-box-office-chart">Weekend Chart</a></li>
+	<li><a href="/movie/records">Records</a></li>
+	<li><a href="/box-office">Chart Index</a></li>
+	<li><a href="/movies/release-schedule">Release Schedule</a></li>
+	</ul>
+</li>
+<li><a href="/weekly-dvd-sales-chart">Home Video</a>
+	<ul>
+	<li><a href="/weekly-dvd-sales-chart">Weekly DVD Chart</a></li>
+	<li><a href="/weekly-bluray-sales-chart">Weekly Blu-ray Chart</a></li>
+	<li><a href="/weekly-video-sales-chart">Weekly Combined DVD+Blu-ray Chart</a></li>
+	<li><a href="/home-market/dvd-sales/2013">2013 DVD Chart</a></li>
+	<li><a href="/home-market/bluray-sales/2013">2013 Blu-ray Chart</a></li>
+	<li><a href="/home-market/packaged-media-sales/2013">2013 Combined Chart</a></li>
+	<li><a href="/alltime-bluray-sales-chart">All-Time Blu-ray</a></li>
+	<li><a href="/home-market/release-schedule">Release Schedule</a></li>
+	</ul>
+</li>
+<li><a href="/movies">Movies</a>
+	<ul>
+		<li><a href="/movie/budgets">Budgets and Finances</a></li>
+		<li><a href="/movies/franchises">Franchises</a></li>
+		<li><a href="/keywords">Keywords</a></li>
+		<li><a href="/movies">Movie Index</a></li>
+		<li><a href="/movies/release-schedule">Release Schedule</a></li>
+	</ul>
+</li>
+<li><a href="/people">People</a>
+	<ul>
+		<li><a href="/bankability">Bankability</a></li>
+		<li><a href="/people/records">Records</a></li>
+		<li><a href="/people">People Index</a></li>
+	</ul>
+</li>
+<li style="background: #ffcc00;"><a style="background: #ffcc00;" href="/oscars">Oscars</a>
+</li>
+</ul>
+</div>
+<div id="main">
+<script type="text/javascript">
+google.load("visualization", "1", {packages:["corechart","gauge"]});
+google.setOnLoadCallback(drawDailyChart);
+function drawDailyChart() {
+	var data = new google.visualization.DataTable();
+	data.addColumn('date', 'Chart Date');
+	data.addColumn('number', 'Cumulative Box Office');
+	data.addRows([
+				 [new Date(2008,7,1), 631770], [new Date(2008,7,8), 918396], [new Date(2008,7,15), 1077551], [new Date(2008,7,22), 1186869], [new Date(2008,7,29), 1289781], [new Date(2008,8,5), 1379671], [new Date(2008,8,12), 1470856]				 ]);
+	var options = {
+		vAxis: {minValue: 0, format: '$#,###'},
+		height: 360,
+		width: 720,
+		legend: {position: 'none'},
+				pointSize: 10,
+				hAxis: {format: 'MMM d, y', title: 'Date'}
+	};
+	
+	var chart = new google.visualization.LineChart(document.getElementById('daily_chart_div'));
+	var formatter = new google.visualization.NumberFormat(
+														  {prefix: '$', fractionDigits: 0});
+	formatter.format(data, 1); // Apply formatter to second column
+	chart.draw(data, options);
+	
+	var data2 = google.visualization.arrayToDataTable([
+													 ['Label', 'Value'],
+													 ['Opening', 80],
+													 ]);
+	
+	var options2 = {
+	width: 80, height: 80,
+	redFrom: 0, redTo: 20,
+	yellowFrom:20, yellowTo: 80,
+	greenFrom: 80, greenTo: 100,
+	minorTicks: 5
+	};
+	
+	var chart2 = new google.visualization.Gauge(document.getElementById('opening_chart_div'));
+	chart2.draw(data2, options2);
+	
+	var data3 = google.visualization.arrayToDataTable([
+													  ['Label', 'Value'],
+													  ['Legs', 55]
+													  ]);
+	
+	var options3 = {
+	width: 80, height: 80,
+	redFrom: 0, redTo: 20,
+	yellowFrom:20, yellowTo: 80,
+	greenFrom: 80, greenTo: 100,
+	minorTicks: 5
+	};
+	
+	var chart3 = new google.visualization.Gauge(document.getElementById('legs_chart_div'));
+	chart3.draw(data3, options3);
+
+	var data4 = google.visualization.arrayToDataTable([
+													  ['Label', 'Value'],
+													  ['Readers', 75]
+													  ]);
+	
+	var options4 = {
+	width: 80, height: 80,
+	redFrom: 0, redTo: 20,
+	yellowFrom:20, yellowTo: 80,
+	greenFrom: 80, greenTo: 100,
+	minorTicks: 5
+	};
+	
+	var chart4 = new google.visualization.Gauge(document.getElementById('readers_chart_div'));
+	chart4.draw(data4, options4);
+	
+}
+</script>
+<h1>Bienvenue chez les Ch'tis</h1>
+<div id="col1">
+</div>
+<div id="col2outer">
+<div id="col2mid">
+<table id="movie_finances">
+<tr class="heading">
+<td colspan="3"><b>Theatrical Performance</b></td>
+</tr>
+<tr>
+<td><b>Domestic Box Office</b></td>
+<td class="data">$1,477,650</td><td><a href="#tab=box-office">Details</a></td>
+</tr>
+	<tr>
+	<td><b>International Box Office</b></td>
+	<td class="data sum">$245,996,847</td>
+	</tr>
+	<tr>
+	<td><b>Worldwide Box Office</b></td>
+	<td class="data">$247,474,497</td>
+	</tr>
+<tr class="heading"><td colspan=3 class="headed"><a href="#more">Further financial details...</td></tr>
+</table>
+</div>
+<div id="col2side">
+<ul id="social_vertical">
+	<li>
+		<a href="https://twitter.com/share" class="twitter-share-button" data-text="Bienvenue chez les Ch'tis - Box Office Data, DVD and Blu-ray Sales, Movie News, Cast and Crew Information - The Numbers" data-via="MovieNumbers"></a>
+		<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+	</li>
+	<li>
+		<div id="fb-root"></div>
+		<script>(function(d, s, id) {
+		  var js, fjs = d.getElementsByTagName(s)[0];
+		  if (d.getElementById(id)) return;
+		  js = d.createElement(s); js.id = id;
+		  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
+		  fjs.parentNode.insertBefore(js, fjs);
+		}(document, 'script', 'facebook-jssdk'));</script>
+		<div class="fb-like" data-href="http://www.the-numbers.com/movie/Bienvenue-chez-les-Ch-tis" data-colorscheme="light" data-layout="button_count" data-action="like" data-show-faces="false" data-send="false"></div>
+	</li>	
+	<li>
+		<!-- Place this tag where you want the +1 button to render -->
+		<g:plusone size="medium"></g:plusone>
+		<!-- Place this render call where appropriate -->
+		<script type="text/javascript">
+		  (function() {
+			var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+			po.src = 'https://apis.google.com/js/plusone.js';
+			var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+		  })();
+		</script>		
+	</li>	
+	<li>
+		<script src="//platform.linkedin.com/in.js" type="text/javascript"></script>
+		<script type="IN/Share" data-counter="right"></script>		
+	</li>
+</ul>
+</div>
+</div>
+<br clear="all">
+<ol id="toc">
+<li><a href="#summary">Summary</a></li>
+<li><a href="#news">News</a></li>
+<li><a href="#box-office">Box Office</a></li>
+<li><a href="#video-sales">Video Sales</a></li>
+<li><a href="#more">Full Financials</a></li>
+<li><a href="#cast-and-crew">Cast & Crew</a></li>
+<li><a href="#trailer">Trailer</a></li>
+<li><a href="#buy">Buy</a></li>
+</ol>
+<div class="content" id="summary">
+<h2>Metrics</h2><p>
+<center><table id="movie_ratings"><tr class="heading"><td colspan=2>Rotten Tomatoes</td></tr><tr><td><a href="http://www.rottentomatoes.com/m/bienvenue-chez-les-chtis-welcome-to-the-land-of-shtis-welcome-to-the-sticks/"><img src="/new/layout/rt-fresh-64-64.png" width=64px height=64px></a></td><td><a href="http://www.rottentomatoes.com/m/bienvenue-chez-les-chtis-welcome-to-the-land-of-shtis-welcome-to-the-sticks/"><img src="/new/layout/rt-upright-64-64.png" width=64px height=64px></a></td></tr><tr><td><a href="http://www.rottentomatoes.com/m/bienvenue-chez-les-chtis-welcome-to-the-land-of-shtis-welcome-to-the-sticks/"><b>Critics</b>
+<br>71% - Fresh</td>
+<td>
+<a href="http://www.rottentomatoes.com/m/bienvenue-chez-les-chtis-welcome-to-the-land-of-shtis-welcome-to-the-sticks/"><b>Audience</b>
+<br>78% - Upright</td>
+</tr></table></center>	
+
+<h2>Movie Details</h2>
+<table>
+<tr><td><b>Production&nbsp;Budget:</b></td><td>$16,000,000</td></tr>
+<tr><td><b>Theatrical&nbsp;Release:</b></td>
+<td>July 25th, 2008 (Wide) (Canada)
+</td></tr>
+<tr><td><b>MPAA&nbsp;Rating:</b></td>
+<td><a href="/market/mpaa-rating/Not-Rated-(US)">Not Rated</a></td></tr>
+<tr><td><b>Keywords:</b></td>
+<td><a href="/keyword/Country-Mouse-City-Mouse">Country Mouse, City Mouse</a>, <a href="/keyword/Foreign-Language">Foreign Language</a></td></tr>
+<tr><td><b>Source:</b></td><td><a href="/market/source/Original-Screenplay">Original Screenplay</a></td></tr>
+<tr><td><b>Genre:</b></td><td><a href="/market/genre/Comedy">Comedy</a></td></tr>
+<tr><td><b>Production&nbsp;Method:</b></td><td><a href="/market/production-method/Live-Action">Live Action</a></td></tr>
+<tr><td><b>Creative&nbsp;Type:</b></td><td><a href="/market/creative-type/Contemporary-Fiction">Contemporary Fiction</a></td></tr>
+</tr></td></table></div>
+<div class="content" id="news">
+<div id="news">
+<h1><a href="/news/3858">International Details - Body is Best of the Rest and that\'s No Lie</a></h1>
+
+<P>
+<!--- $10.17 million --->
+<A HREF="http://www.the-numbers.com/movies/2008/BDLIE.php">Body Of Lies</A> opened in a quartet of major markets, the U.K., Germany, Italy, and Russia, and that helped it climb into second place with $10.17 million on 2837 screens in 32 markets for a total of $33.62 million. It earned second place in both the U.K. with $1.48 million on 393 screens and in Germany where it scored $1.43 million on 427 screens. On the other hand, it earned more in Italy with $1.64 million on 357 screens, but had to settle for third place. Meanwhile in Russia it struggled landing in eighth place with $500,000 on 142 screens. 
+<a href="/news/3858">More...</a>
+<br clear="all"><h1><a href="/news/3844">International Details - School Climbing Higher</a></h1>
+
+<P>
+<!--- $8.65 million --->
+<A HREF="http://www.the-numbers.com/movies/2008/HISM3.php">High School Musical 3: Senior Year</A> fell below $10 million this past weekend, but we still able to remain in second place internationally earning $8.65 million on 4642 screens in 34 markets for a total of $123.01 million internationally and $207.178 million worldwide. The only opening of note this weekend came in Russia, however, the film struggled there placing sixth with $353,000 on 128 screens. Its best market was the U.K. where it added $1.46 million on 483 screens over the weekend for a total of $31.76 million. 
+<a href="/news/3844">More...</a>
+<br clear="all"><h1><a href="/news/3829">International Details - High School Graduates to the Century Mark</a></h1>
+
+<P>
+<!--- $14.63 million --->
+<A HREF="http://www.the-numbers.com/movies/2008/HISM3.php">High School Musical 3: Senior Year</A> remained in second place with $14.63 million on 4413 screens in 30 markets for a total of $110.38 million internationally. This is more than it will make domestically by the end of its run, and at this pace hitting $200 million worldwide will not be an issue, as it has openings in Russia, Australia, and Japan still to go. Its biggest market of the weekend was Italy where it made $2.60 million on 487 screens over the weekend for a total of $9.02 million. Meanwhile, its biggest market overall was the U.K. with $31.44 million, including $2.39 million on 470 screens over the past weekend. 
+<a href="/news/3829">More...</a>
+<br clear="all"><h1><a href="/news/3814">International Details - World Sees Saw</a></h1>
+
+<P>
+<!--- $6.44 million --->
+<A HREF="http://www.the-numbers.com/movies/2008/SAW5.php">Saw V</A> slipped a spot to sixth place with $6.44 million on 1703 screens in 26 markets for a total of $16.52 million. This week it opened in fourth place in Russia with $745,000 on 200 screens while in earned seventh place in Mexico with just $148,000 on 120 screens. As far as holdovers go, the film fell more than 60% in the U.K. to $1.55 million on 367 screens for a total of $7.53 million. 
+<a href="/news/3814">More...</a>
+<br clear="all"><h1><a href="/news/3481">International Details - Panda Feeds on International Audiences</a></h1>
+
+<P>
+<!--- $20.46 million --->
+<A HREF="http://www.the-numbers.com/movies/2008/PANDA.php">Kung Fu Panda</A> started its international run in third place with $20.46 million on 1521 screens in 9 markets. The film reportedly set records in a number of its smaller, Southeast Asian debuts while its brought in an impressive $8.26 million on 821 screens in Russia and $7.84 million on 632 screens in South Korea (including midweek numbers). Next up for the film is Australia and Mexico next weekend while it has major market opening throughout the summer. 
+<a href="/news/3481">More...</a>
+<br clear="all"><h1><a href="/news/3465">International Details - Sex not as Popular with International Audiences</a></h1>
+
+<P>
+<!--- $32.77 million --->
+<A HREF="http://www.the-numbers.com/movies/2008/SEXCT.php">Sex and the City</A> made its international debut this past weekend, and while it wasn't able to top the charts like it did domestically, it still managed a fantastic $32.77 million on 3590 screens in 14 markets over the weekend for a total of $37.52 million. Its biggest opening came in the U.K. where it dominated the market with $17.22 million on 460 screens, which is equivalent to an $80 million to $100 million opening here. It also finished first in Germany with $7.41 million on 836 screens. It also did very well in France with $6.12 million on 551 screens and in Italy with $2.74 million on 552 screens, finishing second in both markets. The film opened in Australia and South Korea this past weekend, while it doesn't end its run till late August with Japan and it should reach several major milestones before then. 
+<a href="/news/3465">More...</a>
+<br clear="all"><h1><a href="/news/3449">International Details - Narnia Softens</a></h1>
+
+<P>
+<!--- $23.31 million --->
+<A HREF="http://www.the-numbers.com/movies/2008/NARN2.php">The Chronicles of Narnia: Prince Caspian</A> slipped 21% during its sophomore stint adding $19.35 million on 3681 screens in 13 markets for a still early total of $51.26 million. This includes a first place, $5.34 million opening on 782 screens over the weekend in Japan, while the film has $7.81 million including midweek numbers. This was below the <A HREF="http://www.the-numbers.com/movies/2005/LWWRB.php">original</A>'s opening in that market of $8.92 million, which is troubling. More troubling news came in Mexico where it was down 51% to $3.05 million on 842 screens over the weekend for a total of $11.58 million while in Russia it was down 55% to $3.03 million on 735 screens over the weekend for a total of $11.54 million after two. 
+<a href="/news/3449">More...</a>
+<br clear="all"><h1><a href="/news/3434">International Details - Narnia is Prince of the International Charts</a></h1>
+
+<P>
+<!--- $23.31 million --->
+<A HREF="http://www.the-numbers.com/movies/2008/NARN2.php">The Chronicles of Narnia: Prince Caspian</A> opened in second place on the international charts with $23.31 million on 3037 screens in 12 markets giving it the best per screen average on this week's list. The film only opened in three major markets, but it finished first in all of them. This includes Russia where it managed $6.73 million on 735 screens and Mexico where it earned $6.27 million on 842 and in both cases it opened significantly higher than the <A HREF="http://www.the-numbers.com/movies/2005/LWWRB.php">original</A>. On the other hand, while it managed first place in South Korea, its opening of $3.42 million on 670 screens over the weekend and a total of $3.90 million is significantly lower than the originals opening of $3.94 million on 262 screens over three days and $5.22 million in total. Next up for the film is its debut in Japan this weekend, while it has major openings all the way till late August. 
+<a href="/news/3434">More...</a>
+<br clear="all"><h1><a href="/news/3418">International Details - What Happened to Speed Racer?</a></h1>
+
+<P>
+<!--- $24.86 million --->
+Like it did domestically, <A HREF="http://www.the-numbers.com/movies/2008/WHAPV.php">What Happens in Vegas...</A> managed to open in second place on the international charts. It was able to do so in part because it opened in nearly every major market over the past weekend earning solid openings in many of them. This includes second place in both the U.K. ($2.47 million on 398 screens), in France ($2.36 million on 304 screens), and in Australia ($2.33 million on 335). It also placed first in Spain with an impressive $3.77 million on 398 screens and also topped the charts in both Russia and Germany with $3.70 million on 476 screens $1.85 million on 500 screens respectively. Overall it managed to pull in $24.86 million on 3904 screens in 36 markets during its opening weekend on the charts, and should have little difficulty matching its domestic total. 
+<a href="/news/3418">More...</a>
+<br clear="all"><h1><a href="/news/3400">International Details - Forbidden Falls from the Top</a></h1>
+
+<P>
+<!--- $9.63 million --->
+The release of <A HREF="http://www.the-numbers.com/movies/2008/IRNMN.php">Iron Man</A> hit <A HREF="http://www.the-numbers.com/movies/2008/FRBDN.php">The Forbidden Kingdom</A> knocking it into second place with $9.63 million on 2062 screens in 11 markets for a total of $40.51 million. The film had no major openings, but it did make $1.10 million on 398 screens over the weekend in South Korea for a total of $5.63 million. 
+<a href="/news/3400">More...</a>
+<br clear="all"><h1><a href="/news/3383">International Details - No Foolin\'</a></h1>
+
+<P>
+<!--- $4.93 million --->
+<A HREF="http://www.the-numbers.com/movies/2008/FGOLD.php">Fool's Gold</A> opened in a trio of major markets and that helped the film climb into sixth place with $4.93 million on 1809 screens in 39 markets for a total of $26.30 million. The film did relatively well in Spain with $1.03 million on 272 screens and in Germany with $934,000 on 254 screens while earning second place in both markets. On the other hand, it bombed in Italy with just $516,000 on 232 screens landing in sixth place. Overall, it was better than the film's average so far, but not nearly enough to recover from its previous troubles. It should hit $100 million worldwide this weekend, but that's not much compared to its domestic run, nor compared to its production budget. 
+<a href="/news/3383">More...</a>
+<br clear="all"><h1><a href="/news/3368">International Details - Goodbye to the Top Five</a></h1>
+
+<P>
+<!--- $5.33 million --->
+<A HREF="http://www.the-numbers.com/movies/2008/0BVCC.php">Bienvenue Chez les Ch'its</A>, a.k.a. Welcome to the Sticks, remained in first place in <A HREF="http://www.the-numbers.com/movies/series/France.php">France</A> with $4.79 million on 867 screens over the weekend for a total of $175.67 million after 8. However, it fell out of the top five internationally with $5.33 million on 963 screens in 4 markets for a total of $187.13 million. In its native market, the film has ticket sales of 19.25 million putting it about three weeks away from topping <A HREF="http://www.the-numbers.com/movies/1997/TITAN.php">Titanic</A>'s record of 20.64 million while it is closing in on $200 million internationally. Both of those are amazing records, and the film is hardly showing signs of slowing down. 
+<a href="/news/3368">More...</a>
+<br clear="all"><h1><a href="/news/3341">International Top Five - Who\'s First Milestone</a></h1>
+
+<P>
+<!--- $9.02 million --->
+No film reached $10 million over the weekend, but <A HREF="http://www.the-numbers.com/movies/2008/HORTN.php">Horton Hears A Who</A> did reach a major milestone. The film made $9.02 million on 4,823 screens in 41 markets for a total of $103.36 million. It did open in a number of smaller markets including Poland where it landed in second place with $507,000 on 105 screens over the weekend and $656,000 in total. However, the lion's share of the movie's weekend haul came from France where it was down just 6% to $3.02 million on 708 screens  for a total of $7.01 million after two. While it did shed screens and markets this weekend, the movie isn't done yet.  With openings in Italy this coming weekend, South Korea in May, and Japan in July it will be earning money well into the Summer.
+<a href="/news/3341">More...</a>
+<br clear="all"><h1><a href="/news/3326">International Top Five - Horton Holds Off International Offerings</a></h1>
+
+<P>
+<!--- $10.72 million --->
+Three of the top five films on the international box office chart were not American this weekend, but <A HREF="http://www.the-numbers.com/movies/2008/HORTN.php">Horton Hears A Who</A> was able to remain in first place. Over the weekend, it earned $10.72 million on 5,617 screens in 51 markets for a total of $90.36 million. The film opened in third place in France with $3.22 million on 708 screens, which was only an average opening. The film is on track to hit $100 million before it opens in Italy, South Korea, and Japan. 
+<a href="/news/3326">More...</a>
+<br clear="all"><h1><a href="/news/3310">International Top Five - Horton Will Be Heard, and Seen</a></h1>
+
+<P>
+<!--- $13.02 million --->
+Despite falling nearly 50%, <A HREF="http://www.the-numbers.com/movies/2008/HORTN.php">Horton Hears A Who</A> rose to first place on the international charts with $13.02 million 5,879 screens in 53 markets for a total of $75.65 million. The film had no major, or even mid-level openings this week, but it held very well in Australia to climb into first place with $1.46 million on 363 screens over the weekend for a total of $5.16 million after two. On the other hand, it plummeted in the U.K., down 68% to $1.87 million on 504 screens over the weekend for a total of $10.71 million after two. The film has yet to open in France, Italy, South Korea, and Japan, and should have little trouble reaching $100 million before it is done. This is low compared to its domestic run so far. However, <A HREF="http://www.the-numbers.com/movies/series/DrSeauss.php">Dr. Seuss</A> is not as popular internationally as he is in North America, so this is expected. In fact, overall the film has done better than expected. 
+<a href="/news/3310">More...</a>
+<br clear="all"><h1><a href="/news/3292">International Top Five - B.C. Breaks the Century Mark</a></h1>
+
+<P>
+<!--- $26.81 million --->
+Not only did <A HREF="http://www.the-numbers.com/movies/2008/10KBC.php">10,000 B.C.</A> remain in first place on the international charts, it also climbed above $100 million during its run. The film added $26.81 million over the weekend on 7337 screens in 57 markets for a total of $117.82 million. This includes openings in China where the movie earned second place with $3.58 million on 1,000 screens, including 537 digital ones. This broke records for widest release in China and the widest digital release on the international scene. However, a glut of new releases pushed the film from first to fifth in the U.K. with $2.06 million on 430 screens over the weekend for a total of $7.55 million. Given the film's hefty production budget and its likely P&A budget, it would need to make $300 million worldwide to have a shot at showing a profit before the home market. This is likely out of the question. On the other hand, to show a profit after the home market, it would only need to make $200 million worldwide. This has likely already happened. 
+<a href="/news/3292">More...</a>
+<br clear="all"><h1><a href="/news/3276">International Top Five - B.C. Stands for Big Cash</a></h1>
+
+<P>
+<!--- $38.65 million --->
+<A HREF="http://www.the-numbers.com/movies/2008/10KBC.php">10,000 B.C.</A> climbed into first place on the international charts with $38.65 million on 6,569 screens in 48 markets for a total of $74.43 million in just two weeks. The film opened in first place in Russia with $3.99 million on 536 screens and in the U.K. with $3.92 million on 431 screens while it also scored first place in South Korea with $3.13 million on 401 screens over the weekend and $3.56 million in total. It wasn't able to top the charts in either France nor Italy, but had to settle for second place with $3.39 million on 562 screens and $2.91 million on 454 screens respectively. As for holdovers, it held on very well in Mexico, down 28% to $2.98 million on 467 screens over the weekend for a total of $9.16 million. It wasn't as strong in Australia where it fell by more than 50% to $1.01 million on 221 screens over the weekend and $3.83 million in total. <A HREF="http://www.the-numbers.com/movies/2008/10KBC.php">10,000 B.C.</A> will hit $100 million very shortly, but it cost $105 million to make, which will make profitability troublesome. 
+<a href="/news/3276">More...</a>
+<br clear="all"><h1><a href="/news/3260">International Top Five - Audiences Welcome International Movies</a></h1>
+
+<P>
+<!--- $29.79 million --->
+<A HREF="http://www.the-numbers.com/movies/2008/0BVCC.php">Bienvenue Chez les Ch'its</A> remained in first place in <A HREF="http://www.the-numbers.com/movies/series/France.php">France</A>, and internationally. In its native market it earned $28.68 million on 840 screens over the weekend for a total of $73.48 million after just two weeks. At this pace it should hit $100 million by this time next weekend, which is an amazing milestone for that market. Add in its two smaller markets and the film made $29.79 million on 905 screens in 3 markets for a total of $75.44 million. 
+<a href="/news/3260">More...</a>
+<br clear="all"><h1><a href="/news/3245">International Top Five - Tres Bien</a></h1>
+
+<P>
+<!--- $36.58 million --->
+The <A HREF="http://www.the-numbers.com/movies/series/France.php">French</A> film, <A HREF=http://www.the-numbers.com/movies/2008/0BVCC.php>Bienvenue Chez les Ch'its</A>, opened over the weekend and it performed tres bien, which means very well. ... I think. I may have just said something rude in French. (On a side note, it was one of four such films to chart this weekend, although it was the only one to reach the top five. We will get to the other three on Sunday.) It set records in its native market earning $31.67 million on 793 screens over the weekend for a total of $36.58 million including previews. Overall it pulled in $32.53 million on 838 screens over the weekend for a total of $37.40 million while its per screen average or $38,816 was the best so far this year. For a film that reportedly cost just 11 million Euros to make, which is about $16 million American, this is a fantastic opening. Even if it had a larger than average P&A budget, it is likely that the film has already shown a profit. 
+<a href="/news/3245">More...</a>
+<br clear="all"></div></div>
+<div class="content" id="cast-and-crew">
+<div id="cast">
+<h1>Cast</h1>
+<table cellspacing=0 align="center">
+<tr>
+<td align="right"><b><a href="/person/98050401-Kad-Merad">Kad Merad</a></b></td>
+<td>&nbsp;&nbsp;</td>
+<td align"left">Philippe</td>
+<tr>
+<td align="right"><b><a href="/person/16800401-Dany-Boon">Dany Boon</a></b></td>
+<td>&nbsp;&nbsp;</td>
+<td align"left">Antoine</td>
+<tr>
+<td align="right"><b><a href="/person/47080401-Zoe-Felix">Zoe Felix</a></b></td>
+<td>&nbsp;&nbsp;</td>
+<td align"left">Julie</td>
+<tr>
+<td align="right"><b><a href="/person/7730401-Lorenzo-Ausilia-Foret">Lorenzo Ausilia-Foret</a></b></td>
+<td>&nbsp;&nbsp;</td>
+<td align"left">Raphael</td>
+<tr>
+<td align="right"><b><a href="/person/92270401-Anne-Marivin">Anne Marivin</a></b></td>
+<td>&nbsp;&nbsp;</td>
+<td align"left">Annabelle</td>
+<tr>
+<td align="right"><b><a href="/person/42750401-Philippe-Duquesne">Philippe Duquesne</a></b></td>
+<td>&nbsp;&nbsp;</td>
+<td align"left">Fabrice</td>
+<tr>
+<td align="right"><b><a href="/person/120180401-Line-Renaud">Line Renaud</a></b></td>
+<td>&nbsp;&nbsp;</td>
+<td align"left">Antoine's Mother</td>
+</table>
+</div>
+</div>
+<div class="content" id="box-office">
+<div id="daily_chart_div" style="width: 720px; height: 360px; align: center;"></div>
+<h2>Daily Box Office Performance</h2>
+<h2>Weekend Box Office Performance</h2>
+<div id="box_office_chart">
+<table>
+<TR><TH>Date</TH><TH>Rank</TH><TH>Gross</TH><TH>%&nbsp;Change</TH><TH>Theaters</TH><TH>Per Theater</TH><TH>Total&nbsp;Gross</TH><TH>Days</TH></TR>
+<tr>
+<td><a href="/box-office-chart/weekend/2008/08/01">2008/08/01</a></td>
+<td class="data">27</td>
+<td  class="data">$199,983</td>
+<td>&nbsp;</td>
+<td class="data">45</td>
+<td class="data chart_grey">$4,444</td>
+<td class="data">&nbsp;&nbsp;$631,770</td>
+<td class="data">10</td>
+</tr>
+<tr>
+<td><a href="/box-office-chart/weekend/2008/08/08">2008/08/08</a></td>
+<td class="data chart_down">35</td>
+<td  class="data">$112,542</td>
+<td class="data chart_down">-44%</td>
+<td class="data">46</td>
+<td class="data chart_grey">$2,447</td>
+<td class="data">&nbsp;&nbsp;$918,396</td>
+<td class="data">17</td>
+</tr>
+<tr>
+<td><a href="/box-office-chart/weekend/2008/08/15">2008/08/15</a></td>
+<td class="data chart_down">46</td>
+<td  class="data">$58,793</td>
+<td class="data chart_down">-48%</td>
+<td class="data">32</td>
+<td class="data chart_grey">$1,837</td>
+<td class="data">&nbsp;&nbsp;$1,077,551</td>
+<td class="data">24</td>
+</tr>
+<tr>
+<td><a href="/box-office-chart/weekend/2008/08/22">2008/08/22</a></td>
+<td class="data chart_down">50</td>
+<td  class="data">$45,648</td>
+<td class="data chart_down">-22%</td>
+<td class="data">24</td>
+<td class="data chart_grey">$1,902</td>
+<td class="data">&nbsp;&nbsp;$1,186,869</td>
+<td class="data">31</td>
+</tr>
+<tr>
+<td><a href="/box-office-chart/weekend/2008/08/29">2008/08/29</a></td>
+<td class="data chart_up">48</td>
+<td  class="data">$63,827</td>
+<td class="data chart_up">+40%</td>
+<td class="data">23</td>
+<td class="data chart_grey">$2,775</td>
+<td class="data">&nbsp;&nbsp;$1,289,781</td>
+<td class="data">38</td>
+</tr>
+<tr>
+<td><a href="/box-office-chart/weekend/2008/09/05">2008/09/05</a></td>
+<td class="data chart_up">45</td>
+<td  class="data">$71,103</td>
+<td class="data chart_up">+11%</td>
+<td class="data">27</td>
+<td class="data chart_grey">$2,633</td>
+<td class="data">&nbsp;&nbsp;$1,379,671</td>
+<td class="data">45</td>
+</tr>
+<tr>
+<td><a href="/box-office-chart/weekend/2008/09/12">2008/09/12</a></td>
+<td class="data chart_down">46</td>
+<td  class="data">$59,221</td>
+<td class="data chart_down">-17%</td>
+<td class="data">29</td>
+<td class="data chart_grey">$2,042</td>
+<td class="data">&nbsp;&nbsp;$1,470,856</td>
+<td class="data">52</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="content" id="video-sales">
+</div>
+<div class="content" id="trailer">
+</div>
+
+<div class="content" id="buy">
+</div>
+<div class="content" id="more">
+<p>
+Full financial estimates for this film, including domestic and international box office, video sales, video rentals, TV and ancillary revenue
+are available through our research services. For more information, please contact us at <a href="mailto:research@the-numbers.com">research@the-numbers.com</a>.</div>
+<script src="/live/js/activatables.js" type="text/javascript"></script>
+<script>
+activatables('tab', ['summary', 'news', 'cast-and-crew', 'box-office', 'video-sales', 'trailer', 'buy', 'more']);
+</script>
+</div>
+<div id="sidebar">
+<h1>Trending Pages</h1>
+<ul>
+<li><a href="/bankability"<span style="color: #008255">Bankability Index</span></a></li>
+<li><a href="/daily-box-office-chart">Daily Box Office</a></li>
+<li><a href="/weekend-box-office-chart">Weekend Box Office</a></li>
+<li><a href="/weekly-dvd-sales-chart">Weekly DVD Sales</a></li>
+<li><a href="/weekly-bluray-sales-chart">Weekly Blu-ray Sales</a></li>
+<li><a href="/home-market/dvd-sales/2013">Top-selling DVDs of 2013</a></li>
+<li><a href="/home-market/bluray-sales/2013">Top-selling Blu-rays of 2013</a></li>
+<li><a href="/movies/release-schedule">Theatrical Release Schedule</a></li>
+<li><a href="/movie/records/">Theatrical Records</a></li>
+<li><a href="/movie/budgets/">Movie Budgets</a></li>
+<li><a href="/movies/">Movie Index</a></li>
+<li><a href="/people/">People Index</a></li>
+<li><a href="/market/">Theatrical Market</a></li>
+<li><a href="/news">Latest News</a></li>
+</ul>
+<center>
+<h1>Search</h1>
+<script type="text/javascript" src="http://www.google.com/jsapi"></script>
+<script type="text/javascript">
+google.load('search', '1');
+google.setOnLoadCallback(function() {
+						 google.search.CustomSearchControl.attachAutoCompletion(
+																				'partner-pub-0505053220181058:6106009327+qptype:1',
+																				document.getElementById('q'),
+																				'cse-search-box');
+						 });
+</script>
+<form action="/search/" id="cse-search-box">
+<div>
+<input type="hidden" name="cx" value="partner-pub-0505053220181058:6106009327" />
+<input type="hidden" name="cof" value="FORID:9" />
+<input type="hidden" name="ie" value="UTF-8" />
+<input type="text" name="q" id="q" autocomplete="off" size="30" />
+</div>
+</form>
+<script type="text/javascript" src="http://www.google.com/cse/brand?form=cse-search-box&lang=en"></script>
+<br><br>
+</center>
+<h1>Trending Movies</h1>
+<ul>
+<li><a href="/movie/Guardians-of-the-Galaxy#tab=summary">Guardians of the Galaxy</a></li>
+<li><a href="/movie/Expendables-3-The#tab=summary">The Expendables 3</a></li>
+<li><a href="/movie/Frozen-(2013)#tab=summary">Frozen</a></li>
+<li><a href="/movie/Teenage-Mutant-Ninja-Turtles-(2014)#tab=summary">Teenage Mutant Ninja Turtles</a></li>
+<li><a href="/movie/No-Good-Deed-(2013)#tab=summary">No Good Deed</a></li>
+<li><a href="/movie/Captain-America-The-Winter-Soldier#tab=summary">Captain America: The Winter Soldier</a></li>
+<li><a href="/movie/Lucy#tab=summary">Lucy</a></li>
+<li><a href="/movie/Edge-of-Tomorrow#tab=summary">Edge of Tomorrow</a></li>
+<li><a href="/movie/Avatar#tab=summary">Avatar</a></li>
+<li><a href="/movie/Transformers-Age-of-Extinction#tab=summary">Transformers: Age of Extinction</a></li>
+</ul>
+<h1>Trending People</h1>
+<ul>
+<li><a href="/person/670401-L-Jackson-Samuel">Samuel L. Jackson</a></li>
+<li><a href="/person/83610401-Christopher-Lee">Christopher Lee</a></li>
+<li><a href="/person/150560401-Frank-Welker">Frank Welker</a></li>
+<li><a href="/person/650401-Tom-Hanks">Tom Hanks</a></li>
+<li><a href="/person/540401-Tom-Cruise">Tom Cruise</a></li>
+<li><a href="/person/135950401-Sylvester-Stallone">Sylvester Stallone</a></li>
+<li><a href="/person/128750401-Arnold-Schwarzenegger">Arnold Schwarzenegger</a></li>
+<li><a href="/person/83860401-Stan-Lee">Stan Lee</a></li>
+<li><a href="/person/149660401-Naomi-Watts">Naomi Watts</a></li>
+<li><a href="/person/8410401-Amitabh-Bachchan">Amitabh Bachchan</a></li>
+</ul>
+</div>
+<div id="footer">
+<B>&copy; 1997-2014 <a href="http://www.nashinfoservices.com">Nash Information Services, LLC</a>. All rights reserved.</B><BR>
+<b>The Numbers is a registered trademark of Nash Information Services, LLC</b><br>
+<B>For comments or corrections, please email us at <A HREF="mailto:corrections@the-numbers.com">corrections@the-numbers.com</A></B>
+<p>Rotten Tomatoes and the Certified Fresh Logo are trademarks or registered trademarks of Flixster, Inc. in the United States and other countries.
+<BR><BR>
+<A HREF="">Privacy Policy</A> - <A HREF="">About Us</A> - <A HREF="">Glossary</A>
+</div>
+</body>
+</html>

@@ -1,0 +1,1003 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="PICS-Label" content='(PICS-1.1 "http://www.icra.org/ratingsv02.html" l gen true for "http://www.the-numbers.com/" r (cb 1 lz 1 nz 1 oz 1 vz 1) "http://www.rsac.org/ratingsv01.html" l gen true for "http://www.the-numbers.com/" r (n 0 s 0 v 0 l 0))'>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" >
+<meta name="format-detection" content="telephone=no">   <!-- for apple mobile --> 
+<meta property="fb:admins" content="521546213" />
+<meta name="description" content="The Numbers provides detailed movie financial analysis, including box office, DVD  and Blu-ray sales reports, and release schedules">
+<meta name="robots" content="NOODP">
+<meta keywords="keywords" content="movies, box office, The Numbers, Numbers, daily box office, weekly box office, movie stars, dvd sales, Blu-ray sales, release schedule">
+<title>Resurrecting the Champ - Box Office Data, DVD and Blu-ray Sales, Movie News, Cast and Crew Information - The Numbers</title>
+<link rel=StyleSheet href="/live/the-numbers.css" TYPE="text/css" TITLE="Numbers Standard Style">
+<script type="text/javascript" src="https://www.google.com/jsapi"></script> 
+<script async type="text/javascript">
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-1343128-1']);
+_gaq.push(['_trackPageview']);
+(function() {
+ var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+ ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+ })();
+</script>
+<!-- Begin comScore Tag -->
+<script async>
+var _comscore = _comscore || [];
+_comscore.push({ c1: "2", c2: "9873768" });
+(function() {
+ var s = document.createElement("script"), el = document.getElementsByTagName("script")[0]; s.async = true;
+ s.src = (document.location.protocol == "https:" ? "https://sb" : "http://b") + ".scorecardresearch.com/beacon.js";
+ el.parentNode.insertBefore(s, el);
+ })();
+</script>
+<noscript>
+<img src="http://b.scorecardresearch.com/p?c1=2&c2=9873768&cv=2.0&cj=1" />
+</noscript>
+<!-- End comScore Tag -->
+</head>
+<body>
+<div id="wrap">
+<div id="header">
+<a href="/"><img src="/images/the-numbers-banner.png" alt="The Numbers - Where Data and Movies Meet" width=524 height=67 border=0>&reg;
+<br>&nbsp;&nbsp;&nbsp;&nbsp;Where Data and the Movie Business Meet
+</a>
+</div>
+<div id="header_right" style="background: #663366; width:200px; height: 96px;">
+</div>
+<div id="nav">
+<ul>
+<li><a href="/news">News</a>
+	<ul>
+	<li><a href="/news">Latest News</a></li>
+	<li><a href="/movies/release-schedule">Release Schedule</a></li>
+	</ul>
+</li>
+</li>
+<li><a href="/box-office">Box Office</a>
+	<ul>
+	<li><a href="/daily-box-office-chart">Daily Chart</a></li>
+	<li><a href="/weekend-box-office-chart">Weekend Chart</a></li>
+	<li><a href="/movie/records">Records</a></li>
+	<li><a href="/box-office">Chart Index</a></li>
+	<li><a href="/movies/release-schedule">Release Schedule</a></li>
+	</ul>
+</li>
+<li><a href="/weekly-dvd-sales-chart">Home Video</a>
+	<ul>
+	<li><a href="/weekly-dvd-sales-chart">Weekly DVD Chart</a></li>
+	<li><a href="/weekly-bluray-sales-chart">Weekly Blu-ray Chart</a></li>
+	<li><a href="/weekly-video-sales-chart">Weekly Combined DVD+Blu-ray Chart</a></li>
+	<li><a href="/home-market/dvd-sales/2013">2013 DVD Chart</a></li>
+	<li><a href="/home-market/bluray-sales/2013">2013 Blu-ray Chart</a></li>
+	<li><a href="/home-market/packaged-media-sales/2013">2013 Combined Chart</a></li>
+	<li><a href="/alltime-bluray-sales-chart">All-Time Blu-ray</a></li>
+	<li><a href="/home-market/release-schedule">Release Schedule</a></li>
+	</ul>
+</li>
+<li><a href="/movies">Movies</a>
+	<ul>
+		<li><a href="/movie/budgets">Budgets and Finances</a></li>
+		<li><a href="/movies/franchises">Franchises</a></li>
+		<li><a href="/keywords">Keywords</a></li>
+		<li><a href="/movies">Movie Index</a></li>
+		<li><a href="/movies/release-schedule">Release Schedule</a></li>
+	</ul>
+</li>
+<li><a href="/people">People</a>
+	<ul>
+		<li><a href="/bankability">Bankability</a></li>
+		<li><a href="/people/records">Records</a></li>
+		<li><a href="/people">People Index</a></li>
+	</ul>
+</li>
+<li style="background: #ffcc00;"><a style="background: #ffcc00;" href="/oscars">Oscars</a>
+</li>
+</ul>
+</div>
+<div id="main">
+<script type="text/javascript">
+google.load("visualization", "1", {packages:["corechart","gauge"]});
+google.setOnLoadCallback(drawDailyChart);
+function drawDailyChart() {
+	var data = new google.visualization.DataTable();
+	data.addColumn('date', 'Chart Date');
+	data.addColumn('number', 'Cumulative Box Office');
+	data.addRows([
+				 [new Date(2007,7,24), 469000], [new Date(2007,8,3), 2930900]				 ]);
+	var options = {
+		vAxis: {minValue: 0, format: '$#,###'},
+		height: 360,
+		width: 720,
+		legend: {position: 'none'},
+				pointSize: 10,
+				hAxis: {format: 'MMM d, y', title: 'Date'}
+	};
+	
+	var chart = new google.visualization.LineChart(document.getElementById('daily_chart_div'));
+	var formatter = new google.visualization.NumberFormat(
+														  {prefix: '$', fractionDigits: 0});
+	formatter.format(data, 1); // Apply formatter to second column
+	chart.draw(data, options);
+	
+	var data2 = google.visualization.arrayToDataTable([
+													 ['Label', 'Value'],
+													 ['Opening', 80],
+													 ]);
+	
+	var options2 = {
+	width: 80, height: 80,
+	redFrom: 0, redTo: 20,
+	yellowFrom:20, yellowTo: 80,
+	greenFrom: 80, greenTo: 100,
+	minorTicks: 5
+	};
+	
+	var chart2 = new google.visualization.Gauge(document.getElementById('opening_chart_div'));
+	chart2.draw(data2, options2);
+	
+	var data3 = google.visualization.arrayToDataTable([
+													  ['Label', 'Value'],
+													  ['Legs', 55]
+													  ]);
+	
+	var options3 = {
+	width: 80, height: 80,
+	redFrom: 0, redTo: 20,
+	yellowFrom:20, yellowTo: 80,
+	greenFrom: 80, greenTo: 100,
+	minorTicks: 5
+	};
+	
+	var chart3 = new google.visualization.Gauge(document.getElementById('legs_chart_div'));
+	chart3.draw(data3, options3);
+
+	var data4 = google.visualization.arrayToDataTable([
+													  ['Label', 'Value'],
+													  ['Readers', 75]
+													  ]);
+	
+	var options4 = {
+	width: 80, height: 80,
+	redFrom: 0, redTo: 20,
+	yellowFrom:20, yellowTo: 80,
+	greenFrom: 80, greenTo: 100,
+	minorTicks: 5
+	};
+	
+	var chart4 = new google.visualization.Gauge(document.getElementById('readers_chart_div'));
+	chart4.draw(data4, options4);
+	
+}
+</script>
+<h1>Resurrecting the Champ</h1>
+<div id="col1">
+</div>
+<div id="col2outer">
+<div id="col2mid">
+<table id="movie_finances">
+<tr class="heading">
+<td colspan="3"><b>Theatrical Performance</b></td>
+</tr>
+<tr>
+<td><b>Domestic Box Office</b></td>
+<td class="data">$3,172,382</td><td><a href="#tab=box-office">Details</a></td>
+</tr>
+	<tr>
+	<td><b>International Box Office</b></td>
+	<td class="data sum">$88,173</td>
+	</tr>
+	<tr>
+	<td><b>Worldwide Box Office</b></td>
+	<td class="data">$3,260,555</td>
+	</tr>
+	<tr class="heading">
+	<td colspan="3" class="headed"><b>Home Market Performance</b></td>
+	</tr>
+	<tr>
+	<td><b>Domestic DVD Sales</b></td>
+	<td class="data">$2,747,544</td>
+	<td><a href="#tab=video-sales">Details</a></td>
+	</tr>
+		<tr>
+	<td><b>Total Domestic Video Sales</b></td>
+	<td class="data">$2,747,544</td>
+	</tr>
+	<tr class="heading"><td colspan=3 class="headed"><a href="#more">Further financial details...</td></tr>
+</table>
+</div>
+<div id="col2side">
+<ul id="social_vertical">
+	<li>
+		<a href="https://twitter.com/share" class="twitter-share-button" data-text="Resurrecting the Champ - Box Office Data, DVD and Blu-ray Sales, Movie News, Cast and Crew Information - The Numbers" data-via="MovieNumbers"></a>
+		<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+	</li>
+	<li>
+		<div id="fb-root"></div>
+		<script>(function(d, s, id) {
+		  var js, fjs = d.getElementsByTagName(s)[0];
+		  if (d.getElementById(id)) return;
+		  js = d.createElement(s); js.id = id;
+		  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
+		  fjs.parentNode.insertBefore(js, fjs);
+		}(document, 'script', 'facebook-jssdk'));</script>
+		<div class="fb-like" data-href="http://www.the-numbers.com/movie/Resurrecting-the-Champ" data-colorscheme="light" data-layout="button_count" data-action="like" data-show-faces="false" data-send="false"></div>
+	</li>	
+	<li>
+		<!-- Place this tag where you want the +1 button to render -->
+		<g:plusone size="medium"></g:plusone>
+		<!-- Place this render call where appropriate -->
+		<script type="text/javascript">
+		  (function() {
+			var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+			po.src = 'https://apis.google.com/js/plusone.js';
+			var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+		  })();
+		</script>		
+	</li>	
+	<li>
+		<script src="//platform.linkedin.com/in.js" type="text/javascript"></script>
+		<script type="IN/Share" data-counter="right"></script>		
+	</li>
+</ul>
+</div>
+</div>
+<br clear="all">
+<ol id="toc">
+<li><a href="#summary">Summary</a></li>
+<li><a href="#news">News</a></li>
+<li><a href="#box-office">Box Office</a></li>
+<li><a href="#video-sales">Video Sales</a></li>
+<li><a href="#more">Full Financials</a></li>
+<li><a href="#cast-and-crew">Cast & Crew</a></li>
+<li><a href="#trailer">Trailer</a></li>
+<li><a href="#buy">Buy</a></li>
+</ol>
+<div class="content" id="summary">
+<h2>Metrics</h2><p>
+<center><table id="movie_ratings"><tr class="heading"><td colspan=2>Rotten Tomatoes</td></tr><tr><td><a href="http://www.rottentomatoes.com/m/resurrecting_the_champ/"><img src="/new/layout/rt-splat-64-64.png" width=64px height=64px></a></td><td><a href="http://www.rottentomatoes.com/m/resurrecting_the_champ/"><img src="/new/layout/rt-upright-64-64.png" width=64px height=64px></a></td></tr><tr><td><a href="http://www.rottentomatoes.com/m/resurrecting_the_champ/"><b>Critics</b>
+<br>59% - Rotten</td>
+<td>
+<a href="http://www.rottentomatoes.com/m/resurrecting_the_champ/"><b>Audience</b>
+<br>60% - Upright</td>
+</tr></table></center>	
+
+<h2>Movie Details</h2>
+<table>
+<tr><td><b>Production&nbsp;Budget:</b></td><td>$13,000,000</td></tr>
+<tr><td><b>Theatrical&nbsp;Release:</b></td>
+<td>August 24th, 2007 (Wide) by <a href="/market/distributor/Yari-Film-Group-Releasing">Yari Film Group Releasing</a></td></tr>
+<tr><td><b><a href="#tab=buy">Video&nbsp;Release:</a></b></td>
+<td>April 8th, 2008 by Fox Home Entertainment</td></tr>
+<tr><td><b>MPAA&nbsp;Rating:</b></td>
+<td><a href="/market/mpaa-rating/PG-13-(US)">PG-13</a> for some violence and brief language</td></tr>
+<tr><td><b>Keywords:</b></td>
+<td><a href="/keyword/News">News</a>, <a href="/keyword/Boxing">Boxing</a></td></tr>
+<tr><td><b>Source:</b></td><td><a href="/market/source/Original-Screenplay">Original Screenplay</a></td></tr>
+<tr><td><b>Genre:</b></td><td><a href="/market/genre/Drama">Drama</a></td></tr>
+<tr><td><b>Production&nbsp;Method:</b></td><td><a href="/market/production-method/Live-Action">Live Action</a></td></tr>
+<tr><td><b>Creative&nbsp;Type:</b></td><td><a href="/market/creative-type/Contemporary-Fiction">Contemporary Fiction</a></td></tr>
+</tr></td></table></div>
+<div class="content" id="news">
+<div id="news">
+<h1><a href="/news/3349">DVD Rentals - There Will Be a New Number One</a></h1>
+
+<P>
+Like on the <A HREF="http://www.the-numbers.com/dvd/charts/weekly/2008/20080413.php">sales chart</A> there were plenty of <A HREF="http://www.the-numbers.com/interactive/newsStory.php?newsID=3321">new releases</A>. However, there was a new number on film on the rental chart as <A HREF="http://www.the-numbers.com/movies/2007/TWBLD.php">There Will Be Blood</A> opened in first place with $8.54 million. I did find it strange that a <A HREF="http://www.rottentomatoes.com/m/there_will_be_blood/" target="_NewWindow">critically acclaimed</A>, <A HREF="http://www.the-numbers.com/interactive/newsStory.php?newsID=3222">Oscar winning</A> movie would do better on the rental charts than the sales charts. Usually this happens when people want to try before they buy, but this doesn't seem the type of movie that would happen with. 
+<a href="/news/3349">More...</a>
+<br clear="all"><h1><a href="/news/3350">DVD Sales - Alvin Repeats on Top</a></h1>
+
+<P>
+Despite numerous <A HREF="http://www.the-numbers.com/interactive/newsStory.php?newsID=3321">new releases</A> that <A HREF="http://www.the-numbers.com/dvd/charts/weekly/2008/20080413.php">charted this week</A>, seven in fact, <A HREF="http://www.the-numbers.com/movies/2007/ALVIN.php">Alvin and the Chipmunks</A> remained in top spot on the DVD sales chart. It's rare for a film to repeat on top of the charts, but <A HREF="http://www.the-numbers.com/movies/2007/ALVIN.php">Alvin</A> was able to do so despite a 72% drop-off from its opening and added 872,000 units and $14.38 million in spending. This lifts its total to 4.02 million units / $66.34 million making it the third best selling DVD of the <A HREF="http://www.the-numbers.com/dvd/charts/annual/2008.php">year</A> so far. 
+<a href="/news/3350">More...</a>
+<br clear="all"><h1><a href="/news/3321">DVD Releases for April 8, 2008</a></h1>
+
+<P>
+It was a good week for top-notch releases with plenty that are worth picking up. But there were two films that were obvious choices for DVD Pick of the Week: <A HREF="http://www.the-numbers.com/movies/2007/WHARD.php">Walk Hard: The Dewey Cox Story</A> and <A HREF="http://www.the-numbers.com/movies/1989/0ADBM.php">Adventures of Baron Munchausen</A>. In both cases, I would recommend the <A HREF="http://www.amazon.com/Walk-Hard-Dewey-Story-Blu-ray/dp/B0012IWRDC?tag=thenumbers" target="_NewWindow">Blu</A>-<A HREF="http://www.amazon.com/Adventures-Baron-Munchausen-Blu-ray/dp/B0011E5RXO?tag=thenumbers" target="_NewWindow">ray</A> versions over the DVD. (On a side note, there were a few late spotlight reviews this week, and next week there will be a few more. Hopefully I will catch up by then, but there's always a chance that more screeners will arrive late in the meantime.) 
+<a href="/news/3321">More...</a>
+<br clear="all"><h1><a href="/news/2801">Holdovers were Super while New Releases were Bad</a></h1>
+
+<P>
+Holdovers went one-two-three on the box office chart this week, which is not a completely uncommon event.
+However, with six wide or wide-ish releases, you would think at least one could finish in the top three. 
+The collapse of the new releases helped keep the overall box office down to $108 million, which was 17% lower than last weekend. 
+However, that is still 4% higher than the same weekend last year and keeps summer 2007 on a record-setting pace. 
+In fact, it has hit $4 billion for the first time ever, so there's plenty of reasons to celebrate. 
+<a href="/news/2801">More...</a>
+<br clear="all"><h1><a href="/news/2796">Weekend Estimates - Holdovers Dominate the Chart</a></h1>
+
+<p>
+Three holdovers took the top three spots on the box office chart this weekend, according to studio estimates released on Sunday.
+Top of the pack was <a href="http://www.the-numbers.com/movies/2007/SPBAD.php">Superbad</a>, which dropped a very respectable 45% in its second weekend in release, to earn approximately $18 million.
+Second was <a href="http://www.the-numbers.com/movies/2007/BORN3.php">The Bourne Ultimatum</a>, which fell only 38% in its fourth weekend to earn $12.4 million.
+That was a rounding error ahead of <a href="http://www.the-numbers.com/movies/2007/RUSH3.php">Rush Hour 3</a>, which took an estimated $12.25 million.
+<a href="/news/2796">More...</a>
+<br clear="all"><h1><a href="/news/2794">Movie Website Updates for August 19 - August 25, 2007</a></h1>
+
+<P>
+After a few busy weeks in a row, there was a total collapse in the number of sites on this week's list. Not only are there only a couple dozen sites this week, nearly half of them are films that are coming out this week and most of those had no updates to report. This leaves us with no sites that are award-worthy, and precious few that have to potential to make it there in the coming weeks. 
+<a href="/news/2794">More...</a>
+<br clear="all"><h1><a href="/news/2791">Holdovers and New Releases go to War</a></h1>
+
+<P>
+As the summer ends, there is a rush to dump failed projects on the market.
+This weekend there are five films opening up in various degrees of wide release from a few hundred to a couple of thousand. 
+However, while there's a lot of competition, <A HREF="http://www.the-numbers.com/movies/2007/SPBAD.php">Superbad</A> has the inside track to repeat on top. 
+<a href="/news/2791">More...</a>
+<br clear="all"><h1><a href="/news/2743">2007 Preview: August</a></h1>
+
+<P>
+August marks the unofficial end of the lucrative summer box office season. The only question is when will it end. Studios usually hope for two summer-like weekends, and sometimes they can squeeze in three. 
+Other times they can only get one, or none. 
+Sadly, this year the August offerings are not particularly strong with only two that have a real shot at $100 million or more, and three or four others that should earn good reviews (and <A HREF="http://www.the-numbers.com/movies/2008/BARTL.php">one</A> of those has since been pulled from the schedule). 
+Most of the rest are films that probably seemed like a good idea at the time but didn't work out and those that were a mistake from day one. 
+<a href="/news/2743">More...</a>
+<br clear="all"><h1><a href="/news/2695">Movie Website Updates for July 1st - July 7, 2007</a></h1>
+
+<P>
+The list returns to its normal busy self, in fact, we have several sites making their first appearance this weekend. In addition, there were a couple of older sites that saw massive updates, including this week's winner, <A HREF="http://www.the-numbers.com/movies/2007/BARTL.php">Charlie Bartlett</A> - <A HREF="http://www.charliebartlett-themovie.com/" target="_NewWindow">Official Site</A>. 
+<a href="/news/2695">More...</a>
+<br clear="all"><h1><a href="/news/2639">New Movie US Release Dates - June 8, 2007</a></h1>
+
+<P>
+This week's round of new movie release information contains release dates for Death Race, Prince of Persia, Narnia 3 and more.
+<a href="/news/2639">More...</a>
+<br clear="all"><h1><a href="/news/2428">New Movie US Release Dates - February 25, 2007</a></h1>
+
+<P>
+This week's round of new movie release information contains release dates for Resurrecting the Champ, The Waterhorse, Avatar and more.
+<a href="/news/2428">More...</a>
+<br clear="all"></div></div>
+<div class="content" id="cast-and-crew">
+<div id="cast">
+<h1>Cast</h1>
+<table cellspacing=0 align="center">
+<tr>
+<td align="right"><b><a href="/person/670401-L-Jackson-Samuel">Samuel L. Jackson</a></b></td>
+<td>&nbsp;&nbsp;</td>
+<td align"left">Champ</td>
+<tr>
+<td align="right"><b><a href="/person/62780401-Josh-Hartnett">Josh Hartnett</a></b></td>
+<td>&nbsp;&nbsp;</td>
+<td align"left">Erik</td>
+<tr>
+<td align="right"><b><a href="/person/102250401-Kathryn-Morris">Kathryn Morris</a></b></td>
+<td>&nbsp;&nbsp;</td>
+<td align"left">Joyce</td>
+<tr>
+<td align="right"><b><a href="/person/3430401-Alan-Alda">Alan Alda</a></b></td>
+<td>&nbsp;&nbsp;</td>
+<td align"left">Metz</td>
+<tr>
+<td align="right"><b><a href="/person/105930401-Rachel-Nichols">Rachel Nichols</a></b></td>
+<td>&nbsp;&nbsp;</td>
+<td align"left">Polly</td>
+<tr>
+<td align="right"><b><a href="/person/112030401-David-Paymer">David Paymer</a></b></td>
+<td>&nbsp;&nbsp;</td>
+<td align"left">Whitley</td>
+<tr>
+<td align="right"><b><a href="/person/63000401-Teri-Hatcher">Teri Hatcher</a></b></td>
+<td>&nbsp;&nbsp;</td>
+<td align"left">Andrea Flak</td>
+<tr>
+<td align="right"><b><a href="/person/84470401-J-Lennix-Harry">Harry J. Lennix</a></b></td>
+<td>&nbsp;&nbsp;</td>
+<td align"left">Satterfield Jr.</td>
+<tr>
+<td align="right"><b><a href="/person/57040401-Dakota-Goyo">Dakota Goyo</a></b></td>
+<td>&nbsp;&nbsp;</td>
+<td align"left">Teddy</td>
+<tr>
+<td align="right"><b><a href="/person/130850401-Kristen-Shaw">Kristen Shaw</a></b></td>
+<td>&nbsp;&nbsp;</td>
+<td align"left">Perlmutter</td>
+<tr>
+<td align="right"><b><a href="/person/126900401-Nick-Sandow">Nick Sandow</a></b></td>
+<td>&nbsp;&nbsp;</td>
+<td align"left">Marciano</td>
+<tr>
+<td align="right"><b><a href="/person/32940401-Peter-Coyote">Peter Coyote</a></b></td>
+<td>&nbsp;&nbsp;</td>
+<td align"left">Epstein</td>
+<tr>
+<td align="right"><b><a href="/person/95470401-Ryan-McDonald">Ryan McDonald</a></b></td>
+<td>&nbsp;&nbsp;</td>
+<td align"left">Kenny</td>
+<tr>
+<td align="right"><b><a href="/person/738580401-Chris-Ippolito">Chris Ippolito</a></b></td>
+<td>&nbsp;&nbsp;</td>
+<td align"left">Jaws</td>
+<tr>
+<td align="right"><b><a href="/person/738590401-Jameson-Trenholm">Jameson Trenholm</a></b></td>
+<td>&nbsp;&nbsp;</td>
+<td align"left">Runt</td>
+<tr>
+<td align="right"><b><a href="/person/738600401-Steve-Strachan">Steve Strachan</a></b></td>
+<td>&nbsp;&nbsp;</td>
+<td align"left">Tillman</td>
+<tr>
+<td align="right"><b><a href="/person/738610401-Eugene-Clark">Eugene Clark</a></b></td>
+<td>&nbsp;&nbsp;</td>
+<td align"left">Washburn</td>
+<tr>
+<td align="right"><b><a href="/person/738620401-Lori-Ravensborg">Lori Ravensborg</a></b></td>
+<td>&nbsp;&nbsp;</td>
+<td align"left">Reporter</td>
+<tr>
+<td align="right"><b><a href="/person/738630401-W-Carroll-J">J.W. Carroll</a></b></td>
+<td>&nbsp;&nbsp;</td>
+<td align"left">Roselle</td>
+<tr>
+<td align="right"><b><a href="/person/738640401-Larry-Austin">Larry Austin</a></b></td>
+<td>&nbsp;&nbsp;</td>
+<td align"left">Crony</td>
+<tr>
+<td align="right"><b><a href="/person/333090401-Chris-Kelly">Chris Kelly</a></b></td>
+<td>&nbsp;&nbsp;</td>
+<td align"left">Police Officer</td>
+<tr>
+<td align="right"><b><a href="/person/738650401-Sean-Olsen">Sean Olsen</a></b></td>
+<td>&nbsp;&nbsp;</td>
+<td align"left">Police Officer</td>
+<tr>
+<td align="right"><b><a href="/person/738660401-Terrance-Morris">Terrance Morris</a></b></td>
+<td>&nbsp;&nbsp;</td>
+<td align"left">Hood</td>
+<tr>
+<td align="right"><b><a href="/person/738670401-Hannah-Stewart">Hannah Stewart</a></b></td>
+<td>&nbsp;&nbsp;</td>
+<td align"left">Jenny</td>
+<tr>
+<td align="right"><b><a href="/person/738680401-Mitchell-Frost">Mitchell Frost</a></b></td>
+<td>&nbsp;&nbsp;</td>
+<td align"left">Jeremy</td>
+<tr>
+<td align="right"><b><a href="/person/738690401-Kaya-Coleman">Kaya Coleman</a></b></td>
+<td>&nbsp;&nbsp;</td>
+<td align"left">Little Girl</td>
+<tr>
+<td align="right"><b><a href="/person/738700401-Claire-Davis">Claire Davis</a></b></td>
+<td>&nbsp;&nbsp;</td>
+<td align"left">Teacher</td>
+<tr>
+<td align="right"><b><a href="/person/738710401-Keenan-Cheltenhan">Keenan Cheltenhan</a></b></td>
+<td>&nbsp;&nbsp;</td>
+<td align"left">Teenage Boy</td>
+<tr>
+<td align="right"><b><a href="/person/738720401-Jesse-Lipscombe">Jesse Lipscombe</a></b></td>
+<td>&nbsp;&nbsp;</td>
+<td align"left">McCracken</td>
+<tr>
+<td align="right"><b><a href="/person/681740401-Troy-Amos-Ross">Troy Amos-Ross</a></b></td>
+<td>&nbsp;&nbsp;</td>
+<td align"left">Young Champ</td>
+<tr>
+<td align="right"><b><a href="/person/738730401-Dave-Trimble">Dave Trimble</a></b></td>
+<td>&nbsp;&nbsp;</td>
+<td align"left">Store Manager</td>
+<tr>
+<td align="right"><b><a href="/person/738740401-John-Elway">John Elway</a></b></td>
+<td>&nbsp;&nbsp;</td>
+<td align"left">Himself</td>
+<tr>
+<td align="right"><b><a href="/person/738750401-Hugh-Delaney">Hugh Delaney</a></b></td>
+<td>&nbsp;&nbsp;</td>
+<td align"left">Announcer</td>
+<tr>
+<td align="right"><b><a href="/person/738760401-Stafford-Lawrence">Stafford Lawrence</a></b></td>
+<td>&nbsp;&nbsp;</td>
+<td align"left">Wealthy Man</td>
+<tr>
+<td align="right"><b><a href="/person/738770401-Suzanne-Pringle">Suzanne Pringle</a></b></td>
+<td>&nbsp;&nbsp;</td>
+<td align"left">Woman with Kenny</td>
+<tr>
+<td align="right"><b><a href="/person/738780401-Ron-Carothers">Ron Carothers</a></b></td>
+<td>&nbsp;&nbsp;</td>
+<td align"left">Champ's Cornerman</td>
+<tr>
+<td align="right"><b><a href="/person/738790401-Stacey-Zurburg">Stacey Zurburg</a></b></td>
+<td>&nbsp;&nbsp;</td>
+<td align"left">Newsroom Editor</td>
+<tr>
+<td align="right"><b><a href="/person/88690401-Rod-Lurie">Rod Lurie</a></b></td>
+<td>&nbsp;&nbsp;</td>
+<td align"left">Toby Eagleburger</td>
+<tr>
+<td align="right"><b><a href="/person/738800401-Roxanne-Wong">Roxanne Wong</a></b></td>
+<td>&nbsp;&nbsp;</td>
+<td align"left">Female in Newsroom</td>
+<tr>
+<td align="right"><b><a href="/person/738810401-George-Green">George Green</a></b></td>
+<td>&nbsp;&nbsp;</td>
+<td align"left">Elway's Manager</td>
+<tr>
+<td align="right"><b><a href="/person/738820401-Dennis-Belair">Dennis Belair</a></b></td>
+<td>&nbsp;&nbsp;</td>
+<td align"left">50s Referee</td>
+<tr>
+<td align="right"><b><a href="/person/738830401-Tom-Carey">Tom Carey</a></b></td>
+<td>&nbsp;&nbsp;</td>
+<td align"left">Office Helper</td>
+<tr>
+<td align="right"><b><a href="/person/738840401-Alfred-Rampersand">Alfred Rampersand</a></b></td>
+<td>&nbsp;&nbsp;</td>
+<td align"left">Minister</td>
+<tr>
+<td align="right"><b><a href="/person/738850401-Jake-Plummer">Jake Plummer</a></b></td>
+<td>&nbsp;&nbsp;</td>
+<td align"left">Himself</td>
+<tr>
+<td align="right"><b><a href="/person/738860401-Jake-LaMotta">Jake LaMotta</a></b></td>
+<td>&nbsp;&nbsp;</td>
+<td align"left">Himself</td>
+<tr>
+<td align="right"><b><a href="/person/738870401-Glenn-Hunter">Glenn Hunter</a></b></td>
+<td>&nbsp;&nbsp;</td>
+<td align"left">Young Marciano</td>
+<tr>
+<td align="right"><b><a href="/person/738880401-Michael-Gleaves">Michael Gleaves</a></b></td>
+<td>&nbsp;&nbsp;</td>
+<td align"left">Quarterman</td>
+<tr>
+<td align="right"><b><a href="/person/43060401-Dale-Dye">Dale Dye</a></b></td>
+<td>&nbsp;&nbsp;</td>
+<td align"left">"The Wow Man"</td>
+<tr>
+<td align="right"><b><a href="/person/738890401-Alex-Rynn">Alex Rynn</a></b></td>
+<td>&nbsp;&nbsp;</td>
+<td align"left">Boxer</td>
+<tr>
+<td align="right"><b><a href="/person/738900401-Angus-McNeilly">Angus McNeilly</a></b></td>
+<td>&nbsp;&nbsp;</td>
+<td align"left">Boxer</td>
+<tr>
+<td align="right"><b><a href="/person/738910401-Richard-Reittie">Richard Reittie</a></b></td>
+<td>&nbsp;&nbsp;</td>
+<td align"left">Boxer</td>
+<tr>
+<td align="right"><b><a href="/person/738920401-Rick-Jamerson">Rick Jamerson</a></b></td>
+<td>&nbsp;&nbsp;</td>
+<td align"left">Boxer</td>
+<tr>
+<td align="right"><b><a href="/person/738930401-Matt-Mychajliv">Matt Mychajliv</a></b></td>
+<td>&nbsp;&nbsp;</td>
+<td align"left">Boxer</td>
+<tr>
+<td align="right"><b><a href="/person/738940401-Mike-Storey">Mike Storey</a></b></td>
+<td>&nbsp;&nbsp;</td>
+<td align"left">Boxer</td>
+<tr>
+<td align="right"><b><a href="/person/738950401-Skervit-Daramola">Skervit Daramola</a></b></td>
+<td>&nbsp;&nbsp;</td>
+<td align"left">Montage Boxer</td>
+<tr>
+<td align="right"><b><a href="/person/738960401-Dexter-Delves">Dexter Delves</a></b></td>
+<td>&nbsp;&nbsp;</td>
+<td align"left">Montage Boxer</td>
+<tr>
+<td align="right"><b><a href="/person/681760401-Art-Binkowski">Art Binkowski</a></b></td>
+<td>&nbsp;&nbsp;</td>
+<td align"left">Montage Boxer</td>
+<tr>
+<td align="right"><b><a href="/person/520740401-Duncan-McLeod">Duncan McLeod</a></b></td>
+<td>&nbsp;&nbsp;</td>
+<td align"left">Montage Boxer</td>
+<tr>
+<td align="right"><b><a href="/person/738970401-Ken-Zilka">Ken Zilka</a></b></td>
+<td>&nbsp;&nbsp;</td>
+<td align"left">Montage Boxer</td>
+<tr>
+<td align="right"><b><a href="/person/738980401-Egerton-Marcus">Egerton Marcus</a></b></td>
+<td>&nbsp;&nbsp;</td>
+<td align"left">Montage Boxer</td>
+</table>
+</div>
+<div id="cast">
+<h1>Production and Technical Credits</h1>
+<table cellspacing=0 align="center">
+<tr>
+<td align"left">Director</td>
+<td>&nbsp;&nbsp;</td>
+<td align="right"><b><a href="/person/88690401-Rod-Lurie">Rod Lurie</a></b></td>
+<tr>
+<td align"left">Screenwriter</td>
+<td>&nbsp;&nbsp;</td>
+<td align="right"><b><a href="/person/738990401-Michael-Bortman">Michael Bortman</a></b></td>
+<tr>
+<td align"left">Screenwriter</td>
+<td>&nbsp;&nbsp;</td>
+<td align="right"><b><a href="/person/313890401-Allison-Burnett">Allison Burnett</a></b></td>
+<tr>
+<td align"left">Story Creator</td>
+<td>&nbsp;&nbsp;</td>
+<td align="right"><b><a href="/person/738990401-Michael-Bortman">Michael Bortman</a></b></td>
+<tr>
+<td align"left">Story Creator</td>
+<td>&nbsp;&nbsp;</td>
+<td align="right"><b><a href="/person/313890401-Allison-Burnett">Allison Burnett</a></b></td>
+<tr>
+<td align"left">Story Creator</td>
+<td>&nbsp;&nbsp;</td>
+<td align="right"><b><a href="/person/739000401-R-Moehringer-J">J.R. Moehringer</a></b></td>
+<tr>
+<td align"left">Producer</td>
+<td>&nbsp;&nbsp;</td>
+<td align="right"><b><a href="/person/197880401-Mike-Medavoy">Mike Medavoy</a></b></td>
+<tr>
+<td align"left">Producer</td>
+<td>&nbsp;&nbsp;</td>
+<td align="right"><b><a href="/person/367860401-Bob-Yari">Bob Yari</a></b></td>
+<tr>
+<td align"left">Producer</td>
+<td>&nbsp;&nbsp;</td>
+<td align="right"><b><a href="/person/739010401-Marc-Frydman">Marc Frydman</a></b></td>
+<tr>
+<td align"left">Producer</td>
+<td>&nbsp;&nbsp;</td>
+<td align="right"><b><a href="/person/88690401-Rod-Lurie">Rod Lurie</a></b></td>
+<tr>
+<td align"left">Executive Producer</td>
+<td>&nbsp;&nbsp;</td>
+<td align="right"><b><a href="/person/197890401-W.-Messer-Arnold">Arnold W. Messer</a></b></td>
+<tr>
+<td align"left">Executive Producer</td>
+<td>&nbsp;&nbsp;</td>
+<td align="right"><b><a href="/person/197920401-J.-Fischer-Bradley">Bradley J. Fischer</a></b></td>
+<tr>
+<td align"left">Executive Producer</td>
+<td>&nbsp;&nbsp;</td>
+<td align="right"><b><a href="/person/338210401-Louis-Phillips">Louis Phillips</a></b></td>
+<tr>
+<td align"left">Executive Producer</td>
+<td>&nbsp;&nbsp;</td>
+<td align="right"><b><a href="/person/479570401-Frederick-Zollo">Frederick Zollo</a></b></td>
+<tr>
+<td align"left">Co-Producer</td>
+<td>&nbsp;&nbsp;</td>
+<td align="right"><b><a href="/person/739020401-Tom-Cox">Tom Cox</a></b></td>
+<tr>
+<td align"left">Co-Producer</td>
+<td>&nbsp;&nbsp;</td>
+<td align="right"><b><a href="/person/739030401-Jordy-Randall">Jordy Randall</a></b></td>
+<tr>
+<td align"left">Co-Producer</td>
+<td>&nbsp;&nbsp;</td>
+<td align="right"><b><a href="/person/739040401-Murray-Ord">Murray Ord</a></b></td>
+<tr>
+<td align"left">Line Producer</td>
+<td>&nbsp;&nbsp;</td>
+<td align="right"><b><a href="/person/739050401-James-Spies">James Spies</a></b></td>
+<tr>
+<td align"left">Director of Photography</td>
+<td>&nbsp;&nbsp;</td>
+<td align="right"><b><a href="/person/607010401-Adam-Kane">Adam Kane</a></b></td>
+<tr>
+<td align"left">Production Designer</td>
+<td>&nbsp;&nbsp;</td>
+<td align="right"><b><a href="/person/729740401-Ken-Rempel">Ken Rempel</a></b></td>
+<tr>
+<td align"left">Editor</td>
+<td>&nbsp;&nbsp;</td>
+<td align="right"><b><a href="/person/615360401-Sarah-Boyd">Sarah Boyd</a></b></td>
+<tr>
+<td align"left">Costume Designer</td>
+<td>&nbsp;&nbsp;</td>
+<td align="right"><b><a href="/person/262420401-Wendy-Partridge">Wendy Partridge</a></b></td>
+<tr>
+<td align"left">Composer</td>
+<td>&nbsp;&nbsp;</td>
+<td align="right"><b><a href="/person/199700401-Larry-Groupe">Larry Groupe</a></b></td>
+<tr>
+<td align"left">Casting Director</td>
+<td>&nbsp;&nbsp;</td>
+<td align="right"><b><a href="/person/739060401-Kathleen-Black">Kathleen Black</a></b></td>
+<tr>
+<td align"left">Assistant Director</td>
+<td>&nbsp;&nbsp;</td>
+<td align="right"><b><a href="/person/350490401-Pierre-Tremblay">Pierre Tremblay</a></b></td>
+<tr>
+<td align"left">Assistant Director</td>
+<td>&nbsp;&nbsp;</td>
+<td align="right"><b><a href="/person/739070401-P-King-Robert">Robert P. King</a></b></td>
+<tr>
+<td align"left">Unit Production Manager</td>
+<td>&nbsp;&nbsp;</td>
+<td align="right"><b><a href="/person/739080401-Tom-Benz">Tom Benz</a></b></td>
+<tr>
+<td align"left">Unit Production Manager</td>
+<td>&nbsp;&nbsp;</td>
+<td align="right"><b><a href="/person/739090401-Greg-Babcock">Greg Babcock</a></b></td>
+<tr>
+<td align"left">Art Director</td>
+<td>&nbsp;&nbsp;</td>
+<td align="right"><b><a href="/person/739100401-Bill-Ives">Bill Ives</a></b></td>
+<tr>
+<td align"left">Set Decorator</td>
+<td>&nbsp;&nbsp;</td>
+<td align="right"><b><a href="/person/432180401-Patrick-Healy">Patrick Healy</a></b></td>
+<tr>
+<td align"left">Costume Supervisor</td>
+<td>&nbsp;&nbsp;</td>
+<td align="right"><b><a href="/person/739110401-Gerald-Dubbin">Gerald Dubbin</a></b></td>
+<tr>
+<td align"left">Sound Mixer</td>
+<td>&nbsp;&nbsp;</td>
+<td align="right"><b><a href="/person/385610401-Jay-Meagher">Jay Meagher</a></b></td>
+<tr>
+<td align"left">Re-recording Mixer</td>
+<td>&nbsp;&nbsp;</td>
+<td align="right"><b><a href="/person/739120401-Jeremy-Grody">Jeremy Grody</a></b></td>
+<tr>
+<td align"left">Re-recording Mixer</td>
+<td>&nbsp;&nbsp;</td>
+<td align="right"><b><a href="/person/739130401-Scott-Weber">Scott Weber</a></b></td>
+<tr>
+<td align"left">Supervising Sound Editor</td>
+<td>&nbsp;&nbsp;</td>
+<td align="right"><b><a href="/person/739140401-Trevor-Jolly">Trevor Jolly</a></b></td>
+<tr>
+<td align"left">Supervising Sound Editor</td>
+<td>&nbsp;&nbsp;</td>
+<td align="right"><b><a href="/person/739120401-Jeremy-Grody">Jeremy Grody</a></b></td>
+<tr>
+<td align"left">Sound Effects Editor</td>
+<td>&nbsp;&nbsp;</td>
+<td align="right"><b><a href="/person/739150401-Marcus-Innocenti">Marcus Innocenti</a></b></td>
+<tr>
+<td align"left">Sound Effects Editor</td>
+<td>&nbsp;&nbsp;</td>
+<td align="right"><b><a href="/person/702840401-Mark-Allen">Mark Allen</a></b></td>
+<tr>
+<td align"left">Dialogue Editor</td>
+<td>&nbsp;&nbsp;</td>
+<td align="right"><b><a href="/person/739120401-Jeremy-Grody">Jeremy Grody</a></b></td>
+<tr>
+<td align"left">Dialogue Editor</td>
+<td>&nbsp;&nbsp;</td>
+<td align="right"><b><a href="/person/693740401-Maciek-Malish">Maciek Malish</a></b></td>
+<tr>
+<td align"left">Music Editor</td>
+<td>&nbsp;&nbsp;</td>
+<td align="right"><b><a href="/person/503160401-Nick-South">Nick South</a></b></td>
+<tr>
+<td align"left">Make up</td>
+<td>&nbsp;&nbsp;</td>
+<td align="right"><b><a href="/person/688590401-Gail-Kennedy">Gail Kennedy</a></b></td>
+<tr>
+<td align"left">Make up</td>
+<td>&nbsp;&nbsp;</td>
+<td align="right"><b><a href="/person/739160401-Dee-Sandella">Dee Sandella</a></b></td>
+<tr>
+<td align"left">Hairstylist</td>
+<td>&nbsp;&nbsp;</td>
+<td align="right"><b><a href="/person/739170401-Iloe-Flemming">Iloe Flemming</a></b></td>
+<tr>
+<td align"left">Hairstylist</td>
+<td>&nbsp;&nbsp;</td>
+<td align="right"><b><a href="/person/739180401-Rosanne-Reid">Rosanne Reid</a></b></td>
+<tr>
+<td align"left">Special Make-up Effects</td>
+<td>&nbsp;&nbsp;</td>
+<td align="right"><b><a href="/person/506760401-Allan-Apone">Allan Apone</a></b></td>
+<tr>
+<td align"left">Special Make-up Effects</td>
+<td>&nbsp;&nbsp;</td>
+<td align="right"><b><a href="/person/739190401-J-Elliott-Paul">Paul J. Elliott</a></b></td>
+<tr>
+<td align"left">Music Supervisor</td>
+<td>&nbsp;&nbsp;</td>
+<td align="right"><b><a href="/person/739200401-Kevin-Edelman">Kevin Edelman</a></b></td>
+<tr>
+<td align"left">Additional Casting</td>
+<td>&nbsp;&nbsp;</td>
+<td align="right"><b><a href="/person/739210401-Rhonda-Fisekci">Rhonda Fisekci</a></b></td>
+<tr>
+<td align"left">Additional Casting</td>
+<td>&nbsp;&nbsp;</td>
+<td align="right"><b><a href="/person/722140401-Candice-Elzinga">Candice Elzinga</a></b></td>
+<tr>
+<td align"left">Stunt Coordinator</td>
+<td>&nbsp;&nbsp;</td>
+<td align="right"><b><a href="/person/739220401-Eric-Bryson">Eric Bryson</a></b></td>
+</table>
+</div>
+</div>
+<div class="content" id="box-office">
+<div id="daily_chart_div" style="width: 720px; height: 360px; align: center;"></div>
+<h2>Daily Box Office Performance</h2>
+<div id="box_office_chart">
+<table>
+<TR><TH>Date</TH><TH>Rank</TH><TH>Gross</TH><TH>%&nbsp;Change</TH><TH>Theaters</TH><TH>Per Theater</TH><TH>Total&nbsp;Gross</TH><TH>Days</TH></TR>
+<tr class="weekend">
+<td><a href="/box-office-chart/daily/2007/08/24">2007/08/24</a></td>
+<td class="data">-</td>
+<td class="data estimate">$469,000</td>
+<td>&nbsp;</td>
+<td class="data">1,602</td>
+<td class="data chart_grey">$293</td>
+<td class="data chart_estimate">&nbsp;&nbsp;$469,000</td>
+<td class="data">1</td>
+</tr>
+<tr>
+<td><a href="/box-office-chart/daily/2007/09/03">2007/09/03</a></td>
+<td class="data chart_down">25</td>
+<td  class="data">$161,869</td>
+<td>&nbsp;</td>
+<td class="data">1,295</td>
+<td class="data chart_grey">$125</td>
+<td class="data">&nbsp;&nbsp;$2,930,900</td>
+<td class="data">11</td>
+</tr>
+</table>
+</div>
+<h2>Weekend Box Office Performance</h2>
+<div id="box_office_chart">
+<table>
+<TR><TH>Date</TH><TH>Rank</TH><TH>Gross</TH><TH>%&nbsp;Change</TH><TH>Theaters</TH><TH>Per Theater</TH><TH>Total&nbsp;Gross</TH><TH>Days</TH></TR>
+<tr>
+<td><a href="/box-office-chart/weekend/2007/08/24">2007/08/24</a></td>
+<td class="data">15</td>
+<td  class="data">$1,659,756</td>
+<td>&nbsp;</td>
+<td class="data">1,605</td>
+<td class="data chart_grey">$1,034</td>
+<td class="data">&nbsp;&nbsp;$1,659,756</td>
+<td class="data">3</td>
+</tr>
+<tr>
+<td><a href="/box-office-chart/weekend/2007/08/31">2007/08/31</a></td>
+<td class="data chart_down">25</td>
+<td  class="data">$544,665</td>
+<td class="data chart_down">-67%</td>
+<td class="data">1,295</td>
+<td class="data chart_grey">$421</td>
+<td class="data">&nbsp;&nbsp;$2,769,031</td>
+<td class="data">10</td>
+</tr>
+<tr>
+<td><a href="/box-office-chart/weekend/2007/09/07">2007/09/07</a></td>
+<td class="data chart_down">53</td>
+<td  class="data">$41,023</td>
+<td class="data chart_down">-92%</td>
+<td class="data">121</td>
+<td class="data chart_grey">$339</td>
+<td class="data">&nbsp;&nbsp;$3,141,250</td>
+<td class="data">17</td>
+</tr>
+<tr>
+<td><a href="/box-office-chart/weekend/2007/09/21">2007/09/21</a></td>
+<td class="data chart_down">100</td>
+<td  class="data">$2,383</td>
+<td>&nbsp;</td>
+<td class="data">23</td>
+<td class="data chart_grey">$104</td>
+<td class="data">&nbsp;&nbsp;$3,169,424</td>
+<td class="data">31</td>
+</tr>
+<tr>
+<td><a href="/box-office-chart/weekend/2007/09/28">2007/09/28</a></td>
+<td class="data chart_down">109</td>
+<td  class="data">$1,897</td>
+<td class="data chart_down">-20%</td>
+<td class="data">4</td>
+<td class="data chart_grey">$474</td>
+<td class="data">&nbsp;&nbsp;$3,172,382</td>
+<td class="data">38</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="content" id="video-sales">
+		<h2>Weekly US DVD Sales</h2>
+		<div id="box_office_chart">
+		<table>
+		<tr><th>Date</th><th>Rank</th><th>Units this Week</th><th>% Change</th><th>Total Units</th><th>Spending this Week</th><th>Total Spending</th><th>Weeks in Release</th></tr>
+		<tr><td class="data"><a href="/home-market/dvd-sales-chart/2008/04/13">4/13/2008</a></td><td class="data">16</td><td class="data">45,234</td><td>&nbsp;</td><td class="data">45,234</td><td class="data">$901,966</td><td class="data">$901,966</td><td class="data">1</td></tr>
+</table>
+</div>
+</div>
+<div class="content" id="trailer">
+</div>
+
+<div class="content" id="buy">
+	<div id="movie_ratings">
+	<center>
+	<table>
+	<tr>
+		<td>
+	<iframe src="http://rcm-na.amazon-adsystem.com/e/cm?t=thenumbers&o=1&p=8&l=as1&asins=B000YDMPC4&ref=tf_til&fc1=000000&IS2=1&lt1=_blank&m=amazon&lc1=0000FF&bc1=FFFFFF&bg1=FFFFFF&f=ifr" style="width:120px;height:240px;" scrolling="no" marginwidth="0" marginheight="0" frameborder="0"></iframe>
+	</td>
+	</tr>
+</table>
+</center>
+</div>
+</div>
+<div class="content" id="more">
+<p>
+Full financial estimates for this film, including domestic and international box office, video sales, video rentals, TV and ancillary revenue
+are available through our research services. For more information, please contact us at <a href="mailto:research@the-numbers.com">research@the-numbers.com</a>.</div>
+<script src="/live/js/activatables.js" type="text/javascript"></script>
+<script>
+activatables('tab', ['summary', 'news', 'cast-and-crew', 'box-office', 'video-sales', 'trailer', 'buy', 'more']);
+</script>
+</div>
+<div id="sidebar">
+<h1>Trending Pages</h1>
+<ul>
+<li><a href="/bankability"<span style="color: #008255">Bankability Index</span></a></li>
+<li><a href="/daily-box-office-chart">Daily Box Office</a></li>
+<li><a href="/weekend-box-office-chart">Weekend Box Office</a></li>
+<li><a href="/weekly-dvd-sales-chart">Weekly DVD Sales</a></li>
+<li><a href="/weekly-bluray-sales-chart">Weekly Blu-ray Sales</a></li>
+<li><a href="/home-market/dvd-sales/2013">Top-selling DVDs of 2013</a></li>
+<li><a href="/home-market/bluray-sales/2013">Top-selling Blu-rays of 2013</a></li>
+<li><a href="/movies/release-schedule">Theatrical Release Schedule</a></li>
+<li><a href="/movie/records/">Theatrical Records</a></li>
+<li><a href="/movie/budgets/">Movie Budgets</a></li>
+<li><a href="/movies/">Movie Index</a></li>
+<li><a href="/people/">People Index</a></li>
+<li><a href="/market/">Theatrical Market</a></li>
+<li><a href="/news">Latest News</a></li>
+</ul>
+<center>
+<h1>Search</h1>
+<script type="text/javascript" src="http://www.google.com/jsapi"></script>
+<script type="text/javascript">
+google.load('search', '1');
+google.setOnLoadCallback(function() {
+						 google.search.CustomSearchControl.attachAutoCompletion(
+																				'partner-pub-0505053220181058:6106009327+qptype:1',
+																				document.getElementById('q'),
+																				'cse-search-box');
+						 });
+</script>
+<form action="/search/" id="cse-search-box">
+<div>
+<input type="hidden" name="cx" value="partner-pub-0505053220181058:6106009327" />
+<input type="hidden" name="cof" value="FORID:9" />
+<input type="hidden" name="ie" value="UTF-8" />
+<input type="text" name="q" id="q" autocomplete="off" size="30" />
+</div>
+</form>
+<script type="text/javascript" src="http://www.google.com/cse/brand?form=cse-search-box&lang=en"></script>
+<br><br>
+</center>
+<h1>Trending Movies</h1>
+<ul>
+<li><a href="/movie/Guardians-of-the-Galaxy#tab=summary">Guardians of the Galaxy</a></li>
+<li><a href="/movie/Expendables-3-The#tab=summary">The Expendables 3</a></li>
+<li><a href="/movie/Frozen-(2013)#tab=summary">Frozen</a></li>
+<li><a href="/movie/Teenage-Mutant-Ninja-Turtles-(2014)#tab=summary">Teenage Mutant Ninja Turtles</a></li>
+<li><a href="/movie/No-Good-Deed-(2013)#tab=summary">No Good Deed</a></li>
+<li><a href="/movie/Captain-America-The-Winter-Soldier#tab=summary">Captain America: The Winter Soldier</a></li>
+<li><a href="/movie/Lucy#tab=summary">Lucy</a></li>
+<li><a href="/movie/Edge-of-Tomorrow#tab=summary">Edge of Tomorrow</a></li>
+<li><a href="/movie/Avatar#tab=summary">Avatar</a></li>
+<li><a href="/movie/Transformers-Age-of-Extinction#tab=summary">Transformers: Age of Extinction</a></li>
+</ul>
+<h1>Trending People</h1>
+<ul>
+<li><a href="/person/670401-L-Jackson-Samuel">Samuel L. Jackson</a></li>
+<li><a href="/person/83610401-Christopher-Lee">Christopher Lee</a></li>
+<li><a href="/person/150560401-Frank-Welker">Frank Welker</a></li>
+<li><a href="/person/650401-Tom-Hanks">Tom Hanks</a></li>
+<li><a href="/person/540401-Tom-Cruise">Tom Cruise</a></li>
+<li><a href="/person/135950401-Sylvester-Stallone">Sylvester Stallone</a></li>
+<li><a href="/person/128750401-Arnold-Schwarzenegger">Arnold Schwarzenegger</a></li>
+<li><a href="/person/83860401-Stan-Lee">Stan Lee</a></li>
+<li><a href="/person/149660401-Naomi-Watts">Naomi Watts</a></li>
+<li><a href="/person/8410401-Amitabh-Bachchan">Amitabh Bachchan</a></li>
+</ul>
+</div>
+<div id="footer">
+<B>&copy; 1997-2014 <a href="http://www.nashinfoservices.com">Nash Information Services, LLC</a>. All rights reserved.</B><BR>
+<b>The Numbers is a registered trademark of Nash Information Services, LLC</b><br>
+<B>For comments or corrections, please email us at <A HREF="mailto:corrections@the-numbers.com">corrections@the-numbers.com</A></B>
+<p>Rotten Tomatoes and the Certified Fresh Logo are trademarks or registered trademarks of Flixster, Inc. in the United States and other countries.
+<BR><BR>
+<A HREF="">Privacy Policy</A> - <A HREF="">About Us</A> - <A HREF="">Glossary</A>
+</div>
+</body>
+</html>

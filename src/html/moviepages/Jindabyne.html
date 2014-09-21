@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="PICS-Label" content='(PICS-1.1 "http://www.icra.org/ratingsv02.html" l gen true for "http://www.the-numbers.com/" r (cb 1 lz 1 nz 1 oz 1 vz 1) "http://www.rsac.org/ratingsv01.html" l gen true for "http://www.the-numbers.com/" r (n 0 s 0 v 0 l 0))'>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" >
+<meta name="format-detection" content="telephone=no">   <!-- for apple mobile --> 
+<meta property="fb:admins" content="521546213" />
+<meta name="description" content="The Numbers provides detailed movie financial analysis, including box office, DVD  and Blu-ray sales reports, and release schedules">
+<meta name="robots" content="NOODP">
+<meta keywords="keywords" content="movies, box office, The Numbers, Numbers, daily box office, weekly box office, movie stars, dvd sales, Blu-ray sales, release schedule">
+<title>Jindabyne - Box Office Data, DVD and Blu-ray Sales, Movie News, Cast and Crew Information - The Numbers</title>
+<link rel=StyleSheet href="/live/the-numbers.css" TYPE="text/css" TITLE="Numbers Standard Style">
+<script type="text/javascript" src="https://www.google.com/jsapi"></script> 
+<script async type="text/javascript">
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-1343128-1']);
+_gaq.push(['_trackPageview']);
+(function() {
+ var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+ ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+ })();
+</script>
+<!-- Begin comScore Tag -->
+<script async>
+var _comscore = _comscore || [];
+_comscore.push({ c1: "2", c2: "9873768" });
+(function() {
+ var s = document.createElement("script"), el = document.getElementsByTagName("script")[0]; s.async = true;
+ s.src = (document.location.protocol == "https:" ? "https://sb" : "http://b") + ".scorecardresearch.com/beacon.js";
+ el.parentNode.insertBefore(s, el);
+ })();
+</script>
+<noscript>
+<img src="http://b.scorecardresearch.com/p?c1=2&c2=9873768&cv=2.0&cj=1" />
+</noscript>
+<!-- End comScore Tag -->
+</head>
+<body>
+<div id="wrap">
+<div id="header">
+<a href="/"><img src="/images/the-numbers-banner.png" alt="The Numbers - Where Data and Movies Meet" width=524 height=67 border=0>&reg;
+<br>&nbsp;&nbsp;&nbsp;&nbsp;Where Data and the Movie Business Meet
+</a>
+</div>
+<div id="header_right" style="background: #663366; width:200px; height: 96px;">
+</div>
+<div id="nav">
+<ul>
+<li><a href="/news">News</a>
+	<ul>
+	<li><a href="/news">Latest News</a></li>
+	<li><a href="/movies/release-schedule">Release Schedule</a></li>
+	</ul>
+</li>
+</li>
+<li><a href="/box-office">Box Office</a>
+	<ul>
+	<li><a href="/daily-box-office-chart">Daily Chart</a></li>
+	<li><a href="/weekend-box-office-chart">Weekend Chart</a></li>
+	<li><a href="/movie/records">Records</a></li>
+	<li><a href="/box-office">Chart Index</a></li>
+	<li><a href="/movies/release-schedule">Release Schedule</a></li>
+	</ul>
+</li>
+<li><a href="/weekly-dvd-sales-chart">Home Video</a>
+	<ul>
+	<li><a href="/weekly-dvd-sales-chart">Weekly DVD Chart</a></li>
+	<li><a href="/weekly-bluray-sales-chart">Weekly Blu-ray Chart</a></li>
+	<li><a href="/weekly-video-sales-chart">Weekly Combined DVD+Blu-ray Chart</a></li>
+	<li><a href="/home-market/dvd-sales/2013">2013 DVD Chart</a></li>
+	<li><a href="/home-market/bluray-sales/2013">2013 Blu-ray Chart</a></li>
+	<li><a href="/home-market/packaged-media-sales/2013">2013 Combined Chart</a></li>
+	<li><a href="/alltime-bluray-sales-chart">All-Time Blu-ray</a></li>
+	<li><a href="/home-market/release-schedule">Release Schedule</a></li>
+	</ul>
+</li>
+<li><a href="/movies">Movies</a>
+	<ul>
+		<li><a href="/movie/budgets">Budgets and Finances</a></li>
+		<li><a href="/movies/franchises">Franchises</a></li>
+		<li><a href="/keywords">Keywords</a></li>
+		<li><a href="/movies">Movie Index</a></li>
+		<li><a href="/movies/release-schedule">Release Schedule</a></li>
+	</ul>
+</li>
+<li><a href="/people">People</a>
+	<ul>
+		<li><a href="/bankability">Bankability</a></li>
+		<li><a href="/people/records">Records</a></li>
+		<li><a href="/people">People Index</a></li>
+	</ul>
+</li>
+<li style="background: #ffcc00;"><a style="background: #ffcc00;" href="/oscars">Oscars</a>
+</li>
+</ul>
+</div>
+<div id="main">
+<script type="text/javascript">
+google.load("visualization", "1", {packages:["corechart","gauge"]});
+google.setOnLoadCallback(drawDailyChart);
+function drawDailyChart() {
+	var data = new google.visualization.DataTable();
+	data.addColumn('date', 'Chart Date');
+	data.addColumn('number', 'Cumulative Box Office');
+	data.addRows([
+				 [new Date(2007,4,28), 224114]				 ]);
+	var options = {
+		vAxis: {minValue: 0, format: '$#,###'},
+		height: 360,
+		width: 720,
+		legend: {position: 'none'},
+				pointSize: 10,
+				hAxis: {format: 'MMM d, y', title: 'Date'}
+	};
+	
+	var chart = new google.visualization.LineChart(document.getElementById('daily_chart_div'));
+	var formatter = new google.visualization.NumberFormat(
+														  {prefix: '$', fractionDigits: 0});
+	formatter.format(data, 1); // Apply formatter to second column
+	chart.draw(data, options);
+	
+	var data2 = google.visualization.arrayToDataTable([
+													 ['Label', 'Value'],
+													 ['Opening', 80],
+													 ]);
+	
+	var options2 = {
+	width: 80, height: 80,
+	redFrom: 0, redTo: 20,
+	yellowFrom:20, yellowTo: 80,
+	greenFrom: 80, greenTo: 100,
+	minorTicks: 5
+	};
+	
+	var chart2 = new google.visualization.Gauge(document.getElementById('opening_chart_div'));
+	chart2.draw(data2, options2);
+	
+	var data3 = google.visualization.arrayToDataTable([
+													  ['Label', 'Value'],
+													  ['Legs', 55]
+													  ]);
+	
+	var options3 = {
+	width: 80, height: 80,
+	redFrom: 0, redTo: 20,
+	yellowFrom:20, yellowTo: 80,
+	greenFrom: 80, greenTo: 100,
+	minorTicks: 5
+	};
+	
+	var chart3 = new google.visualization.Gauge(document.getElementById('legs_chart_div'));
+	chart3.draw(data3, options3);
+
+	var data4 = google.visualization.arrayToDataTable([
+													  ['Label', 'Value'],
+													  ['Readers', 75]
+													  ]);
+	
+	var options4 = {
+	width: 80, height: 80,
+	redFrom: 0, redTo: 20,
+	yellowFrom:20, yellowTo: 80,
+	greenFrom: 80, greenTo: 100,
+	minorTicks: 5
+	};
+	
+	var chart4 = new google.visualization.Gauge(document.getElementById('readers_chart_div'));
+	chart4.draw(data4, options4);
+	
+}
+</script>
+<h1>Jindabyne</h1>
+<div id="col1">
+</div>
+<div id="col2outer">
+<div id="col2mid">
+<table id="movie_finances">
+<tr class="heading">
+<td colspan="3"><b>Theatrical Performance</b></td>
+</tr>
+<tr>
+<td><b>Domestic Box Office</b></td>
+<td class="data">$399,879</td><td><a href="#tab=box-office">Details</a></td>
+</tr>
+	<tr>
+	<td><b>International Box Office</b></td>
+	<td class="data sum">$2,462,665</td>
+	</tr>
+	<tr>
+	<td><b>Worldwide Box Office</b></td>
+	<td class="data">$2,862,544</td>
+	</tr>
+<tr class="heading"><td colspan=3 class="headed"><a href="#more">Further financial details...</td></tr>
+</table>
+</div>
+<div id="col2side">
+<ul id="social_vertical">
+	<li>
+		<a href="https://twitter.com/share" class="twitter-share-button" data-text="Jindabyne - Box Office Data, DVD and Blu-ray Sales, Movie News, Cast and Crew Information - The Numbers" data-via="MovieNumbers"></a>
+		<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+	</li>
+	<li>
+		<div id="fb-root"></div>
+		<script>(function(d, s, id) {
+		  var js, fjs = d.getElementsByTagName(s)[0];
+		  if (d.getElementById(id)) return;
+		  js = d.createElement(s); js.id = id;
+		  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
+		  fjs.parentNode.insertBefore(js, fjs);
+		}(document, 'script', 'facebook-jssdk'));</script>
+		<div class="fb-like" data-href="http://www.the-numbers.com/movie/Jindabyne" data-colorscheme="light" data-layout="button_count" data-action="like" data-show-faces="false" data-send="false"></div>
+	</li>	
+	<li>
+		<!-- Place this tag where you want the +1 button to render -->
+		<g:plusone size="medium"></g:plusone>
+		<!-- Place this render call where appropriate -->
+		<script type="text/javascript">
+		  (function() {
+			var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+			po.src = 'https://apis.google.com/js/plusone.js';
+			var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+		  })();
+		</script>		
+	</li>	
+	<li>
+		<script src="//platform.linkedin.com/in.js" type="text/javascript"></script>
+		<script type="IN/Share" data-counter="right"></script>		
+	</li>
+</ul>
+</div>
+</div>
+<br clear="all">
+<ol id="toc">
+<li><a href="#summary">Summary</a></li>
+<li><a href="#news">News</a></li>
+<li><a href="#box-office">Box Office</a></li>
+<li><a href="#video-sales">Video Sales</a></li>
+<li><a href="#more">Full Financials</a></li>
+<li><a href="#cast-and-crew">Cast & Crew</a></li>
+<li><a href="#trailer">Trailer</a></li>
+<li><a href="#buy">Buy</a></li>
+</ol>
+<div class="content" id="summary">
+<h2>Metrics</h2><p>
+<center><table id="movie_ratings"><tr class="heading"><td colspan=2>Rotten Tomatoes</td></tr><tr><td><a href="http://www.rottentomatoes.com/m/jindabyne/"><img src="/new/layout/rt-fresh-64-64.png" width=64px height=64px></a></td><td><a href="http://www.rottentomatoes.com/m/jindabyne/"><img src="/new/layout/rt-spilled-64-64.png" width=64px height=64px></a></td></tr><tr><td><a href="http://www.rottentomatoes.com/m/jindabyne/"><b>Critics</b>
+<br>65% - Fresh</td>
+<td>
+<a href="http://www.rottentomatoes.com/m/jindabyne/"><b>Audience</b>
+<br>50% - Spilled</td>
+</tr></table></center>	
+
+<h2>Movie Details</h2>
+<table>
+<tr><td><b>Production&nbsp;Budget:</b></td><td>$10,800,000</td></tr>
+<tr><td><b>Theatrical&nbsp;Release:</b></td>
+<td>April 27th, 2007 (Limited) by <a href="/market/distributor/Sony-Pictures-Classics">Sony Pictures Classics</a></td></tr>
+<tr><td><b>MPAA&nbsp;Rating:</b></td>
+<td><a href="/market/mpaa-rating/R-(US)">R</a> for disturbing images, language and some nudity</td></tr>
+<tr><td><b>Source:</b></td><td><a href="/market/source/Based-on-Fictional-Book-or-Short-Story">Based on Fiction Book/Short Story</a></td></tr>
+<tr><td><b>Genre:</b></td><td><a href="/market/genre/Drama">Drama</a></td></tr>
+<tr><td><b>Production&nbsp;Method:</b></td><td><a href="/market/production-method/Live-Action">Live Action</a></td></tr>
+<tr><td><b>Creative&nbsp;Type:</b></td><td><a href="/market/creative-type/Contemporary-Fiction">Contemporary Fiction</a></td></tr>
+</tr></td></table></div>
+<div class="content" id="news">
+<div id="news">
+<h1><a href="/news/2909">DVD Rentals - Four had Fantastic Start on the Rentals Chart</a></h1>
+
+<P>
+<A HREF="http://www.the-numbers.com/interactive/newsStory.php?newsID=2882">New releases</A> were not very prominent on the DVD rental chart this week, but they did have two in the top five, including the overall champion, <A HREF="http://www.the-numbers.com/movies/2007/FOUR2.php">Fantastic Four: Rise of the Silver Surfer</A>, which made $9.46 million during its first week of release. 
+<a href="/news/2909">More...</a>
+<br clear="all"><h1><a href="/news/2882">DVD Releases for October 2, 2007</a></h1>
+
+<P>
+Busy week, at least for me with seven spotlight reviews (including one double-shot from previous weeks). 
+Of the DVDs I've reviewed, several are easy recommendations, including <A HREF="http://www.the-numbers.com/movies/2007/1408.php">1408</A> - <A HREF="http://www.amazon.com/1408-Two-Disc-Collectors-John-Cusack/dp/B000UNYJLS?tag=thenumbers" target="_NewWindow">Two-Disc Collector's Edition</A>, which is the DVD Pick of the Week. 
+<A HREF="http://www.amazon.com/NHL-Stanley-Cup-Champions-2006-2007/dp/B000T28PZG?tag=thenumbers" target="_NewWindow">The NHL Stanley Cup Champions 2006-2007</A> 6-disc set would have also have been a DVD Pick of the Week if the <A HREF="http://canucks.nhl.com/" target="_NewWindow">Canucks</A> had won and not the Anaheim Mighty Ducks.
+<a href="/news/2882">More...</a>
+<br clear="all"><h1><a href="/news/2556">Thank Goodness for Organized Crime</a></h1>
+
+<P>
+Only one film managed to top $10,000 on the per theater chart this weekend, as <A HREF="http://www.the-numbers.com/movies/2007/TELCT.php">Triad Election</A> pulled in $10,811 over the weekend and $12,696 since Wednesday, all in one theater. 
+<A HREF="http://www.the-numbers.com/movies/2007/ZOOO.php">Zoo</A> just missed that mark with $9,920, but only $7,810 of that came over the weekend. 
+<a href="/news/2556">More...</a>
+<br clear="all"><h1><a href="/news/2549">Movie Website Updates for April 22 - April 28, 2007</a></h1>
+
+<P>
+It's a slow week in terms of the cream-of-the-crop sites. There are a few that look like they could be award-worthy once they have a few more updates, but for the most part this week we have a collection that is rather average. There was one stand-out site, <A HREF="http://www.the-numbers.com/movies/2007/ALMT2.php">Evan Almighty</A> - <A HREF="http://www.evanalmighty.com/" target="_NewWindow">Official Site</A>, and it was the only choice for the Weekly Website Award. 
+<a href="/news/2549">More...</a>
+<br clear="all"><h1><a href="/news/2547">Limited Releases hit by a Late Snow</a></h1>
+
+<P>
+While wide releases are a dumping ground of mediocrity this week, the limited releases are not scared of the upcoming summer blockbuster season and there are several high quality movies worth checking out. 
+This includes the <A HREF="http://www.the-numbers.com/movies/series/Canada.php">Canadian</A> film, <A HREF="http://www.the-numbers.com/movies/2007/SCAKE.php">Snow Cake</A>, which was delayed from last December to this weekend. 
+<a href="/news/2547">More...</a>
+<br clear="all"><h1><a href="/news/2170">New Movie US Release Dates - October 8, 2006</a></h1>
+
+<P>
+This week's round of new movie release information contains release dates for Dreamgirls, Stephanie Daley, Black Book and more.
+<a href="/news/2170">More...</a>
+<br clear="all"></div></div>
+<div class="content" id="cast-and-crew">
+<div id="cast">
+<h1>Cast</h1>
+<table cellspacing=0 align="center">
+<tr>
+<td align="right"><b><a href="/person/22370401-Gabriel-Byrne">Gabriel Byrne</a></b></td>
+<td>&nbsp;&nbsp;</td>
+<td align"left">Stewart</td>
+<tr>
+<td align="right"><b><a href="/person/86190401-Laura-Linney">Laura Linney</a></b></td>
+<td>&nbsp;&nbsp;</td>
+<td align"left">Claire</td>
+</table>
+</div>
+</div>
+<div class="content" id="box-office">
+<div id="daily_chart_div" style="width: 720px; height: 360px; align: center;"></div>
+<h2>Daily Box Office Performance</h2>
+<div id="box_office_chart">
+<table>
+<TR><TH>Date</TH><TH>Rank</TH><TH>Gross</TH><TH>%&nbsp;Change</TH><TH>Theaters</TH><TH>Per Theater</TH><TH>Total&nbsp;Gross</TH><TH>Days</TH></TR>
+<tr>
+<td><a href="/box-office-chart/daily/2007/05/28">2007/05/28</a></td>
+<td class="data">36</td>
+<td  class="data">$12,759</td>
+<td>&nbsp;</td>
+<td class="data">25</td>
+<td class="data chart_grey">$510</td>
+<td class="data">&nbsp;&nbsp;$224,114</td>
+<td class="data">32</td>
+</tr>
+</table>
+</div>
+<h2>Weekend Box Office Performance</h2>
+<div id="box_office_chart">
+<table>
+<TR><TH>Date</TH><TH>Rank</TH><TH>Gross</TH><TH>%&nbsp;Change</TH><TH>Theaters</TH><TH>Per Theater</TH><TH>Total&nbsp;Gross</TH><TH>Days</TH></TR>
+<tr>
+<td><a href="/box-office-chart/weekend/2007/04/27">2007/04/27</a></td>
+<td class="data">58</td>
+<td  class="data">$28,298</td>
+<td>&nbsp;</td>
+<td class="data">6</td>
+<td class="data chart_grey">$4,716</td>
+<td class="data">&nbsp;&nbsp;$28,298</td>
+<td class="data">3</td>
+</tr>
+<tr>
+<td><a href="/box-office-chart/weekend/2007/05/04">2007/05/04</a></td>
+<td class="data chart_down">61</td>
+<td  class="data">$20,093</td>
+<td class="data chart_down">-29%</td>
+<td class="data">9</td>
+<td class="data chart_grey">$2,233</td>
+<td class="data">&nbsp;&nbsp;$59,675</td>
+<td class="data">10</td>
+</tr>
+<tr>
+<td><a href="/box-office-chart/weekend/2007/05/11">2007/05/11</a></td>
+<td class="data chart_up">58</td>
+<td  class="data">$31,434</td>
+<td class="data chart_up">+56%</td>
+<td class="data">16</td>
+<td class="data chart_grey">$1,965</td>
+<td class="data">&nbsp;&nbsp;$99,341</td>
+<td class="data">17</td>
+</tr>
+<tr>
+<td><a href="/box-office-chart/weekend/2007/05/18">2007/05/18</a></td>
+<td class="data chart_up">55</td>
+<td  class="data">$40,405</td>
+<td class="data chart_up">+29%</td>
+<td class="data">24</td>
+<td class="data chart_grey">$1,684</td>
+<td class="data">&nbsp;&nbsp;$153,152</td>
+<td class="data">24</td>
+</tr>
+<tr>
+<td><a href="/box-office-chart/weekend/2007/05/25">2007/05/25</a></td>
+<td class="data chart_up">41</td>
+<td  class="data">$41,539</td>
+<td class="data chart_up">+3%</td>
+<td class="data">25</td>
+<td class="data chart_grey">$1,662</td>
+<td class="data">&nbsp;&nbsp;$211,355</td>
+<td class="data">31</td>
+</tr>
+<tr>
+<td><a href="/box-office-chart/weekend/2007/06/01">2007/06/01</a></td>
+<td class="data chart_down">55</td>
+<td  class="data">$18,194</td>
+<td class="data chart_down">-56%</td>
+<td class="data">19</td>
+<td class="data chart_grey">$958</td>
+<td class="data">&nbsp;&nbsp;$252,617</td>
+<td class="data">38</td>
+</tr>
+<tr>
+<td><a href="/box-office-chart/weekend/2007/06/08">2007/06/08</a></td>
+<td class="data chart_down">57</td>
+<td  class="data">$17,806</td>
+<td class="data chart_down">-2%</td>
+<td class="data">22</td>
+<td class="data chart_grey">$809</td>
+<td class="data">&nbsp;&nbsp;$278,684</td>
+<td class="data">45</td>
+</tr>
+<tr>
+<td><a href="/box-office-chart/weekend/2007/06/15">2007/06/15</a></td>
+<td class="data chart_up">50</td>
+<td  class="data">$22,256</td>
+<td class="data chart_up">+25%</td>
+<td class="data">19</td>
+<td class="data chart_grey">$1,171</td>
+<td class="data">&nbsp;&nbsp;$309,609</td>
+<td class="data">52</td>
+</tr>
+<tr>
+<td><a href="/box-office-chart/weekend/2007/06/22">2007/06/22</a></td>
+<td class="data chart_down">56</td>
+<td  class="data">$15,942</td>
+<td class="data chart_down">-28%</td>
+<td class="data">22</td>
+<td class="data chart_grey">$725</td>
+<td class="data">&nbsp;&nbsp;$333,154</td>
+<td class="data">59</td>
+</tr>
+<tr>
+<td><a href="/box-office-chart/weekend/2007/06/29">2007/06/29</a></td>
+<td class="data chart_down">65</td>
+<td  class="data">$4,701</td>
+<td class="data chart_down">-71%</td>
+<td class="data">13</td>
+<td class="data chart_grey">$362</td>
+<td class="data">&nbsp;&nbsp;$347,193</td>
+<td class="data">66</td>
+</tr>
+<tr>
+<td><a href="/box-office-chart/weekend/2007/07/06">2007/07/06</a></td>
+<td class="data chart_down">66</td>
+<td  class="data">$4,513</td>
+<td class="data chart_down">-4%</td>
+<td class="data">11</td>
+<td class="data chart_grey">$410</td>
+<td class="data">&nbsp;&nbsp;$354,715</td>
+<td class="data">73</td>
+</tr>
+<tr>
+<td><a href="/box-office-chart/weekend/2007/07/13">2007/07/13</a></td>
+<td class="data chart_down">70</td>
+<td  class="data">$4,757</td>
+<td class="data chart_up">+5%</td>
+<td class="data">10</td>
+<td class="data chart_grey">$476</td>
+<td class="data">&nbsp;&nbsp;$361,617</td>
+<td class="data">80</td>
+</tr>
+<tr>
+<td><a href="/box-office-chart/weekend/2007/07/20">2007/07/20</a></td>
+<td class="data chart_up">68</td>
+<td  class="data">$6,353</td>
+<td class="data chart_up">+34%</td>
+<td class="data">11</td>
+<td class="data chart_grey">$578</td>
+<td class="data">&nbsp;&nbsp;$396,955</td>
+<td class="data">87</td>
+</tr>
+<tr>
+<td><a href="/box-office-chart/weekend/2007/07/27">2007/07/27</a></td>
+<td class="data chart_down">78</td>
+<td  class="data">$3,721</td>
+<td class="data chart_down">-41%</td>
+<td class="data">7</td>
+<td class="data chart_grey">$532</td>
+<td class="data">&nbsp;&nbsp;$376,128</td>
+<td class="data">94</td>
+</tr>
+<tr>
+<td><a href="/box-office-chart/weekend/2007/08/03">2007/08/03</a></td>
+<td class="data">78</td>
+<td  class="data">$2,835</td>
+<td class="data chart_down">-24%</td>
+<td class="data">5</td>
+<td class="data chart_grey">$567</td>
+<td class="data">&nbsp;&nbsp;$382,644</td>
+<td class="data">101</td>
+</tr>
+<tr>
+<td><a href="/box-office-chart/weekend/2007/08/10">2007/08/10</a></td>
+<td class="data chart_down">91</td>
+<td  class="data">$2,499</td>
+<td class="data chart_down">-12%</td>
+<td class="data">4</td>
+<td class="data chart_grey">$625</td>
+<td class="data">&nbsp;&nbsp;$393,478</td>
+<td class="data">108</td>
+</tr>
+<tr>
+<td><a href="/box-office-chart/weekend/2007/08/17">2007/08/17</a></td>
+<td class="data chart_down">97</td>
+<td  class="data">$1,823</td>
+<td class="data chart_down">-27%</td>
+<td class="data">3</td>
+<td class="data chart_grey">$608</td>
+<td class="data">&nbsp;&nbsp;$397,344</td>
+<td class="data">115</td>
+</tr>
+<tr>
+<td><a href="/box-office-chart/weekend/2007/08/24">2007/08/24</a></td>
+<td class="data chart_down">108</td>
+<td  class="data">$1,076</td>
+<td class="data chart_down">-41%</td>
+<td class="data">3</td>
+<td class="data chart_grey">$359</td>
+<td class="data">&nbsp;&nbsp;$398,887</td>
+<td class="data">122</td>
+</tr>
+<tr>
+<td><a href="/box-office-chart/weekend/2007/08/31">2007/08/31</a></td>
+<td class="data chart_up">98</td>
+<td  class="data">$600</td>
+<td class="data chart_down">-44%</td>
+<td class="data">1</td>
+<td class="data chart_grey">$600</td>
+<td class="data">&nbsp;&nbsp;$399,879</td>
+<td class="data">129</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="content" id="video-sales">
+</div>
+<div class="content" id="trailer">
+</div>
+
+<div class="content" id="buy">
+</div>
+<div class="content" id="more">
+<p>
+Full financial estimates for this film, including domestic and international box office, video sales, video rentals, TV and ancillary revenue
+are available through our research services. For more information, please contact us at <a href="mailto:research@the-numbers.com">research@the-numbers.com</a>.</div>
+<script src="/live/js/activatables.js" type="text/javascript"></script>
+<script>
+activatables('tab', ['summary', 'news', 'cast-and-crew', 'box-office', 'video-sales', 'trailer', 'buy', 'more']);
+</script>
+</div>
+<div id="sidebar">
+<h1>Trending Pages</h1>
+<ul>
+<li><a href="/bankability"<span style="color: #008255">Bankability Index</span></a></li>
+<li><a href="/daily-box-office-chart">Daily Box Office</a></li>
+<li><a href="/weekend-box-office-chart">Weekend Box Office</a></li>
+<li><a href="/weekly-dvd-sales-chart">Weekly DVD Sales</a></li>
+<li><a href="/weekly-bluray-sales-chart">Weekly Blu-ray Sales</a></li>
+<li><a href="/home-market/dvd-sales/2013">Top-selling DVDs of 2013</a></li>
+<li><a href="/home-market/bluray-sales/2013">Top-selling Blu-rays of 2013</a></li>
+<li><a href="/movies/release-schedule">Theatrical Release Schedule</a></li>
+<li><a href="/movie/records/">Theatrical Records</a></li>
+<li><a href="/movie/budgets/">Movie Budgets</a></li>
+<li><a href="/movies/">Movie Index</a></li>
+<li><a href="/people/">People Index</a></li>
+<li><a href="/market/">Theatrical Market</a></li>
+<li><a href="/news">Latest News</a></li>
+</ul>
+<center>
+<h1>Search</h1>
+<script type="text/javascript" src="http://www.google.com/jsapi"></script>
+<script type="text/javascript">
+google.load('search', '1');
+google.setOnLoadCallback(function() {
+						 google.search.CustomSearchControl.attachAutoCompletion(
+																				'partner-pub-0505053220181058:6106009327+qptype:1',
+																				document.getElementById('q'),
+																				'cse-search-box');
+						 });
+</script>
+<form action="/search/" id="cse-search-box">
+<div>
+<input type="hidden" name="cx" value="partner-pub-0505053220181058:6106009327" />
+<input type="hidden" name="cof" value="FORID:9" />
+<input type="hidden" name="ie" value="UTF-8" />
+<input type="text" name="q" id="q" autocomplete="off" size="30" />
+</div>
+</form>
+<script type="text/javascript" src="http://www.google.com/cse/brand?form=cse-search-box&lang=en"></script>
+<br><br>
+</center>
+<h1>Trending Movies</h1>
+<ul>
+<li><a href="/movie/Guardians-of-the-Galaxy#tab=summary">Guardians of the Galaxy</a></li>
+<li><a href="/movie/Expendables-3-The#tab=summary">The Expendables 3</a></li>
+<li><a href="/movie/Frozen-(2013)#tab=summary">Frozen</a></li>
+<li><a href="/movie/Teenage-Mutant-Ninja-Turtles-(2014)#tab=summary">Teenage Mutant Ninja Turtles</a></li>
+<li><a href="/movie/No-Good-Deed-(2013)#tab=summary">No Good Deed</a></li>
+<li><a href="/movie/Captain-America-The-Winter-Soldier#tab=summary">Captain America: The Winter Soldier</a></li>
+<li><a href="/movie/Lucy#tab=summary">Lucy</a></li>
+<li><a href="/movie/Edge-of-Tomorrow#tab=summary">Edge of Tomorrow</a></li>
+<li><a href="/movie/Avatar#tab=summary">Avatar</a></li>
+<li><a href="/movie/Transformers-Age-of-Extinction#tab=summary">Transformers: Age of Extinction</a></li>
+</ul>
+<h1>Trending People</h1>
+<ul>
+<li><a href="/person/670401-L-Jackson-Samuel">Samuel L. Jackson</a></li>
+<li><a href="/person/83610401-Christopher-Lee">Christopher Lee</a></li>
+<li><a href="/person/150560401-Frank-Welker">Frank Welker</a></li>
+<li><a href="/person/650401-Tom-Hanks">Tom Hanks</a></li>
+<li><a href="/person/540401-Tom-Cruise">Tom Cruise</a></li>
+<li><a href="/person/135950401-Sylvester-Stallone">Sylvester Stallone</a></li>
+<li><a href="/person/128750401-Arnold-Schwarzenegger">Arnold Schwarzenegger</a></li>
+<li><a href="/person/83860401-Stan-Lee">Stan Lee</a></li>
+<li><a href="/person/149660401-Naomi-Watts">Naomi Watts</a></li>
+<li><a href="/person/8410401-Amitabh-Bachchan">Amitabh Bachchan</a></li>
+</ul>
+</div>
+<div id="footer">
+<B>&copy; 1997-2014 <a href="http://www.nashinfoservices.com">Nash Information Services, LLC</a>. All rights reserved.</B><BR>
+<b>The Numbers is a registered trademark of Nash Information Services, LLC</b><br>
+<B>For comments or corrections, please email us at <A HREF="mailto:corrections@the-numbers.com">corrections@the-numbers.com</A></B>
+<p>Rotten Tomatoes and the Certified Fresh Logo are trademarks or registered trademarks of Flixster, Inc. in the United States and other countries.
+<BR><BR>
+<A HREF="">Privacy Policy</A> - <A HREF="">About Us</A> - <A HREF="">Glossary</A>
+</div>
+</body>
+</html>

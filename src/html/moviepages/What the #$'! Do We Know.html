@@ -1,0 +1,890 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="PICS-Label" content='(PICS-1.1 "http://www.icra.org/ratingsv02.html" l gen true for "http://www.the-numbers.com/" r (cb 1 lz 1 nz 1 oz 1 vz 1) "http://www.rsac.org/ratingsv01.html" l gen true for "http://www.the-numbers.com/" r (n 0 s 0 v 0 l 0))'>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" >
+<meta name="format-detection" content="telephone=no">   <!-- for apple mobile --> 
+<meta property="fb:admins" content="521546213" />
+<meta name="description" content="The Numbers provides detailed movie financial analysis, including box office, DVD  and Blu-ray sales reports, and release schedules">
+<meta name="robots" content="NOODP">
+<meta keywords="keywords" content="movies, box office, The Numbers, Numbers, daily box office, weekly box office, movie stars, dvd sales, Blu-ray sales, release schedule">
+<title>What the #$'! Do We Know - Box Office Data, DVD and Blu-ray Sales, Movie News, Cast and Crew Information - The Numbers</title>
+<link rel=StyleSheet href="/live/the-numbers.css" TYPE="text/css" TITLE="Numbers Standard Style">
+<script type="text/javascript" src="https://www.google.com/jsapi"></script> 
+<script async type="text/javascript">
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-1343128-1']);
+_gaq.push(['_trackPageview']);
+(function() {
+ var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+ ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+ })();
+</script>
+<!-- Begin comScore Tag -->
+<script async>
+var _comscore = _comscore || [];
+_comscore.push({ c1: "2", c2: "9873768" });
+(function() {
+ var s = document.createElement("script"), el = document.getElementsByTagName("script")[0]; s.async = true;
+ s.src = (document.location.protocol == "https:" ? "https://sb" : "http://b") + ".scorecardresearch.com/beacon.js";
+ el.parentNode.insertBefore(s, el);
+ })();
+</script>
+<noscript>
+<img src="http://b.scorecardresearch.com/p?c1=2&c2=9873768&cv=2.0&cj=1" />
+</noscript>
+<!-- End comScore Tag -->
+</head>
+<body>
+<div id="wrap">
+<div id="header">
+<a href="/"><img src="/images/the-numbers-banner.png" alt="The Numbers - Where Data and Movies Meet" width=524 height=67 border=0>&reg;
+<br>&nbsp;&nbsp;&nbsp;&nbsp;Where Data and the Movie Business Meet
+</a>
+</div>
+<div id="header_right" style="background: #663366; width:200px; height: 96px;">
+</div>
+<div id="nav">
+<ul>
+<li><a href="/news">News</a>
+	<ul>
+	<li><a href="/news">Latest News</a></li>
+	<li><a href="/movies/release-schedule">Release Schedule</a></li>
+	</ul>
+</li>
+</li>
+<li><a href="/box-office">Box Office</a>
+	<ul>
+	<li><a href="/daily-box-office-chart">Daily Chart</a></li>
+	<li><a href="/weekend-box-office-chart">Weekend Chart</a></li>
+	<li><a href="/movie/records">Records</a></li>
+	<li><a href="/box-office">Chart Index</a></li>
+	<li><a href="/movies/release-schedule">Release Schedule</a></li>
+	</ul>
+</li>
+<li><a href="/weekly-dvd-sales-chart">Home Video</a>
+	<ul>
+	<li><a href="/weekly-dvd-sales-chart">Weekly DVD Chart</a></li>
+	<li><a href="/weekly-bluray-sales-chart">Weekly Blu-ray Chart</a></li>
+	<li><a href="/weekly-video-sales-chart">Weekly Combined DVD+Blu-ray Chart</a></li>
+	<li><a href="/home-market/dvd-sales/2013">2013 DVD Chart</a></li>
+	<li><a href="/home-market/bluray-sales/2013">2013 Blu-ray Chart</a></li>
+	<li><a href="/home-market/packaged-media-sales/2013">2013 Combined Chart</a></li>
+	<li><a href="/alltime-bluray-sales-chart">All-Time Blu-ray</a></li>
+	<li><a href="/home-market/release-schedule">Release Schedule</a></li>
+	</ul>
+</li>
+<li><a href="/movies">Movies</a>
+	<ul>
+		<li><a href="/movie/budgets">Budgets and Finances</a></li>
+		<li><a href="/movies/franchises">Franchises</a></li>
+		<li><a href="/keywords">Keywords</a></li>
+		<li><a href="/movies">Movie Index</a></li>
+		<li><a href="/movies/release-schedule">Release Schedule</a></li>
+	</ul>
+</li>
+<li><a href="/people">People</a>
+	<ul>
+		<li><a href="/bankability">Bankability</a></li>
+		<li><a href="/people/records">Records</a></li>
+		<li><a href="/people">People Index</a></li>
+	</ul>
+</li>
+<li style="background: #ffcc00;"><a style="background: #ffcc00;" href="/oscars">Oscars</a>
+</li>
+</ul>
+</div>
+<div id="main">
+<script type="text/javascript">
+google.load("visualization", "1", {packages:["corechart","gauge"]});
+google.setOnLoadCallback(drawDailyChart);
+function drawDailyChart() {
+	var data = new google.visualization.DataTable();
+	data.addColumn('date', 'Chart Date');
+	data.addColumn('number', 'Cumulative Box Office');
+	data.addRows([
+				 [new Date(2005,0,17), 10390430], [new Date(2005,1,21), 38350]				 ]);
+	var options = {
+		vAxis: {minValue: 0, format: '$#,###'},
+		height: 360,
+		width: 720,
+		legend: {position: 'none'},
+				pointSize: 10,
+				hAxis: {format: 'MMM d, y', title: 'Date'}
+	};
+	
+	var chart = new google.visualization.LineChart(document.getElementById('daily_chart_div'));
+	var formatter = new google.visualization.NumberFormat(
+														  {prefix: '$', fractionDigits: 0});
+	formatter.format(data, 1); // Apply formatter to second column
+	chart.draw(data, options);
+	
+	var data2 = google.visualization.arrayToDataTable([
+													 ['Label', 'Value'],
+													 ['Opening', 80],
+													 ]);
+	
+	var options2 = {
+	width: 80, height: 80,
+	redFrom: 0, redTo: 20,
+	yellowFrom:20, yellowTo: 80,
+	greenFrom: 80, greenTo: 100,
+	minorTicks: 5
+	};
+	
+	var chart2 = new google.visualization.Gauge(document.getElementById('opening_chart_div'));
+	chart2.draw(data2, options2);
+	
+	var data3 = google.visualization.arrayToDataTable([
+													  ['Label', 'Value'],
+													  ['Legs', 55]
+													  ]);
+	
+	var options3 = {
+	width: 80, height: 80,
+	redFrom: 0, redTo: 20,
+	yellowFrom:20, yellowTo: 80,
+	greenFrom: 80, greenTo: 100,
+	minorTicks: 5
+	};
+	
+	var chart3 = new google.visualization.Gauge(document.getElementById('legs_chart_div'));
+	chart3.draw(data3, options3);
+
+	var data4 = google.visualization.arrayToDataTable([
+													  ['Label', 'Value'],
+													  ['Readers', 75]
+													  ]);
+	
+	var options4 = {
+	width: 80, height: 80,
+	redFrom: 0, redTo: 20,
+	yellowFrom:20, yellowTo: 80,
+	greenFrom: 80, greenTo: 100,
+	minorTicks: 5
+	};
+	
+	var chart4 = new google.visualization.Gauge(document.getElementById('readers_chart_div'));
+	chart4.draw(data4, options4);
+	
+}
+</script>
+<h1>What the #$'! Do We Know</h1>
+<div id="col1">
+</div>
+<div id="col2outer">
+<div id="col2mid">
+<table id="movie_finances">
+<tr class="heading">
+<td colspan="3"><b>Theatrical Performance</b></td>
+</tr>
+<tr>
+<td><b>Domestic Box Office</b></td>
+<td class="data">$10,941,801</td><td><a href="#tab=box-office">Details</a></td>
+</tr>
+<tr class="heading"><td colspan=3 class="headed"><a href="#more">Further financial details...</td></tr>
+</table>
+</div>
+<div id="col2side">
+<ul id="social_vertical">
+	<li>
+		<a href="https://twitter.com/share" class="twitter-share-button" data-text="What the #$'! Do We Know - Box Office Data, DVD and Blu-ray Sales, Movie News, Cast and Crew Information - The Numbers" data-via="MovieNumbers"></a>
+		<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+	</li>
+	<li>
+		<div id="fb-root"></div>
+		<script>(function(d, s, id) {
+		  var js, fjs = d.getElementsByTagName(s)[0];
+		  if (d.getElementById(id)) return;
+		  js = d.createElement(s); js.id = id;
+		  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
+		  fjs.parentNode.insertBefore(js, fjs);
+		}(document, 'script', 'facebook-jssdk'));</script>
+		<div class="fb-like" data-href="http://www.the-numbers.com/movie/What-the-Bleep-Do-We-Know" data-colorscheme="light" data-layout="button_count" data-action="like" data-show-faces="false" data-send="false"></div>
+	</li>	
+	<li>
+		<!-- Place this tag where you want the +1 button to render -->
+		<g:plusone size="medium"></g:plusone>
+		<!-- Place this render call where appropriate -->
+		<script type="text/javascript">
+		  (function() {
+			var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+			po.src = 'https://apis.google.com/js/plusone.js';
+			var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+		  })();
+		</script>		
+	</li>	
+	<li>
+		<script src="//platform.linkedin.com/in.js" type="text/javascript"></script>
+		<script type="IN/Share" data-counter="right"></script>		
+	</li>
+</ul>
+</div>
+</div>
+<br clear="all">
+<ol id="toc">
+<li><a href="#summary">Summary</a></li>
+<li><a href="#news">News</a></li>
+<li><a href="#box-office">Box Office</a></li>
+<li><a href="#video-sales">Video Sales</a></li>
+<li><a href="#more">Full Financials</a></li>
+<li><a href="#cast-and-crew">Cast & Crew</a></li>
+<li><a href="#trailer">Trailer</a></li>
+<li><a href="#buy">Buy</a></li>
+</ol>
+<div class="content" id="summary">
+<h2>Metrics</h2><p>
+<center><table id="movie_ratings"><tr class="heading"></tr></table></center>	
+
+<h2>Movie Details</h2>
+<table>
+<tr><td><b>Production&nbsp;Budget:</b></td><td>$4,000,000</td></tr>
+<tr><td><b>Theatrical&nbsp;Release:</b></td>
+<td>February 6th, 2004 (Limited) by <a href="/market/distributor/Captured-Light">Captured Light</a></td></tr>
+<tr><td><b><a href="#tab=buy">Video&nbsp;Release:</a></b></td>
+<td>March 15th, 2005 by Fox Home Entertainment</td></tr>
+<tr><td><b>MPAA&nbsp;Rating:</b></td>
+<td><a href="/market/mpaa-rating/Not-Rated-(US)">Not Rated</a></td></tr>
+<tr><td><b>Franchise:</b></td>
+<td><a href="/movies/franchise/What-the-Bleep">What the Bleep</a></td></tr>
+<tr><td><b>Source:</b></td><td><a href="/market/source/Based-on-Real-Life-Events">Based on Real Life Events</a></td></tr>
+<tr><td><b>Genre:</b></td><td><a href="/market/genre/Documentary">Documentary</a></td></tr>
+<tr><td><b>Production&nbsp;Method:</b></td><td><a href="/market/production-method/Live-Action">Live Action</a></td></tr>
+<tr><td><b>Creative&nbsp;Type:</b></td><td><a href="/market/creative-type/Factual">Factual</a></td></tr>
+</tr></td></table></div>
+<div class="content" id="news">
+<div id="news">
+<h1><a href="/news/2044">DVD Releases for August 1, 2006</a></h1>
+
+The first full week of the month is usually quite busy, however, since the DVD coming out tomorrow had to be shipped in July, this is not the case this time around. In fact, there was only one contender for DVD Pick of the week, <A HREF="http://www.the-numbers.com/movies/2006/VFVND.php">V for Vendetta</A> - <A HREF="http://www.amazon.com/exec/obidos/tg/detail/-/B000FS9FCQ/thenumbers" target="_NewWindow">2-Disc Special Edition</A>, and since I'm 90% sure an even better Ultra Edition is coming out, it fails to win that coveted honor. Next week we should have a much better selection of DVDs. 
+<a href="/news/2044">More...</a>
+<br clear="all"><h1><a href="/news/1729">Fastest earns the Widest Limited Release</a></h1>
+
+There's a huge selection of limited releases this weekend with nine film's listed below. And that's not counting the nearly half-a-dozen films expanding to take advantage of their <A HREF="http://www.the-numbers.com/interactive/newsStory.php?newsID=1723">Oscar Nods</A>. On a side note, as you can probably tell by how late this story is, I am still sick. Good news, I'm over the worst of it. Bad news, according to the news story I saw, the symptoms should last another one to two weeks. (You know a particular strain is bad when they do a story about it on the local news.) 
+<a href="/news/1729">More...</a>
+<br clear="all"><h1><a href="/news/1155">DVD Releases for March 15, 2005</a></h1>
+
+Every week films get a second chance at success from the home market; or, in some cases, a first chance at success. Here is a list of wide releases, limited releases and a few from the growing TV on DVD section including this week's co-winners, <A HREF="http://www.the-numbers.com/movies/2004/NCRDB.php">The Incredibles</A> - <A HREF="http://www.amazon.com/exec/obidos/tg/detail/-/B00005JN4W/thenumbers" target="_NewWindow">Buy from Amazon</A> and Red Dwarf - <A HREF="http://www.amazon.com/exec/obidos/tg/detail/-/B0006Z2L10/thenumbers" target="_NewWindow">Series 5 & 6</A>. 
+<a href="/news/1155">More...</a>
+<br clear="all"><h1><a href="/news/1020">Company Done Good</a></h1>
+
+As you can probably guess from the grammatically incorrect headline, <A HREF="http://www.the-numbers.com/movies/2004/NGDCO.php">In Good Company</A> took top spot on the Per Theatre Charts with an amazing $50,583 average in three theatres over the weekend and a total of $225,000 since the film opened on Wednesday. Coming in second is the oldest film in the $10,000 club, <A HREF="http://www.the-numbers.com/movies/2004/MDBAB.php">Million Dollar Baby</A>, which saw its per theatre average jump to $30,164 in nine theatres and has already topped $1 million during its limited run. <A HREF="http://www.the-numbers.com/movies/2004/RWNDA.php">Hotel Rwanda</A> also saw its per theatre average climb and earned $20,340 in 7 theatres and needs to expand quickly to take advantage of its strong start. Oscar hopeful, <A HREF="http://www.the-numbers.com/movies/2004/MVENC.php">The Merchant of Venice</A>, started well with nearly $70,000 over the weekend and over $100,000 since its Wednesday opening, which works out to a $17,467 average in 4 theatres. Rounding out the $10,000 club was the overall box office leader, <A HREF="http://www.the-numbers.com/movies/2004/MPRN2.php">Meet the Fockers</A> with an average of $11,845. 
+<a href="/news/1020">More...</a>
+<br clear="all"><h1><a href="/news/953">Oscars: Academy Announces Documentary Semi-Finalists</a></h1>
+<br clear="all"><h1><a href="/news/884">Lonely Journey at the Top</a></h1>
+
+It's been a lonely few weeks on the per theatre charts as once again only one film topped $10,000 per theatre average. It was the <A HREF="http://www.the-numbers.com/movies/series/RoadTrip.php">road trip</A> film, <A HREF="http://www.the-numbers.com/movies/2004/MCDIA.php">The Motorcycle Diaries</A> that topped the charts with an incredible $53,273 average in 3 theatres. I expect to see this film on the charts for a few more weeks. 
+<a href="/news/884">More...</a>
+<br clear="all"></div></div>
+<div class="content" id="cast-and-crew">
+</div>
+<div class="content" id="box-office">
+<div id="daily_chart_div" style="width: 720px; height: 360px; align: center;"></div>
+<h2>Daily Box Office Performance</h2>
+<div id="box_office_chart">
+<table>
+<TR><TH>Date</TH><TH>Rank</TH><TH>Gross</TH><TH>%&nbsp;Change</TH><TH>Theaters</TH><TH>Per Theater</TH><TH>Total&nbsp;Gross</TH><TH>Days</TH></TR>
+<tr>
+<td><a href="/box-office-chart/daily/2005/01/17">2005/01/17</a></td>
+<td class="data">36</td>
+<td  class="data">$18,347</td>
+<td>&nbsp;</td>
+<td class="data">64</td>
+<td class="data chart_grey">$287</td>
+<td class="data">&nbsp;&nbsp;$10,390,430</td>
+<td class="data">347</td>
+</tr>
+<tr>
+<td><a href="/box-office-chart/daily/2005/02/21">2005/02/21</a></td>
+<td class="data chart_down">53</td>
+<td  class="data">$6,500</td>
+<td>&nbsp;</td>
+<td class="data">52</td>
+<td class="data chart_grey">$125</td>
+<td class="data">&nbsp;&nbsp;$38,350</td>
+<td class="data">382</td>
+</tr>
+</table>
+</div>
+<h2>Weekend Box Office Performance</h2>
+<div id="box_office_chart">
+<table>
+<TR><TH>Date</TH><TH>Rank</TH><TH>Gross</TH><TH>%&nbsp;Change</TH><TH>Theaters</TH><TH>Per Theater</TH><TH>Total&nbsp;Gross</TH><TH>Days</TH></TR>
+<tr>
+<td><a href="/box-office-chart/weekend/2004/05/21">2004/05/21</a></td>
+<td class="data">47</td>
+<td  class="data">$66,183</td>
+<td>&nbsp;</td>
+<td class="data">13</td>
+<td class="data chart_grey">$5,091</td>
+<td class="data">&nbsp;&nbsp;$490,709</td>
+<td class="data">108</td>
+</tr>
+<tr>
+<td><a href="/box-office-chart/weekend/2004/05/28">2004/05/28</a></td>
+<td class="data chart_down">48</td>
+<td  class="data">$61,033</td>
+<td class="data chart_down">-8%</td>
+<td class="data">10</td>
+<td class="data chart_grey">$6,103</td>
+<td class="data">&nbsp;&nbsp;$603,789</td>
+<td class="data">115</td>
+</tr>
+<tr>
+<td><a href="/box-office-chart/weekend/2004/06/04">2004/06/04</a></td>
+<td class="data chart_up">41</td>
+<td  class="data">$56,700</td>
+<td class="data chart_down">-7%</td>
+<td class="data">19</td>
+<td class="data chart_grey">$2,984</td>
+<td class="data">&nbsp;&nbsp;$710,847</td>
+<td class="data">122</td>
+</tr>
+<tr>
+<td><a href="/box-office-chart/weekend/2004/06/11">2004/06/11</a></td>
+<td class="data chart_down">49</td>
+<td  class="data">$46,201</td>
+<td class="data chart_down">-19%</td>
+<td class="data">14</td>
+<td class="data chart_grey">$3,300</td>
+<td class="data">&nbsp;&nbsp;$807,220</td>
+<td class="data">129</td>
+</tr>
+<tr>
+<td><a href="/box-office-chart/weekend/2004/06/18">2004/06/18</a></td>
+<td class="data chart_up">39</td>
+<td  class="data">$55,823</td>
+<td class="data chart_up">+21%</td>
+<td class="data">11</td>
+<td class="data chart_grey">$5,075</td>
+<td class="data">&nbsp;&nbsp;$910,075</td>
+<td class="data">136</td>
+</tr>
+<tr>
+<td><a href="/box-office-chart/weekend/2004/06/25">2004/06/25</a></td>
+<td class="data">39</td>
+<td  class="data">$54,136</td>
+<td class="data chart_down">-3%</td>
+<td class="data">18</td>
+<td class="data chart_grey">$3,008</td>
+<td class="data">&nbsp;&nbsp;$1,009,711</td>
+<td class="data">143</td>
+</tr>
+<tr>
+<td><a href="/box-office-chart/weekend/2004/07/02">2004/07/02</a></td>
+<td class="data chart_up">36</td>
+<td  class="data">$66,340</td>
+<td class="data chart_up">+23%</td>
+<td class="data">13</td>
+<td class="data chart_grey">$5,103</td>
+<td class="data">&nbsp;&nbsp;$1,117,673</td>
+<td class="data">150</td>
+</tr>
+<tr>
+<td><a href="/box-office-chart/weekend/2004/07/09">2004/07/09</a></td>
+<td class="data chart_down">46</td>
+<td  class="data">$50,426</td>
+<td class="data chart_down">-24%</td>
+<td class="data">13</td>
+<td class="data chart_grey">$3,879</td>
+<td class="data">&nbsp;&nbsp;$1,214,366</td>
+<td class="data">157</td>
+</tr>
+<tr>
+<td><a href="/box-office-chart/weekend/2004/07/16">2004/07/16</a></td>
+<td class="data chart_down">47</td>
+<td  class="data">$53,697</td>
+<td class="data chart_up">+6%</td>
+<td class="data">14</td>
+<td class="data chart_grey">$3,836</td>
+<td class="data">&nbsp;&nbsp;$1,306,587</td>
+<td class="data">164</td>
+</tr>
+<tr>
+<td><a href="/box-office-chart/weekend/2004/07/23">2004/07/23</a></td>
+<td class="data chart_down">49</td>
+<td  class="data">$56,672</td>
+<td class="data chart_up">+6%</td>
+<td class="data">14</td>
+<td class="data chart_grey">$4,048</td>
+<td class="data">&nbsp;&nbsp;$1,409,575</td>
+<td class="data">171</td>
+</tr>
+<tr>
+<td><a href="/box-office-chart/weekend/2004/07/30">2004/07/30</a></td>
+<td class="data">49</td>
+<td  class="data">$58,617</td>
+<td class="data chart_up">+3%</td>
+<td class="data">15</td>
+<td class="data chart_grey">$3,908</td>
+<td class="data">&nbsp;&nbsp;$1,545,857</td>
+<td class="data">178</td>
+</tr>
+<tr>
+<td><a href="/box-office-chart/weekend/2004/08/06">2004/08/06</a></td>
+<td class="data chart_up">47</td>
+<td  class="data">$77,068</td>
+<td class="data chart_up">+31%</td>
+<td class="data">20</td>
+<td class="data chart_grey">$3,853</td>
+<td class="data">&nbsp;&nbsp;$1,671,277</td>
+<td class="data">185</td>
+</tr>
+<tr>
+<td><a href="/box-office-chart/weekend/2004/08/13">2004/08/13</a></td>
+<td class="data chart_up">38</td>
+<td  class="data">$140,095</td>
+<td class="data chart_up">+82%</td>
+<td class="data">32</td>
+<td class="data chart_grey">$4,378</td>
+<td class="data">&nbsp;&nbsp;$1,875,993</td>
+<td class="data">192</td>
+</tr>
+<tr>
+<td><a href="/box-office-chart/weekend/2004/08/20">2004/08/20</a></td>
+<td class="data chart_up">34</td>
+<td  class="data">$184,152</td>
+<td class="data chart_up">+31%</td>
+<td class="data">37</td>
+<td class="data chart_grey">$4,977</td>
+<td class="data">&nbsp;&nbsp;$2,165,576</td>
+<td class="data">199</td>
+</tr>
+<tr>
+<td><a href="/box-office-chart/weekend/2004/08/27">2004/08/27</a></td>
+<td class="data chart_up">29</td>
+<td  class="data">$200,480</td>
+<td class="data chart_up">+9%</td>
+<td class="data">40</td>
+<td class="data chart_grey">$5,012</td>
+<td class="data">&nbsp;&nbsp;$2,488,255</td>
+<td class="data">206</td>
+</tr>
+<tr>
+<td><a href="/box-office-chart/weekend/2004/09/03">2004/09/03</a></td>
+<td class="data chart_down">34</td>
+<td  class="data">$219,800</td>
+<td class="data chart_up">+10%</td>
+<td class="data">43</td>
+<td class="data chart_grey">$5,112</td>
+<td class="data">&nbsp;&nbsp;$2,825,954</td>
+<td class="data">213</td>
+</tr>
+<tr>
+<td><a href="/box-office-chart/weekend/2004/09/10">2004/09/10</a></td>
+<td class="data chart_up">25</td>
+<td  class="data">$309,209</td>
+<td class="data chart_up">+41%</td>
+<td class="data">71</td>
+<td class="data chart_grey">$4,355</td>
+<td class="data">&nbsp;&nbsp;$3,297,291</td>
+<td class="data">220</td>
+</tr>
+<tr>
+<td><a href="/box-office-chart/weekend/2004/09/17">2004/09/17</a></td>
+<td class="data chart_down">26</td>
+<td  class="data">$339,222</td>
+<td class="data chart_up">+10%</td>
+<td class="data">88</td>
+<td class="data chart_grey">$3,855</td>
+<td class="data">&nbsp;&nbsp;$3,807,383</td>
+<td class="data">227</td>
+</tr>
+<tr>
+<td><a href="/box-office-chart/weekend/2004/09/24">2004/09/24</a></td>
+<td class="data chart_up">21</td>
+<td  class="data">$377,227</td>
+<td class="data chart_up">+11%</td>
+<td class="data">114</td>
+<td class="data chart_grey">$3,309</td>
+<td class="data">&nbsp;&nbsp;$4,366,072</td>
+<td class="data">234</td>
+</tr>
+<tr>
+<td><a href="/box-office-chart/weekend/2004/10/01">2004/10/01</a></td>
+<td class="data chart_up">19</td>
+<td  class="data">$390,278</td>
+<td class="data chart_up">+3%</td>
+<td class="data">122</td>
+<td class="data chart_grey">$3,199</td>
+<td class="data">&nbsp;&nbsp;$4,956,604</td>
+<td class="data">241</td>
+</tr>
+<tr>
+<td><a href="/box-office-chart/weekend/2004/10/08">2004/10/08</a></td>
+<td class="data chart_down">23</td>
+<td  class="data">$366,184</td>
+<td class="data chart_down">-6%</td>
+<td class="data">131</td>
+<td class="data chart_grey">$2,795</td>
+<td class="data">&nbsp;&nbsp;$5,529,207</td>
+<td class="data">248</td>
+</tr>
+<tr>
+<td><a href="/box-office-chart/weekend/2004/10/15">2004/10/15</a></td>
+<td class="data chart_up">18</td>
+<td  class="data">$368,134</td>
+<td class="data chart_up">+1%</td>
+<td class="data">132</td>
+<td class="data chart_grey">$2,789</td>
+<td class="data">&nbsp;&nbsp;$6,103,766</td>
+<td class="data">255</td>
+</tr>
+<tr>
+<td><a href="/box-office-chart/weekend/2004/10/22">2004/10/22</a></td>
+<td class="data chart_up">17</td>
+<td  class="data">$385,359</td>
+<td class="data chart_up">+5%</td>
+<td class="data">146</td>
+<td class="data chart_grey">$2,639</td>
+<td class="data">&nbsp;&nbsp;$6,685,825</td>
+<td class="data">262</td>
+</tr>
+<tr>
+<td><a href="/box-office-chart/weekend/2004/10/29">2004/10/29</a></td>
+<td class="data chart_down">22</td>
+<td  class="data">$287,547</td>
+<td class="data chart_down">-25%</td>
+<td class="data">144</td>
+<td class="data chart_grey">$1,997</td>
+<td class="data">&nbsp;&nbsp;$7,182,849</td>
+<td class="data">269</td>
+</tr>
+<tr>
+<td><a href="/box-office-chart/weekend/2004/11/05">2004/11/05</a></td>
+<td class="data chart_up">21</td>
+<td  class="data">$312,611</td>
+<td class="data chart_up">+9%</td>
+<td class="data">143</td>
+<td class="data chart_grey">$2,186</td>
+<td class="data">&nbsp;&nbsp;$7,684,477</td>
+<td class="data">276</td>
+</tr>
+<tr>
+<td><a href="/box-office-chart/weekend/2004/11/12">2004/11/12</a></td>
+<td class="data chart_down">22</td>
+<td  class="data">$300,445</td>
+<td class="data chart_down">-4%</td>
+<td class="data">129</td>
+<td class="data chart_grey">$2,329</td>
+<td class="data">&nbsp;&nbsp;$8,194,141</td>
+<td class="data">283</td>
+</tr>
+<tr>
+<td><a href="/box-office-chart/weekend/2004/11/19">2004/11/19</a></td>
+<td class="data chart_down">23</td>
+<td  class="data">$270,059</td>
+<td class="data chart_down">-10%</td>
+<td class="data">116</td>
+<td class="data chart_grey">$2,328</td>
+<td class="data">&nbsp;&nbsp;$8,628,352</td>
+<td class="data">290</td>
+</tr>
+<tr>
+<td><a href="/box-office-chart/weekend/2004/11/26">2004/11/26</a></td>
+<td class="data chart_up">22</td>
+<td  class="data">$255,492</td>
+<td class="data chart_down">-5%</td>
+<td class="data">107</td>
+<td class="data chart_grey">$2,388</td>
+<td class="data">&nbsp;&nbsp;$9,049,915</td>
+<td class="data">297</td>
+</tr>
+<tr>
+<td><a href="/box-office-chart/weekend/2004/12/03">2004/12/03</a></td>
+<td class="data chart_up">21</td>
+<td  class="data">$191,097</td>
+<td class="data chart_down">-25%</td>
+<td class="data">135</td>
+<td class="data chart_grey">$1,416</td>
+<td class="data">&nbsp;&nbsp;$9,353,410</td>
+<td class="data">304</td>
+</tr>
+<tr>
+<td><a href="/box-office-chart/weekend/2004/12/10">2004/12/10</a></td>
+<td class="data chart_down">22</td>
+<td  class="data">$146,670</td>
+<td class="data chart_down">-23%</td>
+<td class="data">127</td>
+<td class="data chart_grey">$1,155</td>
+<td class="data">&nbsp;&nbsp;$9,615,543</td>
+<td class="data">311</td>
+</tr>
+<tr>
+<td><a href="/box-office-chart/weekend/2004/12/17">2004/12/17</a></td>
+<td class="data chart_down">29</td>
+<td  class="data">$108,663</td>
+<td class="data chart_down">-26%</td>
+<td class="data">100</td>
+<td class="data chart_grey">$1,087</td>
+<td class="data">&nbsp;&nbsp;$9,817,689</td>
+<td class="data">318</td>
+</tr>
+<tr>
+<td><a href="/box-office-chart/weekend/2004/12/24">2004/12/24</a></td>
+<td class="data chart_down">34</td>
+<td  class="data">$45,244</td>
+<td class="data chart_down">-58%</td>
+<td class="data">54</td>
+<td class="data chart_grey">$838</td>
+<td class="data">&nbsp;&nbsp;$9,947,085</td>
+<td class="data">325</td>
+</tr>
+<tr>
+<td><a href="/box-office-chart/weekend/2004/12/31">2004/12/31</a></td>
+<td class="data chart_down">38</td>
+<td  class="data">$68,416</td>
+<td class="data chart_up">+51%</td>
+<td class="data">54</td>
+<td class="data chart_grey">$1,267</td>
+<td class="data">&nbsp;&nbsp;$10,091,903</td>
+<td class="data">332</td>
+</tr>
+<tr>
+<td><a href="/box-office-chart/weekend/2005/01/07">2005/01/07</a></td>
+<td class="data chart_up">37</td>
+<td  class="data">$88,838</td>
+<td class="data chart_up">+30%</td>
+<td class="data">64</td>
+<td class="data chart_grey">$1,388</td>
+<td class="data">&nbsp;&nbsp;$10,230,192</td>
+<td class="data">339</td>
+</tr>
+<tr>
+<td><a href="/box-office-chart/weekend/2005/01/14">2005/01/14</a></td>
+<td class="data chart_down">38</td>
+<td  class="data">$84,935</td>
+<td class="data chart_down">-4%</td>
+<td class="data">64</td>
+<td class="data chart_grey">$1,327</td>
+<td class="data">&nbsp;&nbsp;$10,372,083</td>
+<td class="data">346</td>
+</tr>
+<tr>
+<td><a href="/box-office-chart/weekend/2005/01/21">2005/01/21</a></td>
+<td class="data chart_down">44</td>
+<td  class="data">$53,502</td>
+<td class="data chart_down">-37%</td>
+<td class="data">64</td>
+<td class="data chart_grey">$836</td>
+<td class="data">&nbsp;&nbsp;$10,478,420</td>
+<td class="data">353</td>
+</tr>
+<tr>
+<td><a href="/box-office-chart/weekend/2005/01/28">2005/01/28</a></td>
+<td class="data chart_down">45</td>
+<td  class="data">$59,235</td>
+<td class="data chart_up">+11%</td>
+<td class="data">71</td>
+<td class="data chart_grey">$834</td>
+<td class="data">&nbsp;&nbsp;$10,574,635</td>
+<td class="data">360</td>
+</tr>
+<tr>
+<td><a href="/box-office-chart/weekend/2005/02/04">2005/02/04</a></td>
+<td class="data chart_down">47</td>
+<td  class="data">$50,255</td>
+<td class="data chart_down">-15%</td>
+<td class="data">60</td>
+<td class="data chart_grey">$838</td>
+<td class="data">&nbsp;&nbsp;$10,658,111</td>
+<td class="data">367</td>
+</tr>
+<tr>
+<td><a href="/box-office-chart/weekend/2005/02/11">2005/02/11</a></td>
+<td class="data chart_down">55</td>
+<td  class="data">$52,719</td>
+<td class="data chart_up">+5%</td>
+<td class="data">57</td>
+<td class="data chart_grey">$925</td>
+<td class="data">&nbsp;&nbsp;$10,738,401</td>
+<td class="data">374</td>
+</tr>
+<tr>
+<td><a href="/box-office-chart/weekend/2005/02/18">2005/02/18</a></td>
+<td class="data chart_down">57</td>
+<td  class="data">$38,350</td>
+<td class="data chart_down">-27%</td>
+<td class="data">52</td>
+<td class="data chart_grey">$738</td>
+<td class="data">&nbsp;&nbsp;$10,805,353</td>
+<td class="data">381</td>
+</tr>
+<tr>
+<td><a href="/box-office-chart/weekend/2005/02/25">2005/02/25</a></td>
+<td class="data chart_down">59</td>
+<td  class="data">$26,334</td>
+<td class="data chart_down">-31%</td>
+<td class="data">36</td>
+<td class="data chart_grey">$732</td>
+<td class="data">&nbsp;&nbsp;$10,862,326</td>
+<td class="data">388</td>
+</tr>
+<tr>
+<td><a href="/box-office-chart/weekend/2005/03/04">2005/03/04</a></td>
+<td class="data chart_down">74</td>
+<td  class="data">$13,154</td>
+<td class="data chart_down">-50%</td>
+<td class="data">25</td>
+<td class="data chart_grey">$526</td>
+<td class="data">&nbsp;&nbsp;$10,891,927</td>
+<td class="data">395</td>
+</tr>
+<tr>
+<td><a href="/box-office-chart/weekend/2005/03/11">2005/03/11</a></td>
+<td class="data chart_up">73</td>
+<td  class="data">$13,933</td>
+<td class="data chart_up">+6%</td>
+<td class="data">19</td>
+<td class="data chart_grey">$733</td>
+<td class="data">&nbsp;&nbsp;$10,915,846</td>
+<td class="data">402</td>
+</tr>
+<tr>
+<td><a href="/box-office-chart/weekend/2005/03/18">2005/03/18</a></td>
+<td class="data chart_down">90</td>
+<td  class="data">$5,594</td>
+<td class="data chart_down">-60%</td>
+<td class="data">9</td>
+<td class="data chart_grey">$622</td>
+<td class="data">&nbsp;&nbsp;$10,931,811</td>
+<td class="data">409</td>
+</tr>
+<tr>
+<td><a href="/box-office-chart/weekend/2005/03/25">2005/03/25</a></td>
+<td class="data chart_down">116</td>
+<td  class="data">$1,810</td>
+<td class="data chart_down">-68%</td>
+<td class="data">3</td>
+<td class="data chart_grey">$603</td>
+<td class="data">&nbsp;&nbsp;$10,936,101</td>
+<td class="data">416</td>
+</tr>
+<tr>
+<td><a href="/box-office-chart/weekend/2005/04/01">2005/04/01</a></td>
+<td class="data chart_up">96</td>
+<td  class="data">$3,534</td>
+<td class="data chart_up">+95%</td>
+<td class="data">4</td>
+<td class="data chart_grey">$884</td>
+<td class="data">&nbsp;&nbsp;$10,940,077</td>
+<td class="data">423</td>
+</tr>
+<tr>
+<td><a href="/box-office-chart/weekend/2005/04/08">2005/04/08</a></td>
+<td class="data chart_down">113</td>
+<td  class="data">$1,197</td>
+<td class="data chart_down">-66%</td>
+<td class="data">2</td>
+<td class="data chart_grey">$599</td>
+<td class="data">&nbsp;&nbsp;$10,941,801</td>
+<td class="data">430</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="content" id="video-sales">
+</div>
+<div class="content" id="trailer">
+</div>
+
+<div class="content" id="buy">
+	<div id="movie_ratings">
+	<center>
+	<table>
+	<tr>
+		<td>
+	<iframe src="http://rcm-na.amazon-adsystem.com/e/cm?t=thenumbers&o=1&p=8&l=as1&asins=B0006UEVQ8&ref=tf_til&fc1=000000&IS2=1&lt1=_blank&m=amazon&lc1=0000FF&bc1=FFFFFF&bg1=FFFFFF&f=ifr" style="width:120px;height:240px;" scrolling="no" marginwidth="0" marginheight="0" frameborder="0"></iframe>
+	</td>
+	</tr>
+</table>
+</center>
+</div>
+</div>
+<div class="content" id="more">
+<p>
+Full financial estimates for this film, including domestic and international box office, video sales, video rentals, TV and ancillary revenue
+are available through our research services. For more information, please contact us at <a href="mailto:research@the-numbers.com">research@the-numbers.com</a>.</div>
+<script src="/live/js/activatables.js" type="text/javascript"></script>
+<script>
+activatables('tab', ['summary', 'news', 'cast-and-crew', 'box-office', 'video-sales', 'trailer', 'buy', 'more']);
+</script>
+</div>
+<div id="sidebar">
+<h1>Trending Pages</h1>
+<ul>
+<li><a href="/bankability"<span style="color: #008255">Bankability Index</span></a></li>
+<li><a href="/daily-box-office-chart">Daily Box Office</a></li>
+<li><a href="/weekend-box-office-chart">Weekend Box Office</a></li>
+<li><a href="/weekly-dvd-sales-chart">Weekly DVD Sales</a></li>
+<li><a href="/weekly-bluray-sales-chart">Weekly Blu-ray Sales</a></li>
+<li><a href="/home-market/dvd-sales/2013">Top-selling DVDs of 2013</a></li>
+<li><a href="/home-market/bluray-sales/2013">Top-selling Blu-rays of 2013</a></li>
+<li><a href="/movies/release-schedule">Theatrical Release Schedule</a></li>
+<li><a href="/movie/records/">Theatrical Records</a></li>
+<li><a href="/movie/budgets/">Movie Budgets</a></li>
+<li><a href="/movies/">Movie Index</a></li>
+<li><a href="/people/">People Index</a></li>
+<li><a href="/market/">Theatrical Market</a></li>
+<li><a href="/news">Latest News</a></li>
+</ul>
+<center>
+<h1>Search</h1>
+<script type="text/javascript" src="http://www.google.com/jsapi"></script>
+<script type="text/javascript">
+google.load('search', '1');
+google.setOnLoadCallback(function() {
+						 google.search.CustomSearchControl.attachAutoCompletion(
+																				'partner-pub-0505053220181058:6106009327+qptype:1',
+																				document.getElementById('q'),
+																				'cse-search-box');
+						 });
+</script>
+<form action="/search/" id="cse-search-box">
+<div>
+<input type="hidden" name="cx" value="partner-pub-0505053220181058:6106009327" />
+<input type="hidden" name="cof" value="FORID:9" />
+<input type="hidden" name="ie" value="UTF-8" />
+<input type="text" name="q" id="q" autocomplete="off" size="30" />
+</div>
+</form>
+<script type="text/javascript" src="http://www.google.com/cse/brand?form=cse-search-box&lang=en"></script>
+<br><br>
+</center>
+<h1>Trending Movies</h1>
+<ul>
+<li><a href="/movie/Guardians-of-the-Galaxy#tab=summary">Guardians of the Galaxy</a></li>
+<li><a href="/movie/Expendables-3-The#tab=summary">The Expendables 3</a></li>
+<li><a href="/movie/Frozen-(2013)#tab=summary">Frozen</a></li>
+<li><a href="/movie/Teenage-Mutant-Ninja-Turtles-(2014)#tab=summary">Teenage Mutant Ninja Turtles</a></li>
+<li><a href="/movie/No-Good-Deed-(2013)#tab=summary">No Good Deed</a></li>
+<li><a href="/movie/Captain-America-The-Winter-Soldier#tab=summary">Captain America: The Winter Soldier</a></li>
+<li><a href="/movie/Lucy#tab=summary">Lucy</a></li>
+<li><a href="/movie/Edge-of-Tomorrow#tab=summary">Edge of Tomorrow</a></li>
+<li><a href="/movie/Avatar#tab=summary">Avatar</a></li>
+<li><a href="/movie/Transformers-Age-of-Extinction#tab=summary">Transformers: Age of Extinction</a></li>
+</ul>
+<h1>Trending People</h1>
+<ul>
+<li><a href="/person/670401-L-Jackson-Samuel">Samuel L. Jackson</a></li>
+<li><a href="/person/83610401-Christopher-Lee">Christopher Lee</a></li>
+<li><a href="/person/150560401-Frank-Welker">Frank Welker</a></li>
+<li><a href="/person/650401-Tom-Hanks">Tom Hanks</a></li>
+<li><a href="/person/540401-Tom-Cruise">Tom Cruise</a></li>
+<li><a href="/person/135950401-Sylvester-Stallone">Sylvester Stallone</a></li>
+<li><a href="/person/128750401-Arnold-Schwarzenegger">Arnold Schwarzenegger</a></li>
+<li><a href="/person/83860401-Stan-Lee">Stan Lee</a></li>
+<li><a href="/person/149660401-Naomi-Watts">Naomi Watts</a></li>
+<li><a href="/person/8410401-Amitabh-Bachchan">Amitabh Bachchan</a></li>
+</ul>
+</div>
+<div id="footer">
+<B>&copy; 1997-2014 <a href="http://www.nashinfoservices.com">Nash Information Services, LLC</a>. All rights reserved.</B><BR>
+<b>The Numbers is a registered trademark of Nash Information Services, LLC</b><br>
+<B>For comments or corrections, please email us at <A HREF="mailto:corrections@the-numbers.com">corrections@the-numbers.com</A></B>
+<BR><BR>
+<A HREF="">Privacy Policy</A> - <A HREF="">About Us</A> - <A HREF="">Glossary</A>
+</div>
+</body>
+</html>

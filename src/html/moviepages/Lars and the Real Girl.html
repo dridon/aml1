@@ -1,0 +1,844 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="PICS-Label" content='(PICS-1.1 "http://www.icra.org/ratingsv02.html" l gen true for "http://www.the-numbers.com/" r (cb 1 lz 1 nz 1 oz 1 vz 1) "http://www.rsac.org/ratingsv01.html" l gen true for "http://www.the-numbers.com/" r (n 0 s 0 v 0 l 0))'>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" >
+<meta name="format-detection" content="telephone=no">   <!-- for apple mobile --> 
+<meta property="fb:admins" content="521546213" />
+<meta name="description" content="The Numbers provides detailed movie financial analysis, including box office, DVD  and Blu-ray sales reports, and release schedules">
+<meta name="robots" content="NOODP">
+<meta keywords="keywords" content="movies, box office, The Numbers, Numbers, daily box office, weekly box office, movie stars, dvd sales, Blu-ray sales, release schedule">
+<title>Lars and the Real Girl - Box Office Data, DVD and Blu-ray Sales, Movie News, Cast and Crew Information - The Numbers</title>
+<link rel=StyleSheet href="/live/the-numbers.css" TYPE="text/css" TITLE="Numbers Standard Style">
+<script type="text/javascript" src="https://www.google.com/jsapi"></script> 
+<script async type="text/javascript">
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-1343128-1']);
+_gaq.push(['_trackPageview']);
+(function() {
+ var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+ ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+ })();
+</script>
+<!-- Begin comScore Tag -->
+<script async>
+var _comscore = _comscore || [];
+_comscore.push({ c1: "2", c2: "9873768" });
+(function() {
+ var s = document.createElement("script"), el = document.getElementsByTagName("script")[0]; s.async = true;
+ s.src = (document.location.protocol == "https:" ? "https://sb" : "http://b") + ".scorecardresearch.com/beacon.js";
+ el.parentNode.insertBefore(s, el);
+ })();
+</script>
+<noscript>
+<img src="http://b.scorecardresearch.com/p?c1=2&c2=9873768&cv=2.0&cj=1" />
+</noscript>
+<!-- End comScore Tag -->
+</head>
+<body>
+<div id="wrap">
+<div id="header">
+<a href="/"><img src="/images/the-numbers-banner.png" alt="The Numbers - Where Data and Movies Meet" width=524 height=67 border=0>&reg;
+<br>&nbsp;&nbsp;&nbsp;&nbsp;Where Data and the Movie Business Meet
+</a>
+</div>
+<div id="header_right" style="background: #663366; width:200px; height: 96px;">
+</div>
+<div id="nav">
+<ul>
+<li><a href="/news">News</a>
+	<ul>
+	<li><a href="/news">Latest News</a></li>
+	<li><a href="/movies/release-schedule">Release Schedule</a></li>
+	</ul>
+</li>
+</li>
+<li><a href="/box-office">Box Office</a>
+	<ul>
+	<li><a href="/daily-box-office-chart">Daily Chart</a></li>
+	<li><a href="/weekend-box-office-chart">Weekend Chart</a></li>
+	<li><a href="/movie/records">Records</a></li>
+	<li><a href="/box-office">Chart Index</a></li>
+	<li><a href="/movies/release-schedule">Release Schedule</a></li>
+	</ul>
+</li>
+<li><a href="/weekly-dvd-sales-chart">Home Video</a>
+	<ul>
+	<li><a href="/weekly-dvd-sales-chart">Weekly DVD Chart</a></li>
+	<li><a href="/weekly-bluray-sales-chart">Weekly Blu-ray Chart</a></li>
+	<li><a href="/weekly-video-sales-chart">Weekly Combined DVD+Blu-ray Chart</a></li>
+	<li><a href="/home-market/dvd-sales/2013">2013 DVD Chart</a></li>
+	<li><a href="/home-market/bluray-sales/2013">2013 Blu-ray Chart</a></li>
+	<li><a href="/home-market/packaged-media-sales/2013">2013 Combined Chart</a></li>
+	<li><a href="/alltime-bluray-sales-chart">All-Time Blu-ray</a></li>
+	<li><a href="/home-market/release-schedule">Release Schedule</a></li>
+	</ul>
+</li>
+<li><a href="/movies">Movies</a>
+	<ul>
+		<li><a href="/movie/budgets">Budgets and Finances</a></li>
+		<li><a href="/movies/franchises">Franchises</a></li>
+		<li><a href="/keywords">Keywords</a></li>
+		<li><a href="/movies">Movie Index</a></li>
+		<li><a href="/movies/release-schedule">Release Schedule</a></li>
+	</ul>
+</li>
+<li><a href="/people">People</a>
+	<ul>
+		<li><a href="/bankability">Bankability</a></li>
+		<li><a href="/people/records">Records</a></li>
+		<li><a href="/people">People Index</a></li>
+	</ul>
+</li>
+<li style="background: #ffcc00;"><a style="background: #ffcc00;" href="/oscars">Oscars</a>
+</li>
+</ul>
+</div>
+<div id="main">
+<script type="text/javascript">
+google.load("visualization", "1", {packages:["corechart","gauge"]});
+google.setOnLoadCallback(drawDailyChart);
+function drawDailyChart() {
+	var data = new google.visualization.DataTable();
+	data.addColumn('date', 'Chart Date');
+	data.addColumn('number', 'Cumulative Box Office');
+	data.addRows([
+				 [new Date(2008,0,1), 5707874], [new Date(2008,0,21), 5840969], [new Date(2008,1,18), 5907476]				 ]);
+	var options = {
+		vAxis: {minValue: 0, format: '$#,###'},
+		height: 360,
+		width: 720,
+		legend: {position: 'none'},
+				pointSize: 10,
+				hAxis: {format: 'MMM d, y', title: 'Date'}
+	};
+	
+	var chart = new google.visualization.LineChart(document.getElementById('daily_chart_div'));
+	var formatter = new google.visualization.NumberFormat(
+														  {prefix: '$', fractionDigits: 0});
+	formatter.format(data, 1); // Apply formatter to second column
+	chart.draw(data, options);
+	
+	var data2 = google.visualization.arrayToDataTable([
+													 ['Label', 'Value'],
+													 ['Opening', 80],
+													 ]);
+	
+	var options2 = {
+	width: 80, height: 80,
+	redFrom: 0, redTo: 20,
+	yellowFrom:20, yellowTo: 80,
+	greenFrom: 80, greenTo: 100,
+	minorTicks: 5
+	};
+	
+	var chart2 = new google.visualization.Gauge(document.getElementById('opening_chart_div'));
+	chart2.draw(data2, options2);
+	
+	var data3 = google.visualization.arrayToDataTable([
+													  ['Label', 'Value'],
+													  ['Legs', 55]
+													  ]);
+	
+	var options3 = {
+	width: 80, height: 80,
+	redFrom: 0, redTo: 20,
+	yellowFrom:20, yellowTo: 80,
+	greenFrom: 80, greenTo: 100,
+	minorTicks: 5
+	};
+	
+	var chart3 = new google.visualization.Gauge(document.getElementById('legs_chart_div'));
+	chart3.draw(data3, options3);
+
+	var data4 = google.visualization.arrayToDataTable([
+													  ['Label', 'Value'],
+													  ['Readers', 75]
+													  ]);
+	
+	var options4 = {
+	width: 80, height: 80,
+	redFrom: 0, redTo: 20,
+	yellowFrom:20, yellowTo: 80,
+	greenFrom: 80, greenTo: 100,
+	minorTicks: 5
+	};
+	
+	var chart4 = new google.visualization.Gauge(document.getElementById('readers_chart_div'));
+	chart4.draw(data4, options4);
+	
+}
+</script>
+<h1>Lars and the Real Girl</h1>
+<div id="col1">
+</div>
+<div id="col2outer">
+<div id="col2mid">
+<table id="movie_finances">
+<tr class="heading">
+<td colspan="3"><b>Theatrical Performance</b></td>
+</tr>
+<tr>
+<td><b>Domestic Box Office</b></td>
+<td class="data">$5,956,480</td><td><a href="#tab=box-office">Details</a></td>
+</tr>
+	<tr>
+	<td><b>International Box Office</b></td>
+	<td class="data sum">$4,596,962</td>
+	</tr>
+	<tr>
+	<td><b>Worldwide Box Office</b></td>
+	<td class="data">$10,553,442</td>
+	</tr>
+	<tr class="heading">
+	<td colspan="3" class="headed"><b>Home Market Performance</b></td>
+	</tr>
+	<tr>
+	<td><b>Domestic DVD Sales</b></td>
+	<td class="data">$2,790,544</td>
+	<td><a href="#tab=video-sales">Details</a></td>
+	</tr>
+		<tr>
+	<td><b>Total Domestic Video Sales</b></td>
+	<td class="data">$2,790,544</td>
+	</tr>
+	<tr class="heading"><td colspan=3 class="headed"><a href="#more">Further financial details...</td></tr>
+</table>
+</div>
+<div id="col2side">
+<ul id="social_vertical">
+	<li>
+		<a href="https://twitter.com/share" class="twitter-share-button" data-text="Lars and the Real Girl - Box Office Data, DVD and Blu-ray Sales, Movie News, Cast and Crew Information - The Numbers" data-via="MovieNumbers"></a>
+		<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+	</li>
+	<li>
+		<div id="fb-root"></div>
+		<script>(function(d, s, id) {
+		  var js, fjs = d.getElementsByTagName(s)[0];
+		  if (d.getElementById(id)) return;
+		  js = d.createElement(s); js.id = id;
+		  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
+		  fjs.parentNode.insertBefore(js, fjs);
+		}(document, 'script', 'facebook-jssdk'));</script>
+		<div class="fb-like" data-href="http://www.the-numbers.com/movie/Lars-and-the-Real-Girl" data-colorscheme="light" data-layout="button_count" data-action="like" data-show-faces="false" data-send="false"></div>
+	</li>	
+	<li>
+		<!-- Place this tag where you want the +1 button to render -->
+		<g:plusone size="medium"></g:plusone>
+		<!-- Place this render call where appropriate -->
+		<script type="text/javascript">
+		  (function() {
+			var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+			po.src = 'https://apis.google.com/js/plusone.js';
+			var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+		  })();
+		</script>		
+	</li>	
+	<li>
+		<script src="//platform.linkedin.com/in.js" type="text/javascript"></script>
+		<script type="IN/Share" data-counter="right"></script>		
+	</li>
+</ul>
+</div>
+</div>
+<br clear="all">
+<ol id="toc">
+<li><a href="#summary">Summary</a></li>
+<li><a href="#news">News</a></li>
+<li><a href="#box-office">Box Office</a></li>
+<li><a href="#video-sales">Video Sales</a></li>
+<li><a href="#more">Full Financials</a></li>
+<li><a href="#cast-and-crew">Cast & Crew</a></li>
+<li><a href="#trailer">Trailer</a></li>
+<li><a href="#buy">Buy</a></li>
+</ol>
+<div class="content" id="summary">
+<h2>Metrics</h2><p>
+<center><table id="movie_ratings"><tr class="heading"><td colspan=2>Rotten Tomatoes</td></tr><tr><td><a href="http://www.rottentomatoes.com/m/1175569-lars_and_the_real_girl/"><img src="/new/layout/rt-certified-fresh-64-64.png" width=64px height=64px></a></td><td><a href="http://www.rottentomatoes.com/m/1175569-lars_and_the_real_girl/"><img src="/new/layout/rt-upright-64-64.png" width=64px height=64px></a></td></tr><tr><td><a href="http://www.rottentomatoes.com/m/1175569-lars_and_the_real_girl/"><b>Critics</b>
+<br>81% - Certified Fresh</td>
+<td>
+<a href="http://www.rottentomatoes.com/m/1175569-lars_and_the_real_girl/"><b>Audience</b>
+<br>84% - Upright</td>
+</tr></table></center>	
+
+<h2>Movie Details</h2>
+<table>
+<tr><td><b>Production&nbsp;Budget:</b></td><td>$12,500,000</td></tr>
+<tr><td><b>Theatrical&nbsp;Release:</b></td>
+<td>October 12th, 2007 (Limited) by <a href="/market/distributor/MGM">MGM</a></td></tr>
+<tr><td><b><a href="#tab=buy">Video&nbsp;Release:</a></b></td>
+<td>April 15th, 2008 by Fox Home Entertainment</td></tr>
+<tr><td><b>MPAA&nbsp;Rating:</b></td>
+<td><a href="/market/mpaa-rating/PG-13-(US)">PG-13</a> for some sex-related content</td></tr>
+<tr><td><b>Source:</b></td><td><a href="/market/source/Original-Screenplay">Original Screenplay</a></td></tr>
+<tr><td><b>Genre:</b></td><td><a href="/market/genre/Comedy">Comedy</a></td></tr>
+<tr><td><b>Production&nbsp;Method:</b></td><td><a href="/market/production-method/Live-Action">Live Action</a></td></tr>
+<tr><td><b>Creative&nbsp;Type:</b></td><td><a href="/market/creative-type/Contemporary-Fiction">Contemporary Fiction</a></td></tr>
+</tr></td></table></div>
+<div class="content" id="news">
+<div id="news">
+<h1><a href="/news/6090">DVD and Blu-ray Releases for April 5th, 2011</a></h1>
+
+<P>
+
+<div style="float: right; margin: 4px;">
+<iframe src="http://rcm.amazon.com/e/cm?t=thenumbers&o=1&p=8&l=as1&asins=B004K4N64E&fc1=000000&IS2=1<1=_blank&lc1=0000FF&bc1=FFFFFF&bg1=FFFFFF&f=ifr&nou=1" style="width:120px;height:240px;" scrolling="no" marginwidth="0" marginheight="0" frameborder="0"></iframe>
+</div>
+<P>
+
+It's Tron week with at least seven releases related to <A HREF="http://www.the-numbers.com/movies/1982/0TRON.php">Tron</A> and <A HREF="http://www.the-numbers.com/movies/2010/TRON2.php">Tron: Legacy</A>. This appears to have scared away the competition, because outside of those releases, there's not much of a selection. Actually, there are three $100 million hits coming out this week; however, one doesn't come out till Friday, so I'll likely deal with it next week after the screener arrives, and the other is so bad it's best to pretend it doesn't exist. Those two films are clearly the Pick of the Week, but depending on where you buy your DVDs, the <A HREF="http://www.amazon.com/Tron-Original-Classic-Five-Disc-Blu-ray/dp/B004K4N64E?tag=thenumbers" target="_NewWindow">Combo Pack</A> may or may nor be less expensive than buying the <A HREF="http://www.amazon.com/Tron-Legacy-Four-Disc-Blu-ray-Digital/dp/B004K4IZ54?tag=thenumbers" target="_NewWindow">two</A> <A HREF="http://www.amazon.com/Tron-Original-Classic-Two-Disc-Blu-ray/dp/B004KPLVW2?tag=thenumbers" target="_NewWindow">films</A> separately, so double-check before you buy. 
+
+<a href="/news/6090">More...</a>
+<br clear="all"><h1><a href="/news/3369">DVD Rentals - Juno Enjoys the Number One Spot</a></h1>
+
+<P>
+Doing what it couldn't do during its theatrical run, <A HREF="http://www.the-numbers.com/movies/2007/JUNO.php">Juno</A> finished first during its opening week on the rental charts. It led all movies with $8.38 million in rentals. 
+<a href="/news/3369">More...</a>
+<br clear="all"><h1><a href="/news/3370">DVD Sales - Juno has Twin Wins</a></h1>
+
+<P>
+Like it did on the rental chart, <A HREF="http://www.the-numbers.com/movies/2007/JUNO.php">Juno</A> led a large group of <A HREF="http://www.the-numbers.com/interactive/newsStory.php?newsID=3336">new releases</A> on the <A HREF="http://www.the-numbers.com/dvd/charts/weekly/2008/20080420.php">sales chart</A> and earned first place overall. During its first week of release, the film sold 1.44 million units for opening week sales of $25.37 million. 
+<a href="/news/3370">More...</a>
+<br clear="all"><h1><a href="/news/3362">Contest - Turning Iron into Gold</a></h1>
+
+<P>
+Summer blockbuster season is finally here. ... Or least it starts on Friday the 25th with the opening of <A HREF="http://www.the-numbers.com/movies/2008/IRNMN.php">Iron Man</A>. That is this week's target film. In order to win, one must simply predict <A HREF="http://www.the-numbers.com/movies/2008/IRNMN.php">Iron Man</A>'s opening weekend box office.
+
+Whoever comes the closest to predicting the film's opening 3-day weekend box office (Friday to Sunday), <I>without going over</I>, will win <A HREF="http://www.the-numbers.com/movies/2007/DARKM.php">The Golden Compass</A> and <A HREF="http://www.the-numbers.com/movies/1964/0FFRM.php">Fall of the Roman Empire</A>, both on DVD.
+
+Meanwhile, whoever comes the closest to predicting the film's opening 3-day weekend box office (Friday to Sunday), <I>without going under</I>, will win <A HREF="http://www.the-numbers.com/movies/2007/DARKM.php">The Golden Compass</A> and <A HREF="http://www.the-numbers.com/movies/2007/LARSG.php">Lars and the Real Girl</A>. 
+
+Entries must be received by 10 a.m., Pacific Time on Friday to be eligible, so don't delay!
+<a href="/news/3362">More...</a>
+<br clear="all"><h1><a href="/news/3336">DVD Releases for April 15, 2008</a></h1>
+
+<P>
+Not a particularly strong week for DVD releases this week. Sure, there are a few worth picking up, but there were far more that felt like filler. In fact, there was only one contender for DVD Pick of the Week, <A HREF="http://www.the-numbers.com/movies/2007/JUNO.php">Juno</A>. I would certainly recommend the <A HREF="http://www.amazon.com/Juno-Blu-ray-Michael-Cera/dp/B0014DFCMS?tag=thenumbers" target="_NewWindow">Blu-ray</A> version over either DVD edition. 
+<a href="/news/3336">More...</a>
+<br clear="all"><h1><a href="/news/3195">Oscar Contest - Category Highlight - Original Screenplay and Adapted Screenplay</a></h1>
+
+With our annual <A HREF="http://www.the-numbers.com/interactive/oscarResults.php">Oscar Prediction contest</A> underway, now is the best time to look at the <A HREF="http://www.the-numbers.com/interactive/newsStory.php?newsID=3148">nominees</A> and try and figure out who the favorites are and which films should just feel honored to be nominated. Today we will look at Best Writing - Original Screenplay and Best Writing - Adapted Screenplay. 
+<a href="/news/3195">More...</a>
+<br clear="all"><h1><a href="/news/3148">Awards Season - No Shortage of Love for Country or Blood</a></h1>
+
+<P>
+The <A HREF="http://oscar.com/" target="_NewWindow">Oscar</A> nominations were announced today and there is no shortage of contenders. 
+In fact, with no real juggernaut to deal with, the competition is more up in the air that most years. 
+<a href="/news/3148">More...</a>
+<br clear="all"><h1><a href="/news/3134">Awards Season - Guilds Get into the Act</a></h1>
+
+<P>
+The final three guilds handed out their nominations over the past week and while most deal with television, there are a handful of theatrical nominations for each of the <A HREF="http://www.dga.org" target="_NewWindow">Directors Guild of America</A>, the <A HREF="http://www.producersguild.org" target="_NewWindow">Producers Guild of America</A>, and the <A HREF="http://www.wga.org/" target="_NewWindow">Writers Guild of America</A>. 
+<a href="/news/3134">More...</a>
+<br clear="all"><h1><a href="/news/3080">Award Season - SAG Follows the Script - SAG Nominations</a></h1>
+
+<P>
+The <A HREF="http://www.sagawards.org/nominations" target="_NewWindow">Screen Actors Guild nominations</A> were announced this week, but again there were no clear front runners for the six theatrical categories. 
+<a href="/news/3080">More...</a>
+<br clear="all"><h1><a href="/news/3054">Award Season - Globes Spread the Love Around</a></h1>
+
+<P>
+The Hollywood Foreign Press Association announced their <A HREF="http://www.goldenglobes.org/" target="_NewWindow">Golden Globe nominations</A> this week, but there were no truly dominate films out of the 14 theatrical categories. 
+<a href="/news/3054">More...</a>
+<br clear="all"><h1><a href="/news/3031">Competition Takes a Dive against The Savages</a></h1>
+
+<P>
+<A HREF="http://www.the-numbers.com/movies/2007/SAVGS.php">The Savages</A> easily won the race on the per theater chart, scoring $150,000 in 4 theaters for an average of $37,965, and that's with a Wednesday opening. 
+Over five days, the film earned an average of just over $46,000. 
+The only other film to crack $10,000 was <A HREF="http://www.the-numbers.com/movies/2007/DIVBL.php">The Diving Bell and the Butterfly</A> with $75,000 in three theaters for an average of $25,240. 
+<a href="/news/3031">More...</a>
+<br clear="all"><h1><a href="/news/2996">Honeymoon Not Over for Old Men</a></h1>
+
+<P>
+<A HREF="http://www.the-numbers.com/movies/2007/MGWED.php">Margot at the Wedding</A> won the race on the per theater chart with just over $80,000 in two theater for an average of $40,518. <A HREF="http://www.the-numbers.com/movies/2007/NCFOM.php">No Country for Old Men</A> was pushed into second place, but it managed seventh place on the overall chart with over $3 million in just 148 theaters, giving the film an impressive average of $20,782. The only other film to top $10,000 was <A HREF="http://www.the-numbers.com/movies/2007/HOLLY.php">Holly</A> with $12,442 in its lone theater. 
+<a href="/news/2996">More...</a>
+<br clear="all"><h1><a href="/news/2979">No One Tops Old Men on Per Theater Chart</a></h1>
+
+<P>
+<A HREF="http://www.the-numbers.com/movies/2007/NCFOM.php">No Country for Old Men</A> was the latest Oscar hopeful to hit theaters, and while so many have failed to live up to expectations, this was not the case here. 
+Despite opening in 28 theaters, it pulled in more than $1 million over the weekend and led the per theater chart with an average of $43,798. 
+The only other film to come close was <A HREF="http://www.the-numbers.com/movies/2007/HOLLY.php">Holly</A> with an opening of $32,406 in one theater. 
+Finally, <A HREF="http://www.the-numbers.com/movies/2007/0OMOM.php">Om Shanti Om</A> was the second limited release to crack $1 million over the weekend, earning an average of $15,475 in its 114 theaters. 
+<a href="/news/2979">More...</a>
+<br clear="all"><h1><a href="/news/2964">Gangster\'s Future is Now on the Per Theater Chart</a></h1>
+
+<P>
+The overall box office leader, <A HREF="http://www.the-numbers.com/movies/2007/AMGST.php">American Gangster</A>, was also the champion on the per theater chart with $14,265. The only other film to crack $10,000 was <A HREF="http://www.the-numbers.com/movies/2007/STRUM.php">Joe Strummer: The Future is Unwritten</A> with an average of $10,440 in two theaters. 
+<a href="/news/2964">More...</a>
+<br clear="all"><h1><a href="/news/2947">Devil\'s Far from Dead on the Per Theater Chart</a></h1>
+
+<P>
+<A HREF="http://www.the-numbers.com/movies/2007/BDKYD.php">Before the Devil Knows You're Dead</A> opened in first place on the per theater chart with an impressive average of $36,919 in two theaters. <A HREF="http://www.the-numbers.com/movies/2007/0PSPS.php">Pete Seeger: Power in Song</A> and <A HREF="http://www.the-numbers.com/movies/2007/WRIST.php">Wristcutters: A Love Story</A> were well back but still strong with averages of $11,945 and $10,506 respectively. While those were the only three films to creak $10,000 on the per theater chart, two others came very, very close: <A HREF="http://www.the-numbers.com/movies/2007/SAW4.php">Saw IV</A> at $9,977 and <A HREF="http://www.the-numbers.com/movies/1982/0BLRU.php">Blade Runner</A> at $9,915. 
+<a href="/news/2947">More...</a>
+<br clear="all"><h1><a href="/news/2914">Blade Runner Controls the Per Theater Chart</a></h1>
+
+<P>
+<A HREF="http://www.the-numbers.com/movies/1982/0BLRU.php">Blade Runner</A> climbed into first place on the Per Theater Chart with an average of $32,681 in two theaters during its second week of re-release. <A HREF="http://www.the-numbers.com/movies/2007/CNTRO.php">Control</A> debuted in second place with $27,674 in its one theater. <A HREF="http://www.the-numbers.com/movies/2007/LARSG.php">Lars and the Real Girl</A> opened with just over $90,000 in 7 theaters for an average of $12,917. This is a good start, better than most limited releases can hope for, but less than I was expecting. <A HREF="http://www.the-numbers.com/movies/2007/DARJE.php">The Darjeeling Limited</A> continues to perform marvelously as it expands as it earned an average of $11,425 in nearly 100 theaters. The overall box office leader, <A HREF="http://www.the-numbers.com/movies/2007/WDIGM.php">Why Did I Get Married?</A> opened with an average of $10,618. 
+<a href="/news/2914">More...</a>
+<br clear="all"><h1><a href="/news/2906">Movie Website Updates for October 7, 2007 - October 13, 2007</a></h1>
+
+<P>
+Quite a few full sites launched this week, but as is the case most times, there were pretty Spartan at the moment and it will take a few more updates before we can tell if they are award-worthy or not. That said, it was a site for a movie that opens this week, <A HREF="http://www.the-numbers.com/movies/2007/LARSG.php">Lars and the Real Girl</A> - <A HREF="http://www.larsandtherealgirl-themovie.com/" target="_NewWindow">Official Site</A>, that won the top prize as it finished adding all the material marked coming soon this week. 
+<a href="/news/2906">More...</a>
+<br clear="all"><h1><a href="/news/2904">Contest - Night of Prizes</a></h1>
+
+<P>
+The weekend of October 19 is busy for new releases with five earning some degree of wideness.
+Out out of those five films, <A HREF="http://www.the-numbers.com/movies/2007/30DAY.php">30 Days of Night</A> has the best shot at first place and it is the target film in this week's box office prediction contest. 
+
+To win one must simply predict the box office opening for <A HREF="http://www.the-numbers.com/movies/2007/30DAY.php">30 Days of Night</A>.
+
+Whoever comes the closest to predicting the film's opening 3-day weekend box office (Friday to Sunday), <I>without going over</I>, will win a <A HREF="http://www.the-numbers.com/movies/2007/LARSG.php">Lars are the Real Girl</A> poster, <A HREF="http://www.the-numbers.com/movies/2007/RESRD.php">Resevation Road</A> poster and Soundtrack, as well as the <A HREF="http://www.the-numbers.com/movies/2007/GBABG.php">Gone, Baby, Gone</A> novel. 
+
+Meanwhile, whoever comes the closest to predicting the film's opening 3-day weekend box office (Friday to Sunday), <I>without going under</I>, will win the exact same prize pack mentioned above. 
+
+Finally, one lucky entrant will be chosen arbitrarily and that person will win a <A HREF="http://www.the-numbers.com/movies/2007/GBABG.php">Gone, Baby, Gone</A> poster. 
+
+Entries must be received by 10 a.m., Pacific Time on Friday to be eligible, so don't delay!
+<a href="/news/2904">More...</a>
+<br clear="all"><h1><a href="/news/2905">Using the Clues to Deduce the Real Contenders</a></h1>
+
+<P>
+An even dozen films on this week's list, including the A <A HREF="http://www.the-numbers.com/movies/series/Canada.php">Canadian</A> film <A HREF="http://www.the-numbers.com/movies/2007/WRDVL.php">Weirdsville</A>, which doesn't open in the United States until next week, or it may of opened there last week, there seems to be some confusion on the matter. However, the best bet this week is <A HREF="http://www.the-numbers.com/movies/2007/LARSG.php">Lars and the Real Girl</A>, which could expand wide over the coming weeks. 
+<a href="/news/2905">More...</a>
+<br clear="all"><h1><a href="/news/2890">Movie Website Updates for September 30 - October 6, 2007</a></h1>
+
+<P>
+We are starting to get full websites for some of the massive holiday season releases, which should mean there will be at least one award worthy website on each week's list. As for this week, there were a few that have potential assuming the sections marked coming soon live up to the rest of the site. But just one site, <A HREF="http://www.the-numbers.com/movies/2007/DRISN.php">The Seeker: The Dark is Rising</A> - <A HREF="http://www.seekthesigns.com/" target="_NewWindow">Official Site</A>, that was worthy of the Weekly Website Award. 
+<a href="/news/2890">More...</a>
+<br clear="all"><h1><a href="/news/2888">Contest - The Real Deal</a></h1>
+
+<P>
+There's not a single film opening at saturation levels next Friday.
+In fact, <A HREF="http://www.the-numbers.com/movies/2007/WEOWN.php">We Own the Night</A> might be the only film to crack 2,000 theaters and because of this, it is this week's target film. 
+
+To win one must simply predict the box office opening for <A HREF="http://www.the-numbers.com/movies/2007/WEOWN.php">We Own the Night</A>.
+
+Whoever comes the closest to predicting the film's opening 3-day weekend box office (Friday to Sunday), <I>without going over</I>, will win <A HREF="http://www.amazon.com/Film-Crew-Hollywood-After-Dark/dp/B000N2HDIM?tag=thenumbers" target="_NewWindow">The Film Crew - Hollywood After Dark</A>. 
+
+Meanwhile, whoever comes the closest to predicting the film's opening 3-day weekend box office (Friday to Sunday), <I>without going under</I>, will win <A HREF="http://www.amazon.com/Film-Crew-Killers-Space/dp/B000N2HDIW?tag=thenumbers" target="_NewWindow">The Film Crew - Killers from Space</A>. 
+
+Finally, one lucky entrant will be chosen arbitrarily and that person will win <A HREF="http://www.amazon.com/Film-Crew-Wild-Women-Wongo/dp/B000S86J3Q?tag=thenumbers" target="_NewWindow">The Film Crew - Women of Wongo</A>. 
+
+In addition, all three winners will also pick up a poster from <A HREF="http://www.the-numbers.com/movies/2007/LARSG.php">Lars and the Real Girl</A>, which opens in limited release tonight. 
+
+And don't forget, <A HREF="http://www.amazon.com/Film-Crew-Giant-Marathon/dp/B000UAE7CW?tag=thenumbers" target="_NewWindow">The Film Crew - The Giant of Marathon</A> comes out on DVD this Tuesday. 
+
+Entries must be received by 10 a.m., Pacific Time on Friday to be eligible, so don't delay!
+<a href="/news/2888">More...</a>
+<br clear="all"><h1><a href="/news/2881">2007 Preview: October</a></h1>
+
+<P>
+October means one thing: Free candy. ... Oh yeah, and the unofficial start of Award Season.  
+And Halloween brings us a few horror films as well. 
+Unfortunately, this year October is rather weak, with no film looking like a strong contender for $100 million and most of the films with early Oscar buzz having performed poorly with the critics. 
+The only good news is last October was also weak at the box office, meaning there's at least a reasonable shot at 2007 maintaining its box office lead over 2006. 
+<a href="/news/2881">More...</a>
+<br clear="all"><h1><a href="/news/2665">New Movie US Release Dates - June 23, 2007</a></h1>
+
+<P>
+This week's round of new movie release information contains release dates for Michael Clayton, The Day the Earth Stood Still, The Love Guru and more.
+<a href="/news/2665">More...</a>
+<br clear="all"><h1><a href="/news/2354">New Movie US Release Dates - January 15, 2007</a></h1>
+
+<P>
+This week's round of new movie release information contains release dates for Breaking and Entering, Two Weeks, Case 39 and more.
+<a href="/news/2354">More...</a>
+<br clear="all"></div></div>
+<div class="content" id="cast-and-crew">
+<div id="cast">
+<h1>Cast</h1>
+<table cellspacing=0 align="center">
+<tr>
+<td align="right"><b><a href="/person/56840401-Ryan-Gosling">Ryan Gosling</a></b></td>
+<td>&nbsp;&nbsp;</td>
+<td align"left">Lars</td>
+<tr>
+<td align="right"><b><a href="/person/29150401-Patricia-Clarkson">Patricia Clarkson</a></b></td>
+<td>&nbsp;&nbsp;</td>
+<td align"left">Dagmar</td>
+<tr>
+<td align="right"><b><a href="/person/102520401-Emily-Mortimer">Emily Mortimer</a></b></td>
+<td>&nbsp;&nbsp;</td>
+<td align"left">Karin</td>
+<tr>
+<td align="right"><b><a href="/person/53010401-Kelli-Garner">Kelli Garner</a></b></td>
+<td>&nbsp;&nbsp;</td>
+<td align"left">Margo</td>
+<tr>
+<td align="right"><b><a href="/person/128290401-Paul-Schneider">Paul Schneider</a></b></td>
+<td>&nbsp;&nbsp;</td>
+<td align"left">Gus</td>
+</table>
+</div>
+</div>
+<div class="content" id="box-office">
+<div id="daily_chart_div" style="width: 720px; height: 360px; align: center;"></div>
+<h2>Daily Box Office Performance</h2>
+<div id="box_office_chart">
+<table>
+<TR><TH>Date</TH><TH>Rank</TH><TH>Gross</TH><TH>%&nbsp;Change</TH><TH>Theaters</TH><TH>Per Theater</TH><TH>Total&nbsp;Gross</TH><TH>Days</TH></TR>
+<tr>
+<td><a href="/box-office-chart/daily/2008/01/01">2008/01/01</a></td>
+<td class="data">-</td>
+<td  class="data">$10,076</td>
+<td>&nbsp;</td>
+<td class="data">40</td>
+<td class="data chart_grey">$252</td>
+<td class="data">&nbsp;&nbsp;$5,707,874</td>
+<td class="data">82</td>
+</tr>
+<tr>
+<td><a href="/box-office-chart/daily/2008/01/21">2008/01/21</a></td>
+<td class="data chart_down">49</td>
+<td  class="data">$3,843</td>
+<td>&nbsp;</td>
+<td class="data">35</td>
+<td class="data chart_grey">$110</td>
+<td class="data">&nbsp;&nbsp;$5,840,969</td>
+<td class="data">102</td>
+</tr>
+<tr>
+<td><a href="/box-office-chart/daily/2008/02/18">2008/02/18</a></td>
+<td class="data chart_down">66</td>
+<td  class="data">$2,980</td>
+<td>&nbsp;</td>
+<td class="data">19</td>
+<td class="data chart_grey">$157</td>
+<td class="data">&nbsp;&nbsp;$5,907,476</td>
+<td class="data">130</td>
+</tr>
+</table>
+</div>
+<h2>Weekend Box Office Performance</h2>
+<div id="box_office_chart">
+<table>
+<TR><TH>Date</TH><TH>Rank</TH><TH>Gross</TH><TH>%&nbsp;Change</TH><TH>Theaters</TH><TH>Per Theater</TH><TH>Total&nbsp;Gross</TH><TH>Days</TH></TR>
+<tr>
+<td><a href="/box-office-chart/weekend/2007/10/12">2007/10/12</a></td>
+<td class="data">42</td>
+<td  class="data">$90,418</td>
+<td>&nbsp;</td>
+<td class="data">7</td>
+<td class="data chart_grey">$12,917</td>
+<td class="data">&nbsp;&nbsp;$90,418</td>
+<td class="data">3</td>
+</tr>
+<tr>
+<td><a href="/box-office-chart/weekend/2007/10/19">2007/10/19</a></td>
+<td class="data chart_up">36</td>
+<td  class="data">$188,603</td>
+<td class="data chart_up">+109%</td>
+<td class="data">21</td>
+<td class="data chart_grey">$8,981</td>
+<td class="data">&nbsp;&nbsp;$316,218</td>
+<td class="data">10</td>
+</tr>
+<tr>
+<td><a href="/box-office-chart/weekend/2007/10/26">2007/10/26</a></td>
+<td class="data chart_up">19</td>
+<td  class="data">$926,675</td>
+<td class="data chart_up">+391%</td>
+<td class="data">296</td>
+<td class="data chart_grey">$3,131</td>
+<td class="data">&nbsp;&nbsp;$1,330,732</td>
+<td class="data">17</td>
+</tr>
+<tr>
+<td><a href="/box-office-chart/weekend/2007/11/02">2007/11/02</a></td>
+<td class="data chart_up">18</td>
+<td  class="data">$765,971</td>
+<td class="data chart_down">-17%</td>
+<td class="data">321</td>
+<td class="data chart_grey">$2,386</td>
+<td class="data">&nbsp;&nbsp;$2,390,366</td>
+<td class="data">24</td>
+</tr>
+<tr>
+<td><a href="/box-office-chart/weekend/2007/11/09">2007/11/09</a></td>
+<td class="data chart_down">21</td>
+<td  class="data">$702,550</td>
+<td class="data chart_down">-8%</td>
+<td class="data">286</td>
+<td class="data chart_grey">$2,456</td>
+<td class="data">&nbsp;&nbsp;$3,372,897</td>
+<td class="data">31</td>
+</tr>
+<tr>
+<td><a href="/box-office-chart/weekend/2007/11/16">2007/11/16</a></td>
+<td class="data chart_down">23</td>
+<td  class="data">$506,556</td>
+<td class="data chart_down">-28%</td>
+<td class="data">244</td>
+<td class="data chart_grey">$2,076</td>
+<td class="data">&nbsp;&nbsp;$4,143,274</td>
+<td class="data">38</td>
+</tr>
+<tr>
+<td><a href="/box-office-chart/weekend/2007/11/23">2007/11/23</a></td>
+<td class="data">23</td>
+<td  class="data">$358,519</td>
+<td class="data chart_down">-29%</td>
+<td class="data">163</td>
+<td class="data chart_grey">$2,200</td>
+<td class="data">&nbsp;&nbsp;$4,714,072</td>
+<td class="data">45</td>
+</tr>
+<tr>
+<td><a href="/box-office-chart/weekend/2007/11/30">2007/11/30</a></td>
+<td class="data">23</td>
+<td  class="data">$241,474</td>
+<td class="data chart_down">-33%</td>
+<td class="data">178</td>
+<td class="data chart_grey">$1,357</td>
+<td class="data">&nbsp;&nbsp;$5,059,654</td>
+<td class="data">52</td>
+</tr>
+<tr>
+<td><a href="/box-office-chart/weekend/2007/12/07">2007/12/07</a></td>
+<td class="data chart_down">27</td>
+<td  class="data">$167,721</td>
+<td class="data chart_down">-31%</td>
+<td class="data">161</td>
+<td class="data chart_grey">$1,042</td>
+<td class="data">&nbsp;&nbsp;$5,319,075</td>
+<td class="data">59</td>
+</tr>
+<tr>
+<td><a href="/box-office-chart/weekend/2007/12/14">2007/12/14</a></td>
+<td class="data chart_down">30</td>
+<td  class="data">$106,487</td>
+<td class="data chart_down">-37%</td>
+<td class="data">114</td>
+<td class="data chart_grey">$934</td>
+<td class="data">&nbsp;&nbsp;$5,498,148</td>
+<td class="data">66</td>
+</tr>
+<tr>
+<td><a href="/box-office-chart/weekend/2007/12/21">2007/12/21</a></td>
+<td class="data chart_down">34</td>
+<td  class="data">$45,742</td>
+<td class="data chart_down">-57%</td>
+<td class="data">49</td>
+<td class="data chart_grey">$934</td>
+<td class="data">&nbsp;&nbsp;$5,609,849</td>
+<td class="data">73</td>
+</tr>
+<tr>
+<td><a href="/box-office-chart/weekend/2007/12/28">2007/12/28</a></td>
+<td class="data chart_down">43</td>
+<td  class="data">$43,192</td>
+<td class="data chart_down">-6%</td>
+<td class="data">40</td>
+<td class="data chart_grey">$1,080</td>
+<td class="data">&nbsp;&nbsp;$5,687,152</td>
+<td class="data">80</td>
+</tr>
+<tr>
+<td><a href="/box-office-chart/weekend/2008/01/04">2008/01/04</a></td>
+<td class="data chart_down">47</td>
+<td  class="data">$36,886</td>
+<td class="data chart_down">-15%</td>
+<td class="data">38</td>
+<td class="data chart_grey">$971</td>
+<td class="data">&nbsp;&nbsp;$5,760,558</td>
+<td class="data">87</td>
+</tr>
+<tr>
+<td><a href="/box-office-chart/weekend/2008/01/11">2008/01/11</a></td>
+<td class="data">47</td>
+<td  class="data">$26,591</td>
+<td class="data chart_down">-28%</td>
+<td class="data">36</td>
+<td class="data chart_grey">$739</td>
+<td class="data">&nbsp;&nbsp;$5,802,820</td>
+<td class="data">94</td>
+</tr>
+<tr>
+<td><a href="/box-office-chart/weekend/2008/01/18">2008/01/18</a></td>
+<td class="data chart_down">52</td>
+<td  class="data">$21,402</td>
+<td class="data chart_down">-20%</td>
+<td class="data">35</td>
+<td class="data chart_grey">$611</td>
+<td class="data">&nbsp;&nbsp;$5,837,126</td>
+<td class="data">101</td>
+</tr>
+<tr>
+<td><a href="/box-office-chart/weekend/2008/01/25">2008/01/25</a></td>
+<td class="data chart_down">65</td>
+<td  class="data">$12,741</td>
+<td class="data chart_down">-40%</td>
+<td class="data">24</td>
+<td class="data chart_grey">$531</td>
+<td class="data">&nbsp;&nbsp;$5,861,887</td>
+<td class="data">108</td>
+</tr>
+<tr>
+<td><a href="/box-office-chart/weekend/2008/02/01">2008/02/01</a></td>
+<td class="data chart_down">67</td>
+<td  class="data">$7,952</td>
+<td class="data chart_down">-38%</td>
+<td class="data">22</td>
+<td class="data chart_grey">$361</td>
+<td class="data">&nbsp;&nbsp;$5,876,272</td>
+<td class="data">115</td>
+</tr>
+<tr>
+<td><a href="/box-office-chart/weekend/2008/02/08">2008/02/08</a></td>
+<td class="data chart_down">71</td>
+<td  class="data">$7,314</td>
+<td class="data chart_down">-8%</td>
+<td class="data">21</td>
+<td class="data chart_grey">$348</td>
+<td class="data">&nbsp;&nbsp;$5,886,529</td>
+<td class="data">122</td>
+</tr>
+<tr>
+<td><a href="/box-office-chart/weekend/2008/02/15">2008/02/15</a></td>
+<td class="data chart_down">74</td>
+<td  class="data">$9,871</td>
+<td class="data chart_up">+35%</td>
+<td class="data">19</td>
+<td class="data chart_grey">$520</td>
+<td class="data">&nbsp;&nbsp;$5,904,496</td>
+<td class="data">129</td>
+</tr>
+<tr>
+<td><a href="/box-office-chart/weekend/2008/02/22">2008/02/22</a></td>
+<td class="data chart_up">70</td>
+<td  class="data">$18,851</td>
+<td class="data chart_up">+91%</td>
+<td class="data">58</td>
+<td class="data chart_grey">$325</td>
+<td class="data">&nbsp;&nbsp;$5,928,858</td>
+<td class="data">136</td>
+</tr>
+<tr>
+<td><a href="/box-office-chart/weekend/2008/02/29">2008/02/29</a></td>
+<td class="data chart_down">81</td>
+<td  class="data">$10,222</td>
+<td class="data chart_down">-46%</td>
+<td class="data">23</td>
+<td class="data chart_grey">$444</td>
+<td class="data">&nbsp;&nbsp;$5,949,693</td>
+<td class="data">143</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="content" id="video-sales">
+		<h2>Weekly US DVD Sales</h2>
+		<div id="box_office_chart">
+		<table>
+		<tr><th>Date</th><th>Rank</th><th>Units this Week</th><th>% Change</th><th>Total Units</th><th>Spending this Week</th><th>Total Spending</th><th>Weeks in Release</th></tr>
+		<tr><td class="data"><a href="/home-market/dvd-sales-chart/2008/04/20">4/20/2008</a></td><td class="data">15</td><td class="data">69,995</td><td>&nbsp;</td><td class="data">69,995</td><td class="data">$1,045,725</td><td class="data">$1,045,725</td><td class="data">1</td></tr>
+<tr><td class="data"><a href="/home-market/dvd-sales-chart/2008/04/27">4/27/2008</a></td><td class="data">28</td><td class="data">26,860</td><td class="data chart_down">-62%</td>
+<td class="data">96,855</td><td class="data">$402,631</td><td class="data">$1,448,357</td><td class="data">2</td></tr>
+</table>
+</div>
+</div>
+<div class="content" id="trailer">
+</div>
+
+<div class="content" id="buy">
+	<div id="movie_ratings">
+	<center>
+	<table>
+	<tr>
+		<td>
+	<iframe src="http://rcm-na.amazon-adsystem.com/e/cm?t=thenumbers&o=1&p=8&l=as1&asins=B0014D5RBE&ref=tf_til&fc1=000000&IS2=1&lt1=_blank&m=amazon&lc1=0000FF&bc1=FFFFFF&bg1=FFFFFF&f=ifr" style="width:120px;height:240px;" scrolling="no" marginwidth="0" marginheight="0" frameborder="0"></iframe>
+	</td>
+	</tr>
+</table>
+</center>
+</div>
+</div>
+<div class="content" id="more">
+<p>
+Full financial estimates for this film, including domestic and international box office, video sales, video rentals, TV and ancillary revenue
+are available through our research services. For more information, please contact us at <a href="mailto:research@the-numbers.com">research@the-numbers.com</a>.</div>
+<script src="/live/js/activatables.js" type="text/javascript"></script>
+<script>
+activatables('tab', ['summary', 'news', 'cast-and-crew', 'box-office', 'video-sales', 'trailer', 'buy', 'more']);
+</script>
+</div>
+<div id="sidebar">
+<h1>Trending Pages</h1>
+<ul>
+<li><a href="/bankability"<span style="color: #008255">Bankability Index</span></a></li>
+<li><a href="/daily-box-office-chart">Daily Box Office</a></li>
+<li><a href="/weekend-box-office-chart">Weekend Box Office</a></li>
+<li><a href="/weekly-dvd-sales-chart">Weekly DVD Sales</a></li>
+<li><a href="/weekly-bluray-sales-chart">Weekly Blu-ray Sales</a></li>
+<li><a href="/home-market/dvd-sales/2013">Top-selling DVDs of 2013</a></li>
+<li><a href="/home-market/bluray-sales/2013">Top-selling Blu-rays of 2013</a></li>
+<li><a href="/movies/release-schedule">Theatrical Release Schedule</a></li>
+<li><a href="/movie/records/">Theatrical Records</a></li>
+<li><a href="/movie/budgets/">Movie Budgets</a></li>
+<li><a href="/movies/">Movie Index</a></li>
+<li><a href="/people/">People Index</a></li>
+<li><a href="/market/">Theatrical Market</a></li>
+<li><a href="/news">Latest News</a></li>
+</ul>
+<center>
+<h1>Search</h1>
+<script type="text/javascript" src="http://www.google.com/jsapi"></script>
+<script type="text/javascript">
+google.load('search', '1');
+google.setOnLoadCallback(function() {
+						 google.search.CustomSearchControl.attachAutoCompletion(
+																				'partner-pub-0505053220181058:6106009327+qptype:1',
+																				document.getElementById('q'),
+																				'cse-search-box');
+						 });
+</script>
+<form action="/search/" id="cse-search-box">
+<div>
+<input type="hidden" name="cx" value="partner-pub-0505053220181058:6106009327" />
+<input type="hidden" name="cof" value="FORID:9" />
+<input type="hidden" name="ie" value="UTF-8" />
+<input type="text" name="q" id="q" autocomplete="off" size="30" />
+</div>
+</form>
+<script type="text/javascript" src="http://www.google.com/cse/brand?form=cse-search-box&lang=en"></script>
+<br><br>
+</center>
+<h1>Trending Movies</h1>
+<ul>
+<li><a href="/movie/Guardians-of-the-Galaxy#tab=summary">Guardians of the Galaxy</a></li>
+<li><a href="/movie/Expendables-3-The#tab=summary">The Expendables 3</a></li>
+<li><a href="/movie/Frozen-(2013)#tab=summary">Frozen</a></li>
+<li><a href="/movie/Teenage-Mutant-Ninja-Turtles-(2014)#tab=summary">Teenage Mutant Ninja Turtles</a></li>
+<li><a href="/movie/No-Good-Deed-(2013)#tab=summary">No Good Deed</a></li>
+<li><a href="/movie/Captain-America-The-Winter-Soldier#tab=summary">Captain America: The Winter Soldier</a></li>
+<li><a href="/movie/Lucy#tab=summary">Lucy</a></li>
+<li><a href="/movie/Edge-of-Tomorrow#tab=summary">Edge of Tomorrow</a></li>
+<li><a href="/movie/Avatar#tab=summary">Avatar</a></li>
+<li><a href="/movie/Transformers-Age-of-Extinction#tab=summary">Transformers: Age of Extinction</a></li>
+</ul>
+<h1>Trending People</h1>
+<ul>
+<li><a href="/person/670401-L-Jackson-Samuel">Samuel L. Jackson</a></li>
+<li><a href="/person/83610401-Christopher-Lee">Christopher Lee</a></li>
+<li><a href="/person/150560401-Frank-Welker">Frank Welker</a></li>
+<li><a href="/person/650401-Tom-Hanks">Tom Hanks</a></li>
+<li><a href="/person/540401-Tom-Cruise">Tom Cruise</a></li>
+<li><a href="/person/135950401-Sylvester-Stallone">Sylvester Stallone</a></li>
+<li><a href="/person/128750401-Arnold-Schwarzenegger">Arnold Schwarzenegger</a></li>
+<li><a href="/person/83860401-Stan-Lee">Stan Lee</a></li>
+<li><a href="/person/149660401-Naomi-Watts">Naomi Watts</a></li>
+<li><a href="/person/8410401-Amitabh-Bachchan">Amitabh Bachchan</a></li>
+</ul>
+</div>
+<div id="footer">
+<B>&copy; 1997-2014 <a href="http://www.nashinfoservices.com">Nash Information Services, LLC</a>. All rights reserved.</B><BR>
+<b>The Numbers is a registered trademark of Nash Information Services, LLC</b><br>
+<B>For comments or corrections, please email us at <A HREF="mailto:corrections@the-numbers.com">corrections@the-numbers.com</A></B>
+<p>Rotten Tomatoes and the Certified Fresh Logo are trademarks or registered trademarks of Flixster, Inc. in the United States and other countries.
+<BR><BR>
+<A HREF="">Privacy Policy</A> - <A HREF="">About Us</A> - <A HREF="">Glossary</A>
+</div>
+</body>
+</html>

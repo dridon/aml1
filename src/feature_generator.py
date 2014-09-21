@@ -4,7 +4,7 @@ import numpy as np
 import scipy.stats.mstats as ms
 
 
-raw_dataf = open("full_raw_features.csv", "r")
+raw_dataf = open("data/features/full_raw_features.csv", "r")
 raw_datac = csv.reader(raw_dataf)
 
 def seek(f, csv, line):
@@ -109,5 +109,5 @@ def get_data(raw_data, directord, producerd, swriterd, actord):
 
 data = get_data(raw_data, directord, producerd, swriterd, actord) 
 dataw= [("Hot Season", "Budget", "Director RT Critical Average", "Director RT Public Average", "Director IMDB Average", "Producer RT Critical Average", "Producer RT Public Average", "Producer IMDB Average", "Screenwriter RT Critical Average", "Screenwriter RT Public Average", "Screenwriter IMDB Average","Actors RT Critical Average", "Actors RT Public Average", "Actors IMDB Average", "Gross")] + data
-data_writer = csv.writer(open("feature_data.csv", "w+"))
+data_writer = csv.writer(open("data/features/feature_data.csv", "w+"))
 data_writer.writerows(dataw)

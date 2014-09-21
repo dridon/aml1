@@ -5,11 +5,11 @@ def seek(f, csv, line):
     for i in range(line): 
         next(csv)
 
-moviesf =  open("filtered_data.csv", "r")
-actorsf =  open("imdb_movie_actor.csv", "r")
-tcrewf  =  open("imdb_movie_crew.csv", "r")
-tomatorf = open("movie_ratings.csv", "r")
-imdbrf = open("imdb_movie_rating.csv", "r")
+moviesf =  open("data/movies/revenue_only_data.csv", "r")
+actorsf =  open("data/people/imdb_movie_actor.csv", "r")
+tcrewf  =  open("data/people/imdb_movie_crew.csv", "r")
+tomatorf = open("data/ratings/rotten_tomato_ratings.csv", "r")
+imdbrf = open("data/ratings/imdb_movie_rating.csv", "r")
 
 moviesc = csv.reader(moviesf)
 actorsc = csv.reader(actorsf)
@@ -104,11 +104,11 @@ for k in movied.iterkeys():
     ))
 print i
 
-actors_writer = csv.writer(open("actors.csv", "w+"))
-directors_writer = csv.writer(open("directors.csv", "w+"))
-producers_writer = csv.writer(open("producers.csv", "w+"))
-screenwriter_writer = csv.writer(open("screenwriter.csv", "w+"))
-raw_writer = csv.writer(open("full_raw_features.csv", "w+"))
+actors_writer = csv.writer(open("data/people/actors.csv", "w+"))
+directors_writer = csv.writer(open("data/people/directors.csv", "w+"))
+producers_writer = csv.writer(open("data/people/producers.csv", "w+"))
+screenwriter_writer = csv.writer(open("data/people/screenwriter.csv", "w+"))
+raw_writer = csv.writer(open("data/features/full_raw_features.csv", "w+"))
 
 actors_writer.writerows(actors) 
 directors_writer.writerows(directors)

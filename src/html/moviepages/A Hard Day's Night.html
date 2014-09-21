@@ -1,0 +1,725 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="PICS-Label" content='(PICS-1.1 "http://www.icra.org/ratingsv02.html" l gen true for "http://www.the-numbers.com/" r (cb 1 lz 1 nz 1 oz 1 vz 1) "http://www.rsac.org/ratingsv01.html" l gen true for "http://www.the-numbers.com/" r (n 0 s 0 v 0 l 0))'>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" >
+<meta name="format-detection" content="telephone=no">   <!-- for apple mobile --> 
+<meta property="fb:admins" content="521546213" />
+<meta name="description" content="The Numbers provides detailed movie financial analysis, including box office, DVD  and Blu-ray sales reports, and release schedules">
+<meta name="robots" content="NOODP">
+<meta keywords="keywords" content="movies, box office, The Numbers, Numbers, daily box office, weekly box office, movie stars, dvd sales, Blu-ray sales, release schedule">
+<title>A Hard Day's Night - Box Office Data, DVD and Blu-ray Sales, Movie News, Cast and Crew Information - The Numbers</title>
+<link rel=StyleSheet href="/live/the-numbers.css" TYPE="text/css" TITLE="Numbers Standard Style">
+<script type="text/javascript" src="https://www.google.com/jsapi"></script> 
+<script async type="text/javascript">
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-1343128-1']);
+_gaq.push(['_trackPageview']);
+(function() {
+ var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+ ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+ })();
+</script>
+<!-- Begin comScore Tag -->
+<script async>
+var _comscore = _comscore || [];
+_comscore.push({ c1: "2", c2: "9873768" });
+(function() {
+ var s = document.createElement("script"), el = document.getElementsByTagName("script")[0]; s.async = true;
+ s.src = (document.location.protocol == "https:" ? "https://sb" : "http://b") + ".scorecardresearch.com/beacon.js";
+ el.parentNode.insertBefore(s, el);
+ })();
+</script>
+<noscript>
+<img src="http://b.scorecardresearch.com/p?c1=2&c2=9873768&cv=2.0&cj=1" />
+</noscript>
+<!-- End comScore Tag -->
+</head>
+<body>
+<div id="wrap">
+<div id="header">
+<a href="/"><img src="/images/the-numbers-banner.png" alt="The Numbers - Where Data and Movies Meet" width=524 height=67 border=0>&reg;
+<br>&nbsp;&nbsp;&nbsp;&nbsp;Where Data and the Movie Business Meet
+</a>
+</div>
+<div id="header_right" style="background: #663366; width:200px; height: 96px;">
+</div>
+<div id="nav">
+<ul>
+<li><a href="/news">News</a>
+	<ul>
+	<li><a href="/news">Latest News</a></li>
+	<li><a href="/movies/release-schedule">Release Schedule</a></li>
+	</ul>
+</li>
+</li>
+<li><a href="/box-office">Box Office</a>
+	<ul>
+	<li><a href="/daily-box-office-chart">Daily Chart</a></li>
+	<li><a href="/weekend-box-office-chart">Weekend Chart</a></li>
+	<li><a href="/movie/records">Records</a></li>
+	<li><a href="/box-office">Chart Index</a></li>
+	<li><a href="/movies/release-schedule">Release Schedule</a></li>
+	</ul>
+</li>
+<li><a href="/weekly-dvd-sales-chart">Home Video</a>
+	<ul>
+	<li><a href="/weekly-dvd-sales-chart">Weekly DVD Chart</a></li>
+	<li><a href="/weekly-bluray-sales-chart">Weekly Blu-ray Chart</a></li>
+	<li><a href="/weekly-video-sales-chart">Weekly Combined DVD+Blu-ray Chart</a></li>
+	<li><a href="/home-market/dvd-sales/2013">2013 DVD Chart</a></li>
+	<li><a href="/home-market/bluray-sales/2013">2013 Blu-ray Chart</a></li>
+	<li><a href="/home-market/packaged-media-sales/2013">2013 Combined Chart</a></li>
+	<li><a href="/alltime-bluray-sales-chart">All-Time Blu-ray</a></li>
+	<li><a href="/home-market/release-schedule">Release Schedule</a></li>
+	</ul>
+</li>
+<li><a href="/movies">Movies</a>
+	<ul>
+		<li><a href="/movie/budgets">Budgets and Finances</a></li>
+		<li><a href="/movies/franchises">Franchises</a></li>
+		<li><a href="/keywords">Keywords</a></li>
+		<li><a href="/movies">Movie Index</a></li>
+		<li><a href="/movies/release-schedule">Release Schedule</a></li>
+	</ul>
+</li>
+<li><a href="/people">People</a>
+	<ul>
+		<li><a href="/bankability">Bankability</a></li>
+		<li><a href="/people/records">Records</a></li>
+		<li><a href="/people">People Index</a></li>
+	</ul>
+</li>
+<li style="background: #ffcc00;"><a style="background: #ffcc00;" href="/oscars">Oscars</a>
+</li>
+</ul>
+</div>
+<div id="main">
+<script type="text/javascript">
+google.load("visualization", "1", {packages:["corechart","gauge"]});
+google.setOnLoadCallback(drawDailyChart);
+function drawDailyChart() {
+	var data = new google.visualization.DataTable();
+	data.addColumn('date', 'Chart Date');
+	data.addColumn('number', 'Cumulative Box Office');
+	data.addRows([
+				 [new Date(2001,0,15), 860887]				 ]);
+	var options = {
+		vAxis: {minValue: 0, format: '$#,###'},
+		height: 360,
+		width: 720,
+		legend: {position: 'none'},
+				pointSize: 10,
+				hAxis: {format: 'MMM d, y', title: 'Date'}
+	};
+	
+	var chart = new google.visualization.LineChart(document.getElementById('daily_chart_div'));
+	var formatter = new google.visualization.NumberFormat(
+														  {prefix: '$', fractionDigits: 0});
+	formatter.format(data, 1); // Apply formatter to second column
+	chart.draw(data, options);
+	
+	var data2 = google.visualization.arrayToDataTable([
+													 ['Label', 'Value'],
+													 ['Opening', 80],
+													 ]);
+	
+	var options2 = {
+	width: 80, height: 80,
+	redFrom: 0, redTo: 20,
+	yellowFrom:20, yellowTo: 80,
+	greenFrom: 80, greenTo: 100,
+	minorTicks: 5
+	};
+	
+	var chart2 = new google.visualization.Gauge(document.getElementById('opening_chart_div'));
+	chart2.draw(data2, options2);
+	
+	var data3 = google.visualization.arrayToDataTable([
+													  ['Label', 'Value'],
+													  ['Legs', 55]
+													  ]);
+	
+	var options3 = {
+	width: 80, height: 80,
+	redFrom: 0, redTo: 20,
+	yellowFrom:20, yellowTo: 80,
+	greenFrom: 80, greenTo: 100,
+	minorTicks: 5
+	};
+	
+	var chart3 = new google.visualization.Gauge(document.getElementById('legs_chart_div'));
+	chart3.draw(data3, options3);
+
+	var data4 = google.visualization.arrayToDataTable([
+													  ['Label', 'Value'],
+													  ['Readers', 75]
+													  ]);
+	
+	var options4 = {
+	width: 80, height: 80,
+	redFrom: 0, redTo: 20,
+	yellowFrom:20, yellowTo: 80,
+	greenFrom: 80, greenTo: 100,
+	minorTicks: 5
+	};
+	
+	var chart4 = new google.visualization.Gauge(document.getElementById('readers_chart_div'));
+	chart4.draw(data4, options4);
+	
+}
+</script>
+<h1>A Hard Day's Night</h1>
+<div id="col1">
+</div>
+<div id="col2outer">
+<div id="col2mid">
+<table id="movie_finances">
+<tr class="heading">
+<td colspan="3"><b>Theatrical Performance</b></td>
+</tr>
+<tr>
+<td><b>Domestic Box Office</b></td>
+<td class="data">$12,299,668</td><td><a href="#tab=box-office">Details</a></td>
+</tr>
+<tr class="heading"><td colspan=3 class="headed"><a href="#more">Further financial details...</td></tr>
+</table>
+</div>
+<div id="col2side">
+<ul id="social_vertical">
+	<li>
+		<a href="https://twitter.com/share" class="twitter-share-button" data-text="A Hard Day's Night - Box Office Data, DVD and Blu-ray Sales, Movie News, Cast and Crew Information - The Numbers" data-via="MovieNumbers"></a>
+		<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+	</li>
+	<li>
+		<div id="fb-root"></div>
+		<script>(function(d, s, id) {
+		  var js, fjs = d.getElementsByTagName(s)[0];
+		  if (d.getElementById(id)) return;
+		  js = d.createElement(s); js.id = id;
+		  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
+		  fjs.parentNode.insertBefore(js, fjs);
+		}(document, 'script', 'facebook-jssdk'));</script>
+		<div class="fb-like" data-href="http://www.the-numbers.com/movie/Hard-Days-Night-A" data-colorscheme="light" data-layout="button_count" data-action="like" data-show-faces="false" data-send="false"></div>
+	</li>	
+	<li>
+		<!-- Place this tag where you want the +1 button to render -->
+		<g:plusone size="medium"></g:plusone>
+		<!-- Place this render call where appropriate -->
+		<script type="text/javascript">
+		  (function() {
+			var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+			po.src = 'https://apis.google.com/js/plusone.js';
+			var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+		  })();
+		</script>		
+	</li>	
+	<li>
+		<script src="//platform.linkedin.com/in.js" type="text/javascript"></script>
+		<script type="IN/Share" data-counter="right"></script>		
+	</li>
+</ul>
+</div>
+</div>
+<br clear="all">
+<ol id="toc">
+<li><a href="#summary">Summary</a></li>
+<li><a href="#news">News</a></li>
+<li><a href="#box-office">Box Office</a></li>
+<li><a href="#video-sales">Video Sales</a></li>
+<li><a href="#more">Full Financials</a></li>
+<li><a href="#cast-and-crew">Cast & Crew</a></li>
+<li><a href="#trailer">Trailer</a></li>
+<li><a href="#buy">Buy</a></li>
+</ol>
+<div class="content" id="summary">
+<h2>Synopsis</h2><p>Meet the Beatles! Just one month after they exploded onto the U.S. scene with their Ed Sullivan Show appearance, John, Paul, George, and Ringo began working on a project that would bring their revolutionary talent to the big screen. A Hard Day’s Night, in which the bandmates play wily, exuberant versions of themselves,
+captured the astonishing moment when they officially became the singular, irreverent idols of their generation and changed music forever. 
+<h2>Metrics</h2><p>
+<center><table id="movie_ratings"><tr class="heading"><td colspan=2>Rotten Tomatoes</td></tr><tr><td><a href="http://www.rottentomatoes.com/m/beatles_a_hard_days_night/"><img src="/new/layout/rt-certified-fresh-64-64.png" width=64px height=64px></a></td><td><a href="http://www.rottentomatoes.com/m/beatles_a_hard_days_night/"><img src="/new/layout/rt-upright-64-64.png" width=64px height=64px></a></td></tr><tr><td><a href="http://www.rottentomatoes.com/m/beatles_a_hard_days_night/"><b>Critics</b>
+<br>99% - Certified Fresh</td>
+<td>
+<a href="http://www.rottentomatoes.com/m/beatles_a_hard_days_night/"><b>Audience</b>
+<br>90% - Upright</td>
+</tr></table></center>	
+
+<h2>Movie Details</h2>
+<table>
+<tr><td><b>Production&nbsp;Budget:</b></td><td>$560,000</td></tr>
+<tr><td><b>Theatrical&nbsp;Release:</b></td>
+<td>August 11th, 1964 (Wide) by <a href="/market/distributor/Universal">Universal</a><br>February 5th, 1982 (Limited) by <a href="/market/distributor/Universal">Universal</a><br>July 4th, 2014 (Limited) by <a href="/market/distributor/Janus-Films">Janus Films</a></td></tr>
+<tr><td><b><a href="#tab=buy">Video&nbsp;Release:</a></b></td>
+<td>June 24th, 2014 by Criterion</td></tr>
+<tr><td><b>MPAA&nbsp;Rating:</b></td>
+<td><a href="/market/mpaa-rating/G-(US)">G</a></td></tr>
+<tr><td><b>Keywords:</b></td>
+<td><a href="/keyword/Rock-n-Roll">Rock 'n' Roll</a></td></tr>
+<tr><td><b>Source:</b></td><td><a href="/market/source/Original-Screenplay">Original Screenplay</a></td></tr>
+<tr><td><b>Genre:</b></td><td><a href="/market/genre/Comedy">Comedy</a></td></tr>
+<tr><td><b>Production&nbsp;Method:</b></td><td><a href="/market/production-method/Live-Action">Live Action</a></td></tr>
+<tr><td><b>Creative&nbsp;Type:</b></td><td><a href="/market/creative-type/Contemporary-Fiction">Contemporary Fiction</a></td></tr>
+</tr></td></table></div>
+<div class="content" id="news">
+<div id="news">
+<h1><a href="/news/9135">Per Theater Chart: Blacking Out</a></h1>
+
+<P>
+
+<div class="thumbnail">
+<img src="http://www.the-numbers.com/images/movies/opusdata/Code-Black-Thumbnail.jpg" width=101 height=150 alt="Code Black poster">
+</div>
+<P>
+
+There were no films in the $10,000 club on the per theater chart this weekend. The film that came the closest was <A HREF="http://www.the-numbers.com/movie/Transformers-Age-of-Extinction">Transformers: Age of Extinction</A>, which earned an average of $8,753 in more than 4,000 theaters. The best limited release was <A HREF="http://www.the-numbers.com/movie/Code-Black">Code Black</A>, which earned $7,978 in one theater. The best new release was <A HREF="http://www.the-numbers.com/movie/Tammy">Tammy</A> with an average of $6,227 in more than 3,000 theaters. Finally, the best new limited release was <A HREF="http://www.the-numbers.com/movie/Life-Itself">Life Itself</A>, which managed an average of $5,713 in 23 theaters. 
+
+<a href="/news/9135">More...</a>
+<br clear="all"><h1><a href="/news/9130">Limited Releases: The Good Life</a></h1>
+
+<P>
+
+<div class="thumbnail">
+<img src="http://www.the-numbers.com/images/movies/opusdata/Life-Itself-Thumbnail.jpg" width=101 height=149 alt="Life Itself poster">
+</div>
+<P>
+
+It is a busy week with several releases spread over three days. Unfortunately, most movies opening this week are earning weak reviews and many of them have almost no reviews on Rotten Tomatoes. The lack of buzz and the weak critical response will likely prove fatal. Fortunately, there is an exception as <A HREF="http://www.the-numbers.com/movie/Life-Itself">Life Itself</A> is earning amazing reviews. <A HREF="http://www.the-numbers.com/movie/Hard-Days-Night-A">A Hard Day's Night</A> is also worth checking out, as it is getting a 50th anniversary. 
+
+<a href="/news/9130">More...</a>
+<br clear="all"><h1><a href="/news/9110">DVD and Blu-ray Releases for June 24th, 2014</a></h1>
+
+<P>
+
+<div style="float: right; margin: 4px;">
+<iframe src="http://rcm.amazon.com/e/cm?t=thenumbers&o=1&p=8&l=as1&asins=B00IURL19Y&fc1=000000&IS2=1<1=_blank&lc1=0000FF&bc1=FFFFFF&bg1=FFFFFF&f=ifr&nou=1" style="width:120px;height:240px;" scrolling="no" marginwidth="0" marginheight="0" frameborder="0"></iframe>
+</div>
+<P>
+
+There's very little on the home market that stands out. <A HREF="http://www.the-numbers.com/movie/300-Rise-of-an-Empire">300: Rise of an Empire</A> is the biggest movie coming out this week, but it is far from the <A HREF="http://www.rottentomatoes.com/m/300_rise_of_an_empire/" target="_NewWindow">best</A> new release. Unfortunately, there are  not a lot of new releases in competition for Pick of the Week. The <A HREF="http://www.the-numbers.com/movie/Hard-Days-Night-A">A Hard Day's Night</A> <A HREF="http://www.amazon.com/Hard-Night-Criterion-Collection-Blu-ray/dp/B00J2PQZEY?Tag=thenumbers" target="_NewWindow">Criterion Collection Blu-ray</A> is absolutely worth picking up, but there are no new extras for the Blu-ray, so that is a strike against it. <I>Masters of Sex</I>: Season One earned great reviews, but the extras on the <A HREF="http://www.amazon.com/Masters-Sex-Michael-Sheen/dp/B00HI4EGQA?tag=thenumbers" target="_NewWindow">DVD</A> or the <A HREF="http://www.amazon.com/Masters-Sex-Blu-ray-Michael-Sheen/dp/B00HI4EFO8?tag=thenumbers" target="_NewWindow">Blu-ray</A> are only good. <A HREF="http://www.the-numbers.com/people/series/StarTrekTNG.php">Star Trek: The Next Generation</A>: <A HREF="http://www.amazon.com/Star-Trek-Generation-Season-Blu-ray/dp/B00IURL19Y?Tag=thenumbers" target="_NewWindow">Season Six</A> is loaded, but its price is just too high. In the end, I rolled a dice and <A HREF="http://www.the-numbers.com/people/series/StarTrekTNG.php">Star Trek: The Next Generation</A> came out on top, but it really is a close race. 
+
+<a href="/news/9110">More...</a>
+<br clear="all"></div></div>
+<div class="content" id="cast-and-crew">
+<div id="cast">
+<h1>Cast</h1>
+<table cellspacing=0 align="center">
+<tr>
+<td align="right"><b><a href="/person/84490401-John-Lennon">John Lennon</a></b></td>
+<td>&nbsp;&nbsp;</td>
+<td align"left">John</td>
+<tr>
+<td align="right"><b><a href="/person/94740401-Paul-McCartney">Paul McCartney</a></b></td>
+<td>&nbsp;&nbsp;</td>
+<td align"left">Paul </td>
+<tr>
+<td align="right"><b><a href="/person/62480401-George-Harrison">George Harrison</a></b></td>
+<td>&nbsp;&nbsp;</td>
+<td align"left">George</td>
+<tr>
+<td align="right"><b><a href="/person/136320401-Ringo-Starr">Ringo Starr</a></b></td>
+<td>&nbsp;&nbsp;</td>
+<td align"left">Ringo</td>
+<tr>
+<td align="right"><b><a href="/person/836680401-Wilfrid-Brambell">Wilfrid Brambell</a></b></td>
+<td>&nbsp;&nbsp;</td>
+<td align"left">Grandfather</td>
+<tr>
+<td align="right"><b><a href="/person/836690401-Norman-Rossington">Norman Rossington</a></b></td>
+<td>&nbsp;&nbsp;</td>
+<td align"left">Norm</td>
+<tr>
+<td align="right"><b><a href="/person/836700401-John-Junkin">John Junkin</a></b></td>
+<td>&nbsp;&nbsp;</td>
+<td align"left">Shake</td>
+<tr>
+<td align="right"><b><a href="/person/509020401-Victor-Spinetti">Victor Spinetti</a></b></td>
+<td>&nbsp;&nbsp;</td>
+<td align"left">TV Director</td>
+<tr>
+<td align="right"><b><a href="/person/146730401-Richard-Vernon">Richard Vernon</a></b></td>
+<td>&nbsp;&nbsp;</td>
+<td align"left">Man on Train</td>
+<tr>
+<td align="right"><b><a href="/person/836710401-Anna-Quayle">Anna Quayle</a></b></td>
+<td>&nbsp;&nbsp;</td>
+<td align"left">Millie</td>
+<tr>
+<td align="right"><b><a href="/person/836720401-Alison-Seebohm">Alison Seebohm</a></b></td>
+<td>&nbsp;&nbsp;</td>
+<td align"left">Secretary</td>
+<tr>
+<td align="right"><b><a href="/person/836730401-Kenneth-Haigh">Kenneth Haigh</a></b></td>
+<td>&nbsp;&nbsp;</td>
+<td align"left">Simon Marshall</td>
+<tr>
+<td align="right"><b><a href="/person/67070401-Julian-Holloway">Julian Holloway</a></b></td>
+<td>&nbsp;&nbsp;</td>
+<td align"left">Adrian</td>
+<tr>
+<td align="right"><b><a href="/person/836740401-Robin-Ray">Robin Ray</a></b></td>
+<td>&nbsp;&nbsp;</td>
+<td align"left">TV Floor Manager</td>
+<tr>
+<td align="right"><b><a href="/person/836750401-Lionel-Blair">Lionel Blair</a></b></td>
+<td>&nbsp;&nbsp;</td>
+<td align"left">Choreographer</td>
+<tr>
+<td align="right"><b><a href="/person/836760401-David-Janson">David Janson</a></b></td>
+<td>&nbsp;&nbsp;</td>
+<td align"left">Charley</td>
+<tr>
+<td align="right"><b><a href="/person/836770401-Bob-Godfrey">Bob Godfrey</a></b></td>
+<td>&nbsp;&nbsp;</td>
+<td align"left">Bearded Man in Pub</td>
+<tr>
+<td align="right"><b><a href="/person/509040401-John-Bluthal">John Bluthal</a></b></td>
+<td>&nbsp;&nbsp;</td>
+<td align"left">Car Thief</td>
+<tr>
+<td align="right"><b><a href="/person/836780401-Eddie-Malin">Eddie Malin</a></b></td>
+<td>&nbsp;&nbsp;</td>
+<td align"left">Hotel Waiter</td>
+<tr>
+<td align="right"><b><a href="/person/836790401-Deryck-Guyler">Deryck Guyler</a></b></td>
+<td>&nbsp;&nbsp;</td>
+<td align"left">Police Sergeant</td>
+<tr>
+<td align="right"><b><a href="/person/836800401-Michael-Trubshawe">Michael Trubshawe</a></b></td>
+<td>&nbsp;&nbsp;</td>
+<td align"left">Club Manager</td>
+<tr>
+<td align="right"><b><a href="/person/836810401-Pattie-Boyd">Pattie Boyd</a></b></td>
+<td>&nbsp;&nbsp;</td>
+<td align"left">Blonde Schoolgirl on Train</td>
+<tr>
+<td align="right"><b><a href="/person/836820401-Prudence-Bury">Prudence Bury</a></b></td>
+<td>&nbsp;&nbsp;</td>
+<td align"left">Brunette Schoolgirl on Train</td>
+</table>
+</div>
+<div id="cast">
+<h1>Production and Technical Credits</h1>
+<table cellspacing=0 align="center">
+<tr>
+<td align"left">Director</td>
+<td>&nbsp;&nbsp;</td>
+<td align="right"><b><a href="/person/501230401-Richard-Lester">Richard Lester</a></b></td>
+<tr>
+<td align"left">Screenwriter</td>
+<td>&nbsp;&nbsp;</td>
+<td align="right"><b><a href="/person/836830401-Alun-Owen">Alun Owen</a></b></td>
+<tr>
+<td align"left">Producer</td>
+<td>&nbsp;&nbsp;</td>
+<td align="right"><b><a href="/person/509090401-Walter-Shenson">Walter Shenson</a></b></td>
+<tr>
+<td align"left">Editor</td>
+<td>&nbsp;&nbsp;</td>
+<td align="right"><b><a href="/person/836840401-John-Jympson">John Jympson</a></b></td>
+<tr>
+<td align"left">Composer</td>
+<td>&nbsp;&nbsp;</td>
+<td align="right"><b><a href="/person/84490401-John-Lennon">John Lennon</a></b></td>
+<tr>
+<td align"left">Composer</td>
+<td>&nbsp;&nbsp;</td>
+<td align="right"><b><a href="/person/94740401-Paul-McCartney">Paul McCartney</a></b></td>
+<tr>
+<td align"left">Director of Photography</td>
+<td>&nbsp;&nbsp;</td>
+<td align="right"><b><a href="/person/528730401-Taylor-Gilbert">Taylor Gilbert</a></b></td>
+<tr>
+<td align"left">Associate Producer</td>
+<td>&nbsp;&nbsp;</td>
+<td align="right"><b><a href="/person/836850401-Denis-O-Dell">Denis O'Dell</a></b></td>
+<tr>
+<td align"left">Assistant Director</td>
+<td>&nbsp;&nbsp;</td>
+<td align="right"><b><a href="/person/836860401-D-Merriman-John">John D. Merriman</a></b></td>
+<tr>
+<td align"left">Art Director</td>
+<td>&nbsp;&nbsp;</td>
+<td align="right"><b><a href="/person/836870401-Ray-Simm">Ray Simm</a></b></td>
+</table>
+</div>
+</div>
+<div class="content" id="box-office">
+<div id="daily_chart_div" style="width: 720px; height: 360px; align: center;"></div>
+<h2>Daily Box Office Performance</h2>
+<div id="box_office_chart">
+<table>
+<TR><TH>Date</TH><TH>Rank</TH><TH>Gross</TH><TH>%&nbsp;Change</TH><TH>Theaters</TH><TH>Per Theater</TH><TH>Total&nbsp;Gross</TH><TH>Days</TH></TR>
+<tr>
+<td><a href="/box-office-chart/daily/2001/01/15">2001/01/15</a></td>
+<td class="data">44</td>
+<td  class="data">$9,090</td>
+<td>&nbsp;</td>
+<td class="data">31</td>
+<td class="data chart_grey">$293</td>
+<td class="data">&nbsp;&nbsp;$860,887</td>
+<td class="data">13,307</td>
+</tr>
+</table>
+</div>
+<h2>Weekend Box Office Performance</h2>
+<div id="box_office_chart">
+<table>
+<TR><TH>Date</TH><TH>Rank</TH><TH>Gross</TH><TH>%&nbsp;Change</TH><TH>Theaters</TH><TH>Per Theater</TH><TH>Total&nbsp;Gross</TH><TH>Days</TH></TR>
+<tr>
+<td><a href="/box-office-chart/weekend/1982/02/05">1982/02/05</a></td>
+<td class="data">19</td>
+<td  class="data">$56,805</td>
+<td>&nbsp;</td>
+<td class="data">22</td>
+<td class="data chart_grey">$2,582</td>
+<td class="data">&nbsp;&nbsp;$56,805</td>
+<td class="data">6,390</td>
+</tr>
+<tr>
+<td><a href="/box-office-chart/weekend/2000/12/01">2000/12/01</a></td>
+<td class="data chart_down">43</td>
+<td  class="data">$50,445</td>
+<td>&nbsp;</td>
+<td class="data">2</td>
+<td class="data chart_grey">$25,223</td>
+<td class="data">&nbsp;&nbsp;$50,445</td>
+<td class="data">13,264</td>
+</tr>
+<tr>
+<td><a href="/box-office-chart/weekend/2000/12/08">2000/12/08</a></td>
+<td class="data chart_up">29</td>
+<td  class="data">$95,493</td>
+<td class="data chart_up">+89%</td>
+<td class="data">12</td>
+<td class="data chart_grey">$7,958</td>
+<td class="data">&nbsp;&nbsp;$178,161</td>
+<td class="data">13,271</td>
+</tr>
+<tr>
+<td><a href="/box-office-chart/weekend/2000/12/15">2000/12/15</a></td>
+<td class="data chart_down">32</td>
+<td  class="data">$60,992</td>
+<td class="data chart_down">-36%</td>
+<td class="data">18</td>
+<td class="data chart_grey">$3,388</td>
+<td class="data">&nbsp;&nbsp;$277,430</td>
+<td class="data">13,278</td>
+</tr>
+<tr>
+<td><a href="/box-office-chart/weekend/2000/12/22">2000/12/22</a></td>
+<td class="data chart_up">29</td>
+<td  class="data">$115,386</td>
+<td class="data chart_up">+89%</td>
+<td class="data">62</td>
+<td class="data chart_grey">$1,861</td>
+<td class="data">&nbsp;&nbsp;$426,241</td>
+<td class="data">13,285</td>
+</tr>
+<tr>
+<td><a href="/box-office-chart/weekend/2000/12/29">2000/12/29</a></td>
+<td class="data chart_down">38</td>
+<td  class="data">$92,798</td>
+<td class="data chart_down">-20%</td>
+<td class="data">56</td>
+<td class="data chart_grey">$1,657</td>
+<td class="data">&nbsp;&nbsp;$650,450</td>
+<td class="data">13,292</td>
+</tr>
+<tr>
+<td><a href="/box-office-chart/weekend/2001/01/05">2001/01/05</a></td>
+<td class="data chart_down">39</td>
+<td  class="data">$85,006</td>
+<td class="data chart_down">-8%</td>
+<td class="data">63</td>
+<td class="data chart_grey">$1,349</td>
+<td class="data">&nbsp;&nbsp;$775,986</td>
+<td class="data">13,299</td>
+</tr>
+<tr>
+<td><a href="/box-office-chart/weekend/2001/01/12">2001/01/12</a></td>
+<td class="data chart_down">47</td>
+<td  class="data">$51,670</td>
+<td class="data chart_down">-39%</td>
+<td class="data">31</td>
+<td class="data chart_grey">$1,667</td>
+<td class="data">&nbsp;&nbsp;$860,887</td>
+<td class="data">13,306</td>
+</tr>
+<tr>
+<td><a href="/box-office-chart/weekend/2001/01/19">2001/01/19</a></td>
+<td class="data chart_down">48</td>
+<td  class="data">$47,047</td>
+<td class="data chart_down">-9%</td>
+<td class="data">45</td>
+<td class="data chart_grey">$1,045</td>
+<td class="data">&nbsp;&nbsp;$919,921</td>
+<td class="data">13,313</td>
+</tr>
+<tr>
+<td><a href="/box-office-chart/weekend/2001/01/26">2001/01/26</a></td>
+<td class="data chart_down">54</td>
+<td  class="data">$31,150</td>
+<td class="data chart_down">-34%</td>
+<td class="data">41</td>
+<td class="data chart_grey">$760</td>
+<td class="data">&nbsp;&nbsp;$965,351</td>
+<td class="data">13,320</td>
+</tr>
+<tr>
+<td><a href="/box-office-chart/weekend/2001/02/02">2001/02/02</a></td>
+<td class="data chart_down">63</td>
+<td  class="data">$23,051</td>
+<td class="data chart_down">-26%</td>
+<td class="data">27</td>
+<td class="data chart_grey">$854</td>
+<td class="data">&nbsp;&nbsp;$1,000,549</td>
+<td class="data">13,327</td>
+</tr>
+<tr>
+<td><a href="/box-office-chart/weekend/2014/07/04">2014/07/04</a></td>
+<td class="data chart_down">26</td>
+<td  class="data">$220,542</td>
+<td>&nbsp;</td>
+<td class="data">102</td>
+<td class="data chart_grey">$2,162</td>
+<td class="data">&nbsp;&nbsp;$1,221,091</td>
+<td class="data">18,227</td>
+</tr>
+<tr>
+<td><a href="/box-office-chart/weekend/2014/07/11">2014/07/11</a></td>
+<td class="data chart_down">39</td>
+<td  class="data">$65,488</td>
+<td class="data chart_down">-70%</td>
+<td class="data">56</td>
+<td class="data chart_grey">$1,169</td>
+<td class="data">&nbsp;&nbsp;$1,428,055</td>
+<td class="data">18,234</td>
+</tr>
+<tr>
+<td><a href="/box-office-chart/weekend/2014/07/18">2014/07/18</a></td>
+<td class="data chart_down">45</td>
+<td  class="data">$34,498</td>
+<td class="data chart_down">-47%</td>
+<td class="data">29</td>
+<td class="data chart_grey">$1,190</td>
+<td class="data">&nbsp;&nbsp;$515,004</td>
+<td class="data">18,241</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="content" id="video-sales">
+		<h2>Weekly US Blu-ray Sales</h2>
+		<div id="box_office_chart">
+		<table>
+		<tr><th>Date</th><th>Rank</th><th>Units this Week</th><th>% Change</th><th>Total Units</th><th>Spending this Week</th><th>Total Spending</th><th>Weeks in Release</th></tr>
+		<tr><td class="data"><a href="/home-market/bluray-sales-chart/2014/06/29">6/29/2014</a></td><td class="data">15</td><td class="data">9,309</td><td>&nbsp;</td><td class="data">9,309</td><td class="data">$233,940</td><td class="data">$233,940</td><td class="data">1</td></tr>
+</table>
+</div>
+</div>
+<div class="content" id="trailer">
+</div>
+
+<div class="content" id="buy">
+	<div id="movie_ratings">
+	<center>
+	<table>
+	<tr>
+		<td>
+	<iframe src="http://rcm-na.amazon-adsystem.com/e/cm?t=thenumbers&o=1&p=8&l=as1&asins=B00J2PQZEY&ref=tf_til&fc1=000000&IS2=1&lt1=_blank&m=amazon&lc1=0000FF&bc1=FFFFFF&bg1=FFFFFF&f=ifr" style="width:120px;height:240px;" scrolling="no" marginwidth="0" marginheight="0" frameborder="0"></iframe>
+	</td>
+		<td>
+	<iframe src="http://rcm-na.amazon-adsystem.com/e/cm?t=thenumbers&o=1&p=8&l=as1&asins=B00J2PQYYK&ref=tf_til&fc1=000000&IS2=1&lt1=_blank&m=amazon&lc1=0000FF&bc1=FFFFFF&bg1=FFFFFF&f=ifr" style="width:120px;height:240px;" scrolling="no" marginwidth="0" marginheight="0" frameborder="0"></iframe>
+	</td>
+	</tr>
+</table>
+</center>
+</div>
+</div>
+<div class="content" id="more">
+<p>
+Full financial estimates for this film, including domestic and international box office, video sales, video rentals, TV and ancillary revenue
+are available through our research services. For more information, please contact us at <a href="mailto:research@the-numbers.com">research@the-numbers.com</a>.</div>
+<script src="/live/js/activatables.js" type="text/javascript"></script>
+<script>
+activatables('tab', ['summary', 'news', 'cast-and-crew', 'box-office', 'video-sales', 'trailer', 'buy', 'more']);
+</script>
+</div>
+<div id="sidebar">
+<h1>Trending Pages</h1>
+<ul>
+<li><a href="/bankability"<span style="color: #008255">Bankability Index</span></a></li>
+<li><a href="/daily-box-office-chart">Daily Box Office</a></li>
+<li><a href="/weekend-box-office-chart">Weekend Box Office</a></li>
+<li><a href="/weekly-dvd-sales-chart">Weekly DVD Sales</a></li>
+<li><a href="/weekly-bluray-sales-chart">Weekly Blu-ray Sales</a></li>
+<li><a href="/home-market/dvd-sales/2013">Top-selling DVDs of 2013</a></li>
+<li><a href="/home-market/bluray-sales/2013">Top-selling Blu-rays of 2013</a></li>
+<li><a href="/movies/release-schedule">Theatrical Release Schedule</a></li>
+<li><a href="/movie/records/">Theatrical Records</a></li>
+<li><a href="/movie/budgets/">Movie Budgets</a></li>
+<li><a href="/movies/">Movie Index</a></li>
+<li><a href="/people/">People Index</a></li>
+<li><a href="/market/">Theatrical Market</a></li>
+<li><a href="/news">Latest News</a></li>
+</ul>
+<center>
+<h1>Search</h1>
+<script type="text/javascript" src="http://www.google.com/jsapi"></script>
+<script type="text/javascript">
+google.load('search', '1');
+google.setOnLoadCallback(function() {
+						 google.search.CustomSearchControl.attachAutoCompletion(
+																				'partner-pub-0505053220181058:6106009327+qptype:1',
+																				document.getElementById('q'),
+																				'cse-search-box');
+						 });
+</script>
+<form action="/search/" id="cse-search-box">
+<div>
+<input type="hidden" name="cx" value="partner-pub-0505053220181058:6106009327" />
+<input type="hidden" name="cof" value="FORID:9" />
+<input type="hidden" name="ie" value="UTF-8" />
+<input type="text" name="q" id="q" autocomplete="off" size="30" />
+</div>
+</form>
+<script type="text/javascript" src="http://www.google.com/cse/brand?form=cse-search-box&lang=en"></script>
+<br><br>
+</center>
+<h1>Trending Movies</h1>
+<ul>
+<li><a href="/movie/Guardians-of-the-Galaxy#tab=summary">Guardians of the Galaxy</a></li>
+<li><a href="/movie/Expendables-3-The#tab=summary">The Expendables 3</a></li>
+<li><a href="/movie/Frozen-(2013)#tab=summary">Frozen</a></li>
+<li><a href="/movie/Teenage-Mutant-Ninja-Turtles-(2014)#tab=summary">Teenage Mutant Ninja Turtles</a></li>
+<li><a href="/movie/No-Good-Deed-(2013)#tab=summary">No Good Deed</a></li>
+<li><a href="/movie/Captain-America-The-Winter-Soldier#tab=summary">Captain America: The Winter Soldier</a></li>
+<li><a href="/movie/Lucy#tab=summary">Lucy</a></li>
+<li><a href="/movie/Edge-of-Tomorrow#tab=summary">Edge of Tomorrow</a></li>
+<li><a href="/movie/Avatar#tab=summary">Avatar</a></li>
+<li><a href="/movie/Transformers-Age-of-Extinction#tab=summary">Transformers: Age of Extinction</a></li>
+</ul>
+<h1>Trending People</h1>
+<ul>
+<li><a href="/person/670401-L-Jackson-Samuel">Samuel L. Jackson</a></li>
+<li><a href="/person/83610401-Christopher-Lee">Christopher Lee</a></li>
+<li><a href="/person/150560401-Frank-Welker">Frank Welker</a></li>
+<li><a href="/person/650401-Tom-Hanks">Tom Hanks</a></li>
+<li><a href="/person/540401-Tom-Cruise">Tom Cruise</a></li>
+<li><a href="/person/135950401-Sylvester-Stallone">Sylvester Stallone</a></li>
+<li><a href="/person/128750401-Arnold-Schwarzenegger">Arnold Schwarzenegger</a></li>
+<li><a href="/person/83860401-Stan-Lee">Stan Lee</a></li>
+<li><a href="/person/149660401-Naomi-Watts">Naomi Watts</a></li>
+<li><a href="/person/8410401-Amitabh-Bachchan">Amitabh Bachchan</a></li>
+</ul>
+</div>
+<div id="footer">
+<B>&copy; 1997-2014 <a href="http://www.nashinfoservices.com">Nash Information Services, LLC</a>. All rights reserved.</B><BR>
+<b>The Numbers is a registered trademark of Nash Information Services, LLC</b><br>
+<B>For comments or corrections, please email us at <A HREF="mailto:corrections@the-numbers.com">corrections@the-numbers.com</A></B>
+<p>Rotten Tomatoes and the Certified Fresh Logo are trademarks or registered trademarks of Flixster, Inc. in the United States and other countries.
+<BR><BR>
+<A HREF="">Privacy Policy</A> - <A HREF="">About Us</A> - <A HREF="">Glossary</A>
+</div>
+</body>
+</html>

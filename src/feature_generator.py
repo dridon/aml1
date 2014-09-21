@@ -3,18 +3,8 @@ import time
 import numpy as np 
 import scipy.stats.mstats as ms
 
-data = [("Hot Season", "Budget", "Director RT Critical Average", "Director RT Public Average", "Director IMDB Average", "Producer RT Critical Average", "Producer RT Public Average", "Producer IMDB Average", "Screenwriter RT Critical Average", "Screenwriter RT Public Average", "Screenwriter IMDB Average","Actors RT Critical Average", "Actors RT Public Average", "Actors IMDB Average", "Gross")]
 
-actorsf = open("actors.csv", "r")
-directorsf = open("directors.csv", "r")
-producersf = open("producers.csv", "r")
-swriterf = open("screenwriter.csv", "r")
 raw_dataf = open("full_raw_features.csv", "r")
-
-actorsc = csv.reader(actorsf)
-directorsc = csv.reader(directorsf)
-producersc = csv.reader(producersf)
-swriterc = csv.reader(swriterf)
 raw_datac = csv.reader(raw_dataf)
 
 def seek(f, csv, line):
@@ -41,18 +31,16 @@ def hot_season(date):
 def keys(s):
   return s.split("|")
 
-def load_key(k, d, i, l): 
+def load_key(k, d): 
   if not k in d: 
-    d[k] = [i]*l 
+    d[k] = [[], [], []] 
 
 def add_ratings(d, ks, rtc_rating, rta_rating, imdb_rating): 
   for k in ks: 
-    load_key(k, d, [], 3) 
+    load_key(k, d) 
     d[k][0].append(rtc_rating)
     d[k][1].append(rta_rating)
     d[k][2].append(imdb_rating)
-
-    print "imdb :" + d[k][0]
 
 def percent2float(s): 
   return float(s.strip().strip('%'))
@@ -80,25 +68,6 @@ def people_dicts(raw_data):
     add_ratings(ad, akeys, rtc_rating, rta_rating, imdb_rating) 
   return (dd, pd, sd, ad)
 
-# def person_exists(p, s):
-#   return p in s.split("|")
-
-# def person_ratings(p, d, raw_data, ri):
-#   load_key(p, d, [], 3)
-
-#   for k in raw_data.iterkeys():
-#     if person_exists(p, raw_data[k][ri]):
-#       d[p][0].append(raw_data[k][6])
-#       d[p][1].append(raw_data[k][8])
-#       d[p][2].append(raw_data[k][9])
-
-# def all_person_ratings(s, raw_data, i):
-#   d = {} 
-#   for p in s: 
-#     p = p[0]
-#     person_ratings(p, d, raw_data, i)
-#   return d
-
 next(raw_datac)
 raw_data = csv_dict(raw_datac, raw_dataf)
 directord, producerd, swriterd, actord = people_dicts(raw_data)
@@ -107,7 +76,7 @@ def ratings(d, ks, rating_index):
   avgs = [] 
   for k in ks:
     v =  d[k][rating_index]
-    avgs.append(np.average(v))
+    avgs.append(ms.gmean(v))
   return np.average(avgs)
 
 def get_data(raw_data, directord, producerd, swriterd, actord):
@@ -139,5 +108,6 @@ def get_data(raw_data, directord, producerd, swriterd, actord):
   return data 
 
 data = get_data(raw_data, directord, producerd, swriterd, actord) 
-# data_writer = csv.writer(open("feature_data.csv", "w+"))
-# data_writer.writerows(data)
+dataw= [("Hot Season", "Budget", "Director RT Critical Average", "Director RT Public Average", "Director IMDB Average", "Producer RT Critical Average", "Producer RT Public Average", "Producer IMDB Average", "Screenwriter RT Critical Average", "Screenwriter RT Public Average", "Screenwriter IMDB Average","Actors RT Critical Average", "Actors RT Public Average", "Actors IMDB Average", "Gross")] + data
+data_writer = csv.writer(open("feature_data.csv", "w+"))
+data_writer.writerows(dataw)

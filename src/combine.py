@@ -7,7 +7,7 @@ def seek(f, csv, line):
 
 moviesf =  open("filtered_data.csv", "r")
 actorsf =  open("imdb_movie_actor.csv", "r")
-tcrewf  =  open("technicalCrew.csv", "r")
+tcrewf  =  open("imdb_movie_crew.csv", "r")
 tomatorf = open("movie_ratings.csv", "r")
 imdbrf = open("imdb_movie_rating.csv", "r")
 
@@ -102,8 +102,6 @@ for k in movied.iterkeys():
       "|".join(swriterd[k]),
       "|".join(actorsd[k]),
     ))
-    if k.strip() == "Moneyball": 
-      print "|".join(actorsd[k])
 print i
 
 actors_writer = csv.writer(open("actors.csv", "w+"))

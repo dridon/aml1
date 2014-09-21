@@ -6,7 +6,7 @@ def seek(f, csv, line):
         next(csv)
 
 moviesf =  open("filtered_data.csv", "r")
-actorsf =  open("actor_data.csv", "r")
+actorsf =  open("imdb_movie_actor.csv", "r")
 tcrewf  =  open("technicalCrew.csv", "r")
 tomatorf = open("movie_ratings.csv", "r")
 imdbrf = open("imdb_movie_rating.csv", "r")
@@ -81,10 +81,11 @@ def key_in_all(k, ds):
   return in_all
 
 raw_data = [("Movie Name", "Release Date", "Genre", "Budget", "Gross", "RT Critic Label", "RT Critic Rating", "RT Audience Label", "RT Audience Rating", "IMDB Rating", "Directors", "Producers", "Sreenwriters", "Actors")]
-data = [("Movie Name", "Hot Season", "Budget", "Director RT Average", "Director RT Public Average", "Director IMDB Average", "Producer RT Critical Average", "Producer RT Public Average", "Producer IMDB Average", "Screenwriter RT Critical Average", "Screenwriter RT Public Average", "Screenwriter IMDB Average","Actors RT Critical Average", "Actors RT Public Average", "Actors IMDB Average", "Gross")]
 
+i = 0 
 for k in movied.iterkeys(): 
   if key_in_all(k, ds):
+    i = i + 1
     raw_data.append((
       movied[k][0], 
       movied[k][1], 
@@ -101,17 +102,18 @@ for k in movied.iterkeys():
       "|".join(swriterd[k]),
       "|".join(actorsd[k]),
     ))
+    if k.strip() == "Moneyball": 
+      print "|".join(actorsd[k])
+print i
 
 actors_writer = csv.writer(open("actors.csv", "w+"))
 directors_writer = csv.writer(open("directors.csv", "w+"))
 producers_writer = csv.writer(open("producers.csv", "w+"))
 screenwriter_writer = csv.writer(open("screenwriter.csv", "w+"))
-# raw_writer = csv.writer(open("full_raw_features.csv", "w+"))
-# data_writer = csv.writer(open("feature_data.csv", "w+"))
+raw_writer = csv.writer(open("full_raw_features.csv", "w+"))
 
 actors_writer.writerows(actors) 
 directors_writer.writerows(directors)
 producers_writer.writerows(producers)
 screenwriter_writer.writerows(swriter)
-# raw_writer.writerows(raw_data)
-# data_writer.writerows(data)
+raw_writer.writerows(raw_data)

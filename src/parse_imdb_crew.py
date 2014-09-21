@@ -32,7 +32,7 @@ for row in data_reader:
                 data_writer.writerows(output)
         writers=top_div.xpath('*[@itemprop="creator"]/a/span/text()')
         for i in range(0,len(writers)):
-                output = [(movie_title,"Writer",writers[i])]
+                output = [(movie_title,"Screenwriter",writers[i])]
                 data_writer.writerows(output)
                 
         movie_details=html_page.xpath('//*[@id="titleDetails"]')

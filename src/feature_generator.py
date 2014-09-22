@@ -94,6 +94,10 @@ def get_data(raw_data, directord, producerd, swriterd, actord):
     skeys = keys(m[12])
     akeys = keys(m[13])
 
+    revenue = float(m[4])
+    if revenue <= 0 : 
+      revenue = 1
+
     data.append((
       hot_season(m[1].strip()), 
       m[3],
@@ -109,7 +113,7 @@ def get_data(raw_data, directord, producerd, swriterd, actord):
       ratings(actord, akeys, 0),
       ratings(actord, akeys, 1),
       ratings(actord, akeys, 2),
-      m[4]
+      revenue
       ))
   return data 
 

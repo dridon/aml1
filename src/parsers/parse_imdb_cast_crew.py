@@ -7,7 +7,7 @@ import unicodecsv as csv
 import re
 
 path = "../html//imdb_pages//"
-data_reader = csv.reader(open("../data/revenue_only_data.csv"), delimiter=',')
+data_reader = csv.reader(open("../data/movies/revenue_only_data.csv"), delimiter=',')
 data_writer1 = csv.writer(open("../data/people/imdb_movie_crew.csv", "ab"))
 data_writer2 = csv.writer(open("../data/people/imdb_movie_actor.csv", "ab"))
 output = [("Movie Name","Type","Value")]

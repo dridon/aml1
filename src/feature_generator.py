@@ -2,6 +2,7 @@ import unicodecsv as csv
 import time
 import numpy as np 
 import scipy.stats.mstats as ms
+import math
 
 raw_dataf = open("data/features/full_raw_features.csv", "r")
 raw_datac = csv.reader(raw_dataf)
@@ -95,12 +96,15 @@ def get_data(raw_data, directord, producerd, swriterd, actord):
     akeys = keys(m[13])
 
     revenue = float(m[4])
+    budget = float(m[3])
     if revenue <= 0 : 
       revenue = 1
+    if budget <= 0: 
+      budget = 1 
 
     data.append((
       hot_season(m[1].strip()), 
-      m[3],
+      math.log(budget, 10),
       ratings(directord, dkeys, 0),
       ratings(directord, dkeys, 1),
       ratings(directord, dkeys, 2),
@@ -113,7 +117,7 @@ def get_data(raw_data, directord, producerd, swriterd, actord):
       ratings(actord, akeys, 0),
       ratings(actord, akeys, 1),
       ratings(actord, akeys, 2),
-      revenue
+      math.log(revenue, 10)
       ))
   return data 
 
@@ -131,7 +135,7 @@ swriter_writer = csv.writer(open("data/features/swriter_data.csv", "w+"))
 actor_writer = csv.writer(open("data/features/actor_data.csv", "w+"))
 data_writer = csv.writer(open("data/features/feature_data.csv", "w+"))
 
-directors_writer.writerows(directors)
+director_writer.writerows(directors)
 producer_writer.writerows(producers)
 swriter_writer.writerows(swriters)
 actor_writer.writerows(actors)

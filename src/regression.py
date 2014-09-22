@@ -18,6 +18,13 @@ def data2matrx(data):
     a.append(list(d))
   return np.matrix(a)
 
+def append_ones(m):
+  p,q = m.shape
+  a = np.zeros((p, q+1))
+  a[:,:-1] = m 
+  a[:,-1:] = np.ones((p, 1))
+  return np.matrix(a)
+
 def regression_weights(x, y):
   return (x.T*x).I*x.T*y
 
@@ -26,7 +33,7 @@ def predict(x, w):
 
 def lse_error(x, y, w): 
   e1 = y - x*w 
-  return e1.T*e
+  return e1.T*e1
 
 def mse_error(x, y, w):
   return lse_error(x, y, w)/y.size
@@ -36,5 +43,8 @@ datac = csv.reader(dataf)
 next(datac)
 m = csv2matrix(datac) 
 x = m.T[:-1].T
+x = append_ones(x)
 y =  m.T[-1:].T
 w = regression_weights(x,y)
+lse = lse_error(x, y, w) 
+mse = mse_error(x, y, w)

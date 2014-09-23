@@ -17,25 +17,34 @@ def merge(l):
   return list(chain.from_iterable(l))
 
 def train_regression(training): 
+  # get data
   t = fl.list2ordered_dict(training)
   data,ds = fl.get_data2(t)
+
+  # generate regression
   m = rg.iter2matrix(data)
   x = m.T[:-1].T
   x = rg.append_ones(x)
   y =  m.T[-1:].T
 
   w = rg.regression_weights(x,y)
+
+  # get training error
   terror = rg.mse_error(x,y,w)
 
   return (w, ds, terror)
 
 def test_regression(w, test, ds): 
+  # get data
   data = fl.format_inputs(test, ds)
+
+  # predict results
   m = rg.iter2matrix(data)
   x = m.T[:-1].T
   x = rg.append_ones(x)
   y =  m.T[-1:].T
 
+  # test error
   return rg.mse_error(x, y, w)
 
 def k_random_folds(l, k):

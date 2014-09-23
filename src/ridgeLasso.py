@@ -61,21 +61,36 @@ wRidge = ( (xNC.T)*(xNC) + (lmb * np.identity(xNC.shape[1])) )*xNC.T*y
 #print w
 '''
 
-#Ridge Regression (SciKit) - utilizes cross-validation to choose a lambda value
+#Ridge Regression (SciKit)
 xNC = m.T[:-1].T #i.e. x without the constant field
-clf = linear_model.Ridge (alpha = .5)
-clf.fit (xNC, y) 
+ridgeReg = linear_model.Ridge ()
+ridgeReg.fit (xNC, y) 
 wRidge = w
 
 for i in xrange(0,15):
     if i == 14:
-        wRidge[i] = clf.intercept_
+        wRidge[i] = ridgeReg.intercept_
     else:
-        wRidge[i] = clf.coef_[(0,i)]
+        wRidge[i] = ridgeReg.coef_[(0,i)]
 #print wRidge
 
 ridgeLSE = lse_error(x, y, wRidge) 
 ridgeMSE = mse_error(x, y, wRidge) 
+
+#Lasso Regularization (SciKit)
+lassoReg = linear_model.Lasso ()
+lassoReg.fit (xNC, y) 
+wLasso = w
+
+for i in xrange(0,15):
+    if i == 14:
+        wLasso[i] = lassoReg.intercept_
+    else:
+        wLasso[i] = lassoReg.coef_[i]
+#print wRidge
+
+lassoLSE = lse_error(x, y, wLasso) 
+lassoMSE = mse_error(x, y, wLasso) 
 
 print "Normal Reg:"
 print lse
@@ -83,3 +98,35 @@ print mse
 print "Ridge Reg:"
 print ridgeLSE
 print ridgeMSE
+print "Lasso Reg:"
+print lassoLSE
+print lassoMSE
+
+#Returns weight vector for ridge regression
+def ridgeReg(x, y):#pass X that doesn't have 1s appended
+        ridgeReg = linear_model.Ridge ()
+	ridgeReg.fit (x, y) 
+	wRidge = w
+
+	for i in xrange(0,15):
+	    if i == 14:
+		wRidge[i] = ridgeReg.intercept_
+	    else:
+		wRidge[i] = ridgeReg.coef_[(0,i)]
+        return wRidge
+
+#Returns weight vector for lasso regularization
+def lassoReg(x, y):#pass X that doesn't have 1s appended
+	lassoReg = linear_model.Lasso ()
+	lassoReg.fit (xNC, y) 
+	wLasso = w
+
+	for i in xrange(0,15):
+	    if i == 14:
+		wLasso[i] = lassoReg.intercept_
+	    else:
+		wLasso[i] = lassoReg.coef_[i]
+        return wLasso
+
+ridgeReg(xNC,y)
+lassoReg(xNC,y)

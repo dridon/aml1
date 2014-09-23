@@ -2,6 +2,7 @@ import time
 import numpy as np 
 import scipy.stats.mstats as ms
 import math
+from collections import OrderedDict 
 
 def seek(f, csv, line):
     f.seek(0)
@@ -14,6 +15,12 @@ def csv_dict(csv, f):
     d[row[0].strip()] = row 
 
   seek(f, csv, 1)
+  return d 
+
+def list2ordered_dict(l): 
+  d = OrderedDict()
+  for row in l:
+    d[row[0].strip()] = row 
   return d 
 
 def hot_season(date): 
@@ -74,9 +81,36 @@ def dict2list(d):
 def ratings(d, ks, rating_index):
   avgs = [] 
   for k in ks:
-    v =  d[k][rating_index]
-    avgs.append(ms.gmean(v))
+    if not k in d:
+      if rating_index < 2: 
+        avgs.append(50.0)
+      else: 
+        avgs.append(5.0)
+    else: 
+      v = d[k][rating_index]
+      avgs.append(ms.gmean(v))
   return np.average(avgs)
+
+# def rating(d, k, rating_indx): 
+#   return ms.gmean(d[k][rating_index])
+
+# def rt_critic_rating(d, k):
+#   r = 50.0
+#   if k in d:
+#     r = rating(d, k, 0)
+#   return r
+
+# def rt_audience_rating(d, k):
+#   r = 50.0
+#   if k in d:
+#     r = rating(d, k, 1)
+#   return r
+
+# def rt_imdb_rating(d, k):
+#   r = 5.0
+#   if k in d:
+#     r = rating(d, k, 2)
+#   return r
 
 def get_data(raw_data, directord, producerd, swriterd, actord):
   data = [] 
@@ -112,3 +146,44 @@ def get_data(raw_data, directord, producerd, swriterd, actord):
       math.log(revenue, 10)
       ))
   return data 
+
+def get_data2(raw_data):
+  t = people_dicts(raw_data)
+  directord, producerd, swriterd, actord = t 
+  return (get_data(raw_data, directord, producerd, swriterd, actord), t) 
+    
+
+def format_input(m, ds): 
+  directord, producerd, swriterd, actord = ds 
+  dkeys = keys(m[10])
+  pkeys = keys(m[11])
+  skeys = keys(m[12])
+  akeys = keys(m[13])
+
+  revenue = float(m[4])
+  budget = float(m[3])
+  if revenue <= 0 : 
+    revenue = 1
+  if budget <= 0: 
+    budget = 1 
+
+  return [
+      hot_season(m[1].strip()), 
+      math.log(budget, 10),
+      ratings(directord, dkeys, 0),
+      ratings(directord, dkeys, 1),
+      ratings(directord, dkeys, 2),
+      ratings(producerd, pkeys, 0),
+      ratings(producerd, pkeys, 1),
+      ratings(producerd, pkeys, 2),
+      ratings(swriterd, skeys, 0),
+      ratings(swriterd, skeys, 1),
+      ratings(swriterd, skeys, 2),
+      ratings(actord, akeys, 0),
+      ratings(actord, akeys, 1),
+      ratings(actord, akeys, 2),
+      math.log(revenue, 10)
+      ]
+
+def format_inputs(ms, ds): 
+  return [format_input(m, ds) for m in ms]

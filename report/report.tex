@@ -463,24 +463,123 @@ online movie databases.
 \section{Related Work}
 
 \section{Dataset Description}
+The data set we use to train should be viewed in two parts. The first is the raw data set that 
+is generated from mining, parsing, filtering and concatenation that is discussed further
+below. The second is the formatted movie set along the actor, director, studio and screenwriter dictionaries. 
+
+The formatted movie set contains a data point for each movie in the raw set. For each movie we present a boolean 
+indicating if they were released during a "hot season". We also present a measure of ratings
+by critics and audiences for the directors, studios, screen writers and main actors of the movie. Lastly, 
+we have the budget of the movie and the target value, gross revenue for a movie. The dictionaries for 
+the cast and crew show their average ratings over all their movies and are used for prediction.
 
 \section{Methods}
-
-\subsection{Data Collection}
-
-\subsection{Feature Selection}
+Our methodology is described in three main steps. First we mine our data from 
+two major movie sites and filter it. Then we apply four different regression algorithms 
+with cross validation to get initial estimates on errors. Then we apply a set of experiments 
+varying parameters in order to draw insights of our data. 
 
 \subsection{Libraries}
+\begin{table}[h]
+\caption{Python Libraries Used In Study}
+\label{table:pylibs}
+\begin{tabular}{l|l}
+Library          & Usage \\
+\hline
+\\
+Beautiful Soup 4\cite{beautifulsoup} & parsing HTML pages \\
+unicodecsv\cite{unicodecsv}       & drop-in replacement for csv with unicode support \\
+lxml\cite{lxml}             & xml parser for poorly formatted pages \\
+numpy\cite{numpy}           & matrix operations\\
+scipy\cite{scipy}            & extended operations such as geometric mean \\
+scikit-learn\cite{scikit-learn}     & implementations of ridge and lasso regression \\ 
+\end{tabular}
+\end{table}
+
+A number of libraries were used in our implementations. We describe them briefly in \ref{table:pylibs}: 
+
+\subsection{Data Collection}
+We extracted our data from two major movie sites: the-numbers \cite{thenumbers} and IMDB\cite{imdb}.
+The first is a collection movie information with budgets, revenues, cast, crew with all movies 
+indexed but has incomplete information for a large number of movies. The second one is a large site and 
+community but has no simple movie index to parse data through. 
+
+We use the first to extract a list of movies ~20,000 and 
+filter the ones that have values for Budgets, Release Dates and 
+Revenues, Critic Label/Rating and Audience Label/Rating
+(both ratings are from Rotten Tomatoes\cite{rtomato}). 
+This gives us ~4,000 movies. We then use the movie names 
+collected from the-numbers to search on imdb for the main cast 
+and crew of the movie alongside the imdb audience rating. We then 
+take the union of all the movies with data points for all the 
+columns from the-numbers with the imdb data to get our raw
+feature set. This raw set has a size of ~3,300 movies. 
+
+\subsection{Feature Selection}
+Release Dates and Cast/Crew names are poor features for only 
+3,300 examples. Considering there are thousands of individuals amongst
+all considered people, we would end up having to estimate 
+thousands of values with very little data if we go with something 
+along the lines of Naive Bayes. 
+
+We thus create a rating function for all personnel involved in a movie. 
+For each director, producer, screen writer and actor, we create a mapping
+for the person to the geometric mean of the ratings of all the movies that they 
+had significant involvement with. Then for every movie we take the set of actors
+and take the average of the mean ratings for all actors involved in the movie. This
+gives us a measure on the rating of the movie for the set of actors involved. We 
+repeat this for the directors, producers and screenwriters of the movie. We produce 
+a rating per person for the "Critical" Rating from Rotten Tomatoes, the "Audience" 
+Rating from Rotten Tomatoes and the IMDB Rating. Thus, we have, for each movie, 
+3 measures for each: the set of directors, set of actors, set of producers and 
+the set of screen writers giving us a total of 12 features. 
+
+We then label the summer months between May and August (inclusive) and the 
+holiday season of November and December together to be the 6 months giving
+us the "hot season". We then convert the Release Dates to indiciate a 1 
+for being released during the hot season and 0 otherwise. 
+
+Lastly, since movie budgets and revenues can range from thousands
+to hundreds of millions, we take the base 10 logarithms of each to
+compress the possible inputs and outputs. For some cases we had a 
+few cases (< 50) where there were \$0 revenues. For these we used a 
+revenue of \$1, a small increment considering the rest are many orders
+of magnitudes higher, that helps smoothen out the transformation.
+
+We are thus left with 14 features and a target value all in real numbers making 
+regression an optimal choice
 
 \subsection{Algorithms}
+We investigated four regression algorithms in our study: 
+Standard Linear Regress, Gradient Descent, Ride Regression and 
+Lasso Regression. We apply a standard k-fold cross validation 
+scheme in order to generate estimates of true errors.
 
 \subsubsection{Standard Linear Regression}
+We apply the standard form of linear regression with the least-squared error 
+closed form. We initially investigate a 10-fold validation and present the results
+for each of the test set along with the mean squared error. We then 
+range k from 10 to 33, bounding the size of the test set below by atleast 100 movies, 
+and present the mean squared error for each k. 
 
 \subsubsection{Gradient Descent}
+We apply the typical gradient descent using a step size of ------??--------- and 
+max iterations of ---------??------------. We repeat the 10-fold validation and the 
+k-variation from linear regression for gradient descent. We also vary the step size
+alpha from ===============????=============== to ============????=======
+and similarly range iterations from ===========????-------- to =========??========.
 
 \subsubsection{Ridge and Lasso}
+We apply the ridge and lasso from the scikit-learn library. We repeat the experiments
+done for standard regression on ridge and lasso and present their results. 
 
 \subsubsection{Cross Validation}
+Since we rely on the average ratings for the cast on crew over all their movies to generate
+the measure for their respective set on the movies, we need to take care in creating the mappings
+that gives us the average rating for a given person. That is, we regenerate the feature set for each
+k fold validation in order to not pollute the input. In the case that an actor, director, producer or 
+screen writer is not present in a mapping, we simply assing them a 50\% rating for rotten tomato and
+5.0 for imdb. That is we do not assume any information for missing cases. 
 
 % add how we messed with different parameters and stuff here 
 
@@ -628,6 +727,22 @@ http://www.the-numbers.com/movie/budgets/
 
 \bibitem{numbersbank}
 One two three
+
+\bibitem{thenumbers}
+asdasd
+
+\bibitem{imdb}
+lalala
+
+\bibitem{rtomato}
+dododo
+
+\bibitem{beautifulsoup}
+\bibitem{unicodecsv}
+\bibitem{lxml}
+\bibitem{numpy}
+\bibitem{scipy}
+\bibitem{scikit-learn}
 
 \bibitem{kopka}
 H.~Kopka and P.~W. Daly, \emph{A Guide to \LaTeX}, 3rd~ed.\hskip 1em plus

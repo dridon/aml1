@@ -50,6 +50,7 @@ def train_grad_descent(training, params):
 
   init_weight = np.ones((x.shape[1],1))
   w = gd.grad_descent(x,y,init_weight,params["alpha"],params["iterations"])
+
   # get training error
   terror = rg.mse_error(x,y,w)
 
@@ -122,8 +123,7 @@ def k_fold_cvalidation(l, k, trainer, tester, params={}):
     terrors.append(terror)
     errors.append(tester(predictor, test, formatters))
 
-  return (errors, terror)
+  return (errors, terrors)
 
 def mean_error(errors): 
   return np.average([float(a) for a in errors])
-

@@ -1,21 +1,14 @@
 import numpy as np 
 import scipy as sp 
-import unicodecsv as csv 
 import math 
 
-def csv2matrix(csv):
+def iter2matrix(it):
   a = [] 
-  for row in csv: 
+  for row in it: 
     l = [] 
     for c in row: 
       l.append(float(c))
     a.append(l)
-  return np.matrix(a)
-
-def data2matrx(data): 
-  a = [] 
-  for d in data: 
-    a.append(list(d))
   return np.matrix(a)
 
 def append_ones(m):
@@ -29,22 +22,12 @@ def regression_weights(x, y):
   return (x.T*x).I*x.T*y
 
 def predict(x, w):
-  return w*x
+  return x*w
 
 def lse_error(x, y, w): 
-  e1 = y - x*w 
+  e1 = y - predict(x, w) 
   return e1.T*e1
 
 def mse_error(x, y, w):
   return lse_error(x, y, w)/y.size
 
-dataf = open('data/features/feature_data.csv', 'rt')
-datac = csv.reader(dataf)
-next(datac)
-m = csv2matrix(datac) 
-x = m.T[:-1].T
-x = append_ones(x)
-y =  m.T[-1:].T
-w = regression_weights(x,y)
-lse = lse_error(x, y, w) 
-mse = mse_error(x, y, w)

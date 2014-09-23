@@ -1,129 +1,5 @@
 
-%% bare_conf.tex
-%% V1.3
-%% 2007/01/11
-%% by Michael Shell
-%% See:
-%% http://www.michaelshell.org/
-%% for current contact information.
-%%
-%% This is a skeleton file demonstrating the use of IEEEtran.cls
-%% (requires IEEEtran.cls version 1.7 or later) with an IEEE conference paper.
-%%
-%% Support sites:
-%% http://www.michaelshell.org/tex/ieeetran/
-%% http://www.ctan.org/tex-archive/macros/latex/contrib/IEEEtran/
-%% and
-%% http://www.ieee.org/
-
-%%*************************************************************************
-%% Legal Notice:
-%% This code is offered as-is without any warranty either expressed or
-%% implied; without even the implied warranty of MERCHANTABILITY or
-%% FITNESS FOR A PARTICULAR PURPOSE! 
-%% User assumes all risk.
-%% In no event shall IEEE or any contributor to this code be liable for
-%% any damages or losses, including, but not limited to, incidental,
-%% consequential, or any other damages, resulting from the use or misuse
-%% of any information contained here.
-%%
-%% All comments are the opinions of their respective authors and are not
-%% necessarily endorsed by the IEEE.
-%%
-%% This work is distributed under the LaTeX Project Public License (LPPL)
-%% ( http://www.latex-project.org/ ) version 1.3, and may be freely used,
-%% distributed and modified. A copy of the LPPL, version 1.3, is included
-%% in the base LaTeX documentation of all distributions of LaTeX released
-%% 2003/12/01 or later.
-%% Retain all contribution notices and credits.
-%% ** Modified files should be clearly indicated as such, including  **
-%% ** renaming them and changing author support contact information. **
-%%
-%% File list of work: IEEEtran.cls, IEEEtran_HOWTO.pdf, bare_adv.tex,
-%%                    bare_conf.tex, bare_jrnl.tex, bare_jrnl_compsoc.tex
-%%*************************************************************************
-
-% *** Authors should verify (and, if needed, correct) their LaTeX system  ***
-% *** with the testflow diagnostic prior to trusting their LaTeX platform ***
-% *** with production work. IEEE's font choices can trigger bugs that do  ***
-% *** not appear when using other class files.                            ***
-% The testflow support page is at:
-% http://www.michaelshell.org/tex/testflow/
-
-
-
-% Note that the a4paper option is mainly intended so that authors in
-% countries using A4 can easily print to A4 and see how their papers will
-% look in print - the typesetting of the document will not typically be
-% affected with changes in paper size (but the bottom and side margins will).
-% Use the testflow package mentioned above to verify correct handling of
-% both paper sizes by the user's LaTeX system.
-%
-% Also note that the "draftcls" or "draftclsnofoot", not "draft", option
-% should be used if it is desired that the figures are to be displayed in
-% draft mode.
-%
 \documentclass[conference]{IEEEtran}
-% Add the compsoc option for Computer Society conferences.
-%
-% If IEEEtran.cls has not been installed into the LaTeX system files,
-% manually specify the path to it like:
-% \documentclass[conference]{../sty/IEEEtran}
-
-
-
-
-
-% Some very useful LaTeX packages include:
-% (uncomment the ones you want to load)
-
-
-% *** MISC UTILITY PACKAGES ***
-%
-%\usepackage{ifpdf}
-% Heiko Oberdiek's ifpdf.sty is very useful if you need conditional
-% compilation based on whether the output is pdf or dvi.
-% usage:
-% \ifpdf
-%   % pdf code
-% \else
-%   % dvi code
-% \fi
-% The latest version of ifpdf.sty can be obtained from:
-% http://www.ctan.org/tex-archive/macros/latex/contrib/oberdiek/
-% Also, note that IEEEtran.cls V1.7 and later provides a builtin
-% \ifCLASSINFOpdf conditional that works the same way.
-% When switching from latex to pdflatex and vice-versa, the compiler may
-% have to be run twice to clear warning/error messages.
-
-
-
-
-
-
-% *** CITATION PACKAGES ***
-%
-%\usepackage{cite}
-% cite.sty was written by Donald Arseneau
-% V1.6 and later of IEEEtran pre-defines the format of the cite.sty package
-% \cite{} output to follow that of IEEE. Loading the cite package will
-% result in citation numbers being automatically sorted and properly
-% "compressed/ranged". e.g., [1], [9], [2], [7], [5], [6] without using
-% cite.sty will become [1], [2], [5]--[7], [9] using cite.sty. cite.sty's
-% \cite will automatically add leading space, if needed. Use cite.sty's
-% noadjust option (cite.sty V3.8 and later) if you want to turn this off.
-% cite.sty is already installed on most LaTeX systems. Be sure and use
-% version 4.0 (2003-05-27) and later if using hyperref.sty. cite.sty does
-% not currently provide for hyperlinked citations.
-% The latest version can be obtained at:
-% http://www.ctan.org/tex-archive/macros/latex/contrib/cite/
-% The documentation is contained in the cite.sty file itself.
-
-
-
-
-
-
 % *** GRAPHICS RELATED PACKAGES ***
 %
 \ifCLASSINFOpdf
@@ -332,9 +208,8 @@
 % http://www.ctan.org/tex-archive/macros/latex/contrib/misc/
 % Read the url.sty source comments for usage information. Basically,
 % \url{my_url_here}.
-
-
-
+\usepackage{xcolor}
+\newcommand{\dofocus}[1]{\textcolor{red}{#1}}
 
 
 % *** Do not adjust lengths that control margins, column widths, etc. ***
@@ -348,11 +223,12 @@
 \hyphenation{op-tical net-works semi-conduc-tor}
 
 
+
 \begin{document}
 %
 % paper title
 % can use linebreaks \\ within to get better formatting as desired
-\title{Saving Hollywood:\\ Can Movie Revenues Be Predicted?}
+\title{Forecasting Hollywood:\\ Can Movie Revenues Be Predicted?}
 
 
 % author names and affiliations
@@ -364,11 +240,11 @@ McGill University\\
 260558036\\
 Email: muntasir.chodhury@mail.mcgill.ca}
 \and
-\IEEEauthorblockN{Kashif Javid}
+\IEEEauthorblockN{Kashif Javed}
 \IEEEauthorblockA{School of Computer Science\\
 McGill University\\
 260535684\\
-Email: kashif.javid@mail.mcgill.ca}
+Email: kashif.javed@mail.mcgill.ca}
 \and
 \IEEEauthorblockN{Faiz Khan}
 \IEEEauthorblockA{School of Computer Science\\
@@ -413,7 +289,8 @@ Email: faiz.khan@mail.mcgill.ca}}
 
 \begin{abstract}
 %\boldmath
-Abstract is necessary, please put abstract. 
+Abstract is necessary, please put abstract. The complete code and data set is 
+available at https://github.com/dridon/aml1/. 
 \end{abstract}
 % IEEEtran.cls defaults to using nonbold math in the Abstract.
 % This preserves the distinction between vectors and scalars. However,
@@ -422,7 +299,7 @@ Abstract is necessary, please put abstract.
 % of the abstract to achieve this. Many IEEE journals/conferences frown on
 % math in the abstract anyway.
 
-% no keywords
+% no key
 
 
 
@@ -437,30 +314,98 @@ Abstract is necessary, please put abstract.
 % creates the second title. It will be ignored for other modes.
 \IEEEpeerreviewmaketitle
 
-
-
 \section{Introduction}
 \subsection{Problem Description}
 Modern day movie budgets are now reaching near the half billion dollar 
-mark. Figures for James Cameron's Avatar Budget reaching up to
+mark. Estimates for James Cameron's Avatar Budget reach up to
 \$425,000,000\cite{topmovies}. As movie budgets grow, so does their
 required revenue to yield an acceptable profit for the investment size.
-This presents a problem. It would be important to know the potential 
+and presents an interesting problem. It is important to know the potential 
 success of a movie in order to valuate its investment potential. However, 
-movies are complex creations involving a large cast and crew. 
-On top these factors, amongst others, a movie's success is 
-affected by marketing, public perception and critical ratings. This makes
-predicting the potential revenue for a planned movie a challenging 
-task. We describe this task as follows: 
+movies are complex products shaped by various commercial
+and artistic constraints, and require the involvement of
+a diverse group of people (cast and crew). In addition to these factors 
+a movie's success is affected by marketing, public perception 
+and critical ratings. This makes predicting the potential 
+revenue for a potential movie a challenge. We describe this more formally 
+as follows: 
 
-\textit{\textbf{Produce a predictor using some constructed feature set that allows us 
-to accurately predict the gross revenue of a movie.}}
+ ``\textit{Produce a predictor using some feature set that allows us 
+to accurately estimate the gross revenue for a potential movie.}''
 
-In this document we will describe our attempt at tackling this task through
-several linear regression models using our feature set constructed from parsing
-online movie databases.
+In this document we will describe our attempt at tackling this challenge through
+several regression models. We apply our feature set constructed from parsing two
+major online movie databases.
 
 \section{Related Work}
+\subsection{The-numbers Bankability Index}
+The "Hollywood Creative Graph" represents films using 
+information about 80,000 people from the movie industry 
+and attempts to measure each individual's influence 
+on that graph by assigining a "bankability" value 
+to them \cite{numbersbank}. This "bankability index" 
+is essentially aimed at understanding how much an individual 
+should be paid for working on a film using box-office data by 
+estimating how much value they bring in to the industry each
+year. One may be able to generate the potential revenues by using 
+this data. However, this index is commercial and their methodology
+private. 
+
+\subsection{Word Of Mouth}
+Dellarocas et al\cite{dellarocas} leveraged data about a films's initial commercial 
+performance, marketing campaign, and early public reaction (word of mouth) 
+to forecast revenue. They used a data set of 80 movies with reviews
+frmo over 1,000 critics and nearly 35,000 individuals and fit it to a modified Bass equation. 
+They divide the movie into two sets, fit on one and test on the other. They saw a remarkable
+success with an error less than 3\%. 
+
+In a similar vein Rui et al.\cite{rui} and Asur et al.\cite{asur} have tried to gauge the 
+influence of "online word of mouth" on movie sales by analysing Twitter data. Rui et al
+collected 4,000,000 tweets for 63 movies between June 2009 and February 2010. They took in 
+to consideration the authors and the number of followers and the intention of the tweets.
+However, they do no cross validation or estimation of true error and directly move on 
+to inference from their fit.
+
+Asur et al. used 24 movies with 2.89 million tweets and 1.2 million users. Their fit 
+had an R\textsuperscript{2} value of 0.973. However, they also provide no measure
+of true error. 
+
+In all cases of \textit{Word Of Mouth}, their methodology is restricted to released
+or soon-to-be released movies (otherwise no reviews or tweets will be present) and 
+can not be used for movies being considered, planned or in production. Granted that their 
+data sets are large, none of the above considered movies greater than 80 in number. This is 
+expected because the data collection tasks would be enormous and Twitter data is not available for 
+a large number of movies that pre-date the service. Nonetheless, considering that there
+is a large range of movies, testing over a small set raises concerns that the fits only 
+performed well in local regions.
+
+\subsection{Neural Networks}
+Zhang et al\cite{zhang} employ a BP neural-network to predict revenues. They bin
+movies in to 6 ordered-categories for classification targets. 
+Each representing a different ranges of movie revenues. They
+had a maximum of 40 movies per category. Several variables variables were trained
+some examples being nationality, advertising, content and showing time. They used 
+6-fold cross validation and were able to classify a movie correctly with 68.1\%
+accuracy and within one class difference with 97.1\% acuracy. 
+
+Their data is also limited by the number of movies they use to train. Also,
+their results represent the Chinese market and includes a mixture of Hollywood
+and Chinese movies. This data may not be fully reflective of Hollywood earnings. 
+
+\subsection{Other}
+Dellarocas \cite{dellarocas} describes the forecasting of motion picture 
+revenues to be discernable in to two approaches. The first using 
+econometric factors that predict motion picture revenues such 
+as the-numbers bankability index. The second using factors that 
+influence an individual's decision to watch a movie such as the 
+Word Of Mouth approaches. There has been a large amount of work done 
+in the prediction of movie revenues and a comprehensive review is out
+of th scope for this document. We refer interested readers to \cite{litman-kohl},
+\cite{el-el}, \cite{sawhey}, \cite{sochay} and \cite{}
+
+Most of these approaches use budget and revenue of a film as items in the 
+dataset, none factor in the historical critical and audience ratings 
+from aggregate movie sites when trying to predict revenue. 
 
 \section{Dataset Description}
 The data set we use to train should be viewed in two parts. The first is the raw data set that 
@@ -469,15 +414,18 @@ below. The second is the formatted movie set along the actor, director, studio a
 
 The formatted movie set contains a data point for each movie in the raw set. For each movie we present a boolean 
 indicating if they were released during a "hot season". We also present a measure of ratings
-by critics and audiences for the directors, studios, screen writers and main actors of the movie. Lastly, 
-we have the budget of the movie and the target value, gross revenue for a movie. The dictionaries for 
+by critics and audiences for the directors, studios, screen writers and main actors of the movie. 
+Lastly, we have the budget of the movie and the target value, gross revenue for a movie. The dictionaries for 
 the cast and crew show their average ratings over all their movies and are used for prediction.
 
+
+See the appendix for more details.
+
 \section{Methods}
-Our methodology is described in three main steps. First we mine our data from 
+Our methodology is described in three main steps. First, we mine our data from 
 two major movie sites and filter it. Then we apply four different regression algorithms 
 with cross validation to get initial estimates on errors. Then we apply a set of experiments 
-varying parameters in order to draw insights of our data. 
+varying parameters in order to draw insights from our data.
 
 \subsection{Libraries}
 \begin{table}[h]
@@ -499,21 +447,19 @@ scikit-learn\cite{scikit-learn}     & implementations of ridge and lasso regress
 A number of libraries were used in our implementations. We describe them briefly in \ref{table:pylibs}: 
 
 \subsection{Data Collection}
-We extracted our data from two major movie sites: the-numbers \cite{thenumbers} and IMDB\cite{imdb}.
-The first is a collection movie information with budgets, revenues, cast, crew with all movies 
-indexed but has incomplete information for a large number of movies. The second one is a large site and 
-community but has no simple movie index to parse data through. 
+We extracted our data from two major movie sites: The Numbers \cite{thenumbers} and IMDB\cite{imdb}.
+The first is a collection of movie information with budget, revenue, cast, crew with all entries indexed. However, for a large number of movies the information is incomplete. The second one is a large site and community with extensive data but it has no simple movie index to parse data from. A crucial element of our raw data is taken from a third movie aggregation site called Rotten Tomatoes. Instead of parsing the relevant data from the site itself we collected it from The Numbers site.
 
-We use the first to extract a list of movies ~20,000 and 
+We first used The Numbers to extract a list of movies, \~20,000 entries, and 
 filter the ones that have values for Budgets, Release Dates and 
 Revenues, Critic Label/Rating and Audience Label/Rating
 (both ratings are from Rotten Tomatoes\cite{rtomato}). 
-This gives us ~4,000 movies. We then use the movie names 
-collected from the-numbers to search on imdb for the main cast 
-and crew of the movie alongside the imdb audience rating. We then 
+This gives us around 4,000 movies. We then use the movie names 
+collected from The Numbers to search on IMDB for the main cast 
+and crew of the movie alongside the IMDB audience rating. We then 
 take the union of all the movies with data points for all the 
-columns from the-numbers with the imdb data to get our raw
-feature set. This raw set has a size of ~3,300 movies. 
+columns from The Numbers with the IMDB data to get our raw
+feature set. This raw set has a size of \~3,300 movies.
 
 \subsection{Feature Selection}
 Release Dates and Cast/Crew names are poor features for only 
@@ -528,9 +474,10 @@ for the person to the geometric mean of the ratings of all the movies that they
 had significant involvement with. Then for every movie we take the set of actors
 and take the average of the mean ratings for all actors involved in the movie. This
 gives us a measure on the rating of the movie for the set of actors involved. We 
-repeat this for the directors, producers and screenwriters of the movie. We produce 
-a rating per person for the "Critical" Rating from Rotten Tomatoes, the "Audience" 
-Rating from Rotten Tomatoes and the IMDB Rating. Thus, we have, for each movie, 
+repeat this for the directors, producers and screenwriters of the movie. 
+
+We produce a rating per person for the "Critical" rating from Rotten Tomatoes, the "Audience" 
+rating from Rotten Tomatoes and the IMDB Rating. Thus, we have, for each movie, 
 3 measures for each: the set of directors, set of actors, set of producers and 
 the set of screen writers giving us a total of 12 features. 
 
@@ -563,29 +510,59 @@ range k from 10 to 33, bounding the size of the test set below by atleast 100 mo
 and present the mean squared error for each k. 
 
 \subsubsection{Gradient Descent}
-We apply the typical gradient descent using a step size of ------??--------- and 
-max iterations of ---------??------------. We repeat the 10-fold validation and the 
-k-variation from linear regression for gradient descent. We also vary the step size
-alpha from ===============????=============== to ============????=======
-and similarly range iterations from ===========????-------- to =========??========.
+We apply gradient descent using the least squared error. We first vary alpha and 
+use cross validation error to obtain an estimate for an optimal alpha with 100,000 iterations.
+The alphas vary from 10\textsuperscript{-5} to 10\textsuperscript{-8} with one order of magnitude increments. 
+We then use that alpha to determine an optimal iteration. We then use the optimal alpha
+and iteration values in our general analysis of our predictability. We vary iterations from
+10\textsuperscript{1} to 10\textsuperscript{5} increments, simply because execution time becomes unfeasible.
+We also use these values to train the predictor for the full feature set.
 
 \subsubsection{Ridge and Lasso}
 We apply the ridge and lasso from the scikit-learn library. We repeat the experiments
-done for standard regression on ridge and lasso and present their results. 
+done for standard regression on ridge and lasso and present their results.
 
 \subsubsection{Cross Validation}
-Since we rely on the average ratings for the cast on crew over all their movies to generate
-the measure for their respective set on the movies, we need to take care in creating the mappings
-that gives us the average rating for a given person. That is, we regenerate the feature set for each
-k fold validation in order to not pollute the input. In the case that an actor, director, producer or 
-screen writer is not present in a mapping, we simply assing them a 50\% rating for rotten tomato and
-5.0 for imdb. That is we do not assume any information for missing cases. 
+In order to test on a prediction we need a method to map a given set of actors, directors or producers to
+their average rating. We cannot create this prior to cross validation because we will be using the test set 
+and potentially corrupting our data. Thus we have to generate these mappings from an individual to rating 
+each time for during each fold in cross validation and essentially regenerate the entire feature set. 
+In the case that an actor, director, producer or screen writer is not present in a mapping, we simply assing 
+them a 50\% rating for rotten tomato and 5.0 for imdb. That is we do not assume any information for missing cases.
+
+The cross validation scheme is done as follows: 
+\begin{enumerate}
+\item The raw feature set, R, is loaded as a list of movie features for each movie
+\item The movies are shuffled around in R to get R' 
+\item R' is then divided in to k folds 
+\item For each fold f in the k fold we merge all but fold f in to f' 
+\item We train on f', to get predictor P and generate mappings from an individual to their average rating call M 
+\item We use M to convert the f fold into input parameters and test the predictions against the actual values 
+\item Then we take the mean of all the errors from the k runs to estimate the true error 
+\end{enumerate}
 
 % add how we messed with different parameters and stuff here 
 
 \section{Results}
+We first present the results for the determination of an optimal alpha for gradient descent in : 
+
+
+
+We then present the results for the determination of an optimal iteration for gradient descent in : 
+
+
+We then show the weights of the predictors for all of our regression algorithms, using the optimal alpha and 
+iteration values in:
+
+
+We show the true error estimates of using our predictor with our cross validation strategy with k = 10: 
+
+
+We then vary k from 10 to 33 to show the results of varying the hyper parameter k on our true error estimates: 
+
 
 \section{Discussion}
+
 \subsection{Analysis}
 
 \subsection{Applications}
@@ -596,97 +573,6 @@ screen writer is not present in a mapping, we simply assing them a 50\% rating f
 
 \section{Conclusion}
 The conclusion goes here. \cite{kopka}
-% An example of a floating figure using the graphicx package.
-% Note that \label must occur AFTER (or within) \caption.
-% For figures, \caption should occur after the \includegraphics.
-% Note that IEEEtran v1.7 and later has special internal code that
-% is designed to preserve the operation of \label within \caption
-% even when the captionsoff option is in effect. However, because
-% of issues like this, it may be the safest practice to put all your
-% \label just after \caption rather than within \caption{}.
-%
-% Reminder: the "draftcls" or "draftclsnofoot", not "draft", class
-% option should be used if it is desired that the figures are to be
-% displayed while in draft mode.
-%
-%\begin{figure}[!t]
-%\centering
-%\includegraphics[width=2.5in]{myfigure}
-% where an .eps filename suffix will be assumed under latex, 
-% and a .pdf suffix will be assumed for pdflatex; or what has been declared
-% via \DeclareGraphicsExtensions.
-%\caption{Simulation Results}
-%\label{fig_sim}
-%\end{figure}
-
-% Note that IEEE typically puts floats only at the top, even when this
-% results in a large percentage of a column being occupied by floats.
-
-
-% An example of a double column floating figure using two subfigures.
-% (The subfig.sty package must be loaded for this to work.)
-% The subfigure \label commands are set within each subfloat command, the
-% \label for the overall figure must come after \caption.
-% \hfil must be used as a separator to get equal spacing.
-% The subfigure.sty package works much the same way, except \subfigure is
-% used instead of \subfloat.
-%
-%\begin{figure*}[!t]
-%\centerline{\subfloat[Case I]\includegraphics[width=2.5in]{subfigcase1}%
-%\label{fig_first_case}}
-%\hfil
-%\subfloat[Case II]{\includegraphics[width=2.5in]{subfigcase2}%
-%\label{fig_second_case}}}
-%\caption{Simulation results}
-%\label{fig_sim}
-%\end{figure*}
-%
-% Note that often IEEE papers with subfigures do not employ subfigure
-% captions (using the optional argument to \subfloat), but instead will
-% reference/describe all of them (a), (b), etc., within the main caption.
-
-
-% An example of a floating table. Note that, for IEEE style tables, the 
-% \caption command should come BEFORE the table. Table text will default to
-% \footnotesize as IEEE normally uses this smaller font for tables.
-% The \label must come after \caption as always.
-%
-%\begin{table}[!t]
-%% increase table row spacing, adjust to taste
-%\renewcommand{\arraystretch}{1.3}
-% if using array.sty, it might be a good idea to tweak the value of
-% \extrarowheight as needed to properly center the text within the cells
-%\caption{An Example of a Table}
-%\label{table_example}
-%\centering
-%% Some packages, such as MDW tools, offer better commands for making tables
-%% than the plain LaTeX2e tabular which is used here.
-%\begin{tabular}{|c||c|}
-%\hline
-%One & Two\\
-%\hline
-%Three & Four\\
-%\hline
-%\end{tabular}
-%\end{table}
-
-
-% Note that IEEE does not put floats in the very first column - or typically
-% anywhere on the first page for that matter. Also, in-text middle ("here")
-% positioning is not used. Most IEEE journals/conferences use top floats
-% exclusively. Note that, LaTeX2e, unlike IEEE journals/conferences, places
-% footnotes above bottom floats. This can be corrected via the \fnbelowfloat
-% command of the stfloats package.
-
-
-
-
-
-
-% conference papers do not normally have an appendix
-
-
-% use section* for acknowledgement
 \section*{Acknowledgment}
 
 
@@ -698,51 +584,68 @@ We hereby state that all the work presented in
 this report is that of the authors.
 
 
-
-% trigger a \newpage just before the given reference
-% number - used to balance the columns on the last page
-% adjust value as needed - may need to be readjusted if
-% the document is modified later
-%\IEEEtriggeratref{8}
-% The "triggered" command can be changed if desired:
-%\IEEEtriggercmd{\enlargethispage{-5in}}
-
-% references section
-
-% can use a bibliography generated by BibTeX as a .bbl file
-% BibTeX documentation can be easily obtained at:
-% http://www.ctan.org/tex-archive/biblio/bibtex/contrib/doc/
-% The IEEEtran BibTeX style support page is at:
-% http://www.michaelshell.org/tex/ieeetran/bibtex/
-%\bibliographystyle{IEEEtran}
-% argument is your BibTeX string definitions and bibliography database(s)
-%\bibliography{IEEEabrv,../bib/paper}
-%
-% <OR> manually copy in the resultant .bbl file
-% set second argument of \begin to the number of references
-% (used to reserve space for the reference number labels box)
 \begin{thebibliography}{1}
 \bibitem{topmovies}
-http://www.the-numbers.com/movie/budgets/
+"Movie Budget and Financial Performance Records" (The-Numbers)  [online], http://www.the-numbers.com/movie/budgets/ (Accessed:15 September 2014)
 
 \bibitem{numbersbank}
-One two three
+"The Numbers Bankability Index" (The-Numbers) [online], http://www.the-numbers.com/bankability/ (Accessed:15 September 2014)
 
 \bibitem{thenumbers}
-asdasd
+"The-Numbers" (The-Numbers) [online], http://www.the-numbers.com/ (Accessed: 15 September 2014)
+
+\bibitem{dellarocas}
+C. Dellarocas, N. Awad and X. Zhang, 2004, "Exploring the Value of Online Reviews to Organizations: Implications for Revenue Forecasting and Planning", ICIS 2004 Proceedings
+
+\bibitem{rui}
+H. Rui, Y. Liu and A. Whinston, 2013, "Whose and what chatter matters? The effect of tweets on movie sales", Decision Support Systems 55.4 (2013): 863-870
+
+\bibitem{asur}
+S. Asur and B. Huberman, 2010, "Predicting the Future with Social Media", Web Intelligence and Intelligent Agent Technology (WI-IAT), 2010 IEEE/WIC/ACM International Conference on. Vol. 1, pp 492 - 499
+
+\bibitem{zhang}
+L Zhang, J Luo and S Yang, 2009, "Forecasting box office revenue of movies with BP neural network." Expert Systems with Applications 36.3 (2009): 6580-6587
+
+\bibitem{litman-kohl}
+B. Litman and L. Kohl, 1989, "Predicting financial success of motion pictures: The'80s experience." Journal of Media Economics 2.2 (1989), pp 35-50
+
+\bibitem{el-el}
+M Sawhney and J. Eliashberg, 2002, "The drivers of motion picture performance: the need to consider dynamics, endogeneity and simultaneity." proceedings of the Business and Economic Scholars Workshop in Motion Picture Industry Studies. Florida Atlantic University
+
+\bibitem{sawhey}
+M Sawhney and J. Eliashberg, 1996, “A Parsimonious Model
+for Forecasting Gross Box-Office Revenues of Motion Pictures,” Marketing Science 15.2, pp 113-131.
+
+\bibitem{sochay}
+S. Sochay, "Predicting the performance of motion pictures." Journal of Media Economics 7.4 (1994), pp 1-20
+
+\bibitem{zufryden}
+F. Zufryden, 1996, "Linking advertising to box office performance of new film releases: A marketing planning model." Journal of Advertising Research 36 (1996), pp 29-42
 
 \bibitem{imdb}
-lalala
+"IMDb - Movies, TV and Celebrities" (IMDB) [online], http://www.imdb.com/ (Accessed: 15 September 2014)
 
 \bibitem{rtomato}
-dododo
+"Rotten Tomatoes" (Rotten Tomatoes) [online], http://www.rottentomatoes.com/ (Accessed: 15 September 2014)
 
 \bibitem{beautifulsoup}
+"Beautiful Soup" (Crummy) [online], http://www.crummy.com/software/BeautifulSoup/ (Accessed: 15 September 2014)
+
 \bibitem{unicodecsv}
+"unicodecsv 0.9.4" (Python) [online], https://pypi.python.org/pypi/unicodecsv/0.9.4 (Accessed: 15 September 2014)
+
 \bibitem{lxml}
+"lxml - Processing XML and HTML with Python" (lxml) [online], http://lxml.de/ (Accessed: 15 September 2014)
+
 \bibitem{numpy}
+"NumPy" (NumPy) [online], http://www.numpy.org/ (Accessed: 15 September 2014)
+
 \bibitem{scipy}
+"SciPy" (SciPy) [online], http://www.scipy.org/ (Accessed: 15 September 2014)
+
 \bibitem{scikit-learn}
+"scikit-learn: machine learning in Python" (scikit-learn) [online], http://scikit-learn.org/stable/ (Accessed: 15 September 2014)
+
 
 \bibitem{kopka}
 H.~Kopka and P.~W. Daly, \emph{A Guide to \LaTeX}, 3rd~ed.\hskip 1em plus
@@ -750,7 +653,68 @@ H.~Kopka and P.~W. Daly, \emph{A Guide to \LaTeX}, 3rd~ed.\hskip 1em plus
 
 \end{thebibliography}
 
+\newpage
+\section{Appendix}
 
+\subsection{Data Dictionary}
+
+Initially we downloaded the indexed movie pages from The Numbers. After filtering out the entries that were missing too many relevant fields we queried the IMDB search engine for the remaining movies. We downloaded these pages and used the information there to add the IMDB score and fill in whatever fields were empty in the remaining movie list. The "full\_raw\_features.csv" contains the data parsed from The Numbers movie pages and the IMDB page. Each entry is a movie and contains the following information:
+
+Movie Name, Release Date, Genre, Budget, Gross, RT Critic Label, RT Critic Rating, RT Audience Label, RT Audience Rating, IMDB Rating, Directors, Producers, Sreenwriters, and Actors.
+\\*\textbf{RT Critic Rating} - This is the "Critical Rating" given to a movie on Rotten Tomatoes. Rotten Tomatoes aggregates movie reviews from major critics and publications and gives them a quantative value. It then takes the average of those values to produce the Critical Rating.
+\\*\textbf{RT Audience Rating} - This is the average of the ratings given to a movie by registered users on the Rotten Tomatoes website.
+\\*\textbf{RT Critic Label and RT Audience Label} - We do not end up using these in the final feature set. 
+\\*\textbf{IMDB Rating} - This is the average of the ratings given to a movie by registered users on the IMDB website.
+\\*\textbf{Director} - The name of the director(s) of the movie.
+\\*\textbf{Producers} - Names of the studio that produced the movie.
+\\*\textbf{Screenwriters} - Names of all the screenwriters of the movie.
+\\*\textbf{Actors} - The first 3 names from the actor lists on The Numbers and the IMDB movie pages. These lists are in order of importance of the actor in the movie.\\
+From this file we calculated the three kinds of ratings for every unique director, producer, screenwriter and actor. These are listed in four seperate data files for each type of the four mentioned types.\\*
+
+\textbf{Person's RTC Mean} - The average of the Critical Ratings for all the movies the person is listed in. If a person has been in the role of both a director and an actor then her values for each role are independent and mutually exclusive.\\*
+\textbf{Person's RTA Mean} - The average of the Audience Ratings for all the movies the person is listed in.\\*
+\textbf{Person's IMDB Mean} - The average of the Critical Ratings for all the movies the person is listed in.\\*
+
+From these we form our final feature set, a version of which is outputted in "feature.csv". The format is outlined below.
+
+\begin{table}[h]
+\caption{Feature Set}
+\label{table:datadict}
+\begin{tabular}{l|l}
+Feature          & Description \\
+\hline
+\\
+Hot Season & This is 0 or 1 depending on the\\* & release date\\ 
+Budget & The log of the movie's budget \\* & in dollars \\
+Director RT Critical Average & Average of the RTC Mean for all\\* & directors involved\\
+Director RT Public Average & Average of the RTA Mean for all\\* & directors involved\\
+Director IMDB Average & Average of the IMDB Mean for all\\* & directors involved\\
+Producer RT Critical Average & Average of the RTC Mean for all\\* & studios involved\\
+Producer RT Public Average & Average of the RTA Mean for \\* & all studios involved\\
+Producer IMDB Average &  Average of the IMDB Mean for \\* & all studios involved\\
+Screenwriter RT Critical Average & Average of the RTC Mean for all \\* & screenwriters involved\\
+Screenwriter RT Public Average & Average of the RTA Mean for all \\* & screenwriters involved\\
+Screenwriter IMDB Average & Average of the IMDB mean for all \\* & screenwriters involved (DT)\\ 
+Actors RT Critical Average & Average of the RTC Mean for all \\* & actors involved\\
+Actors RT Public Average  & Average of the RTA Mean for all\\* & actors involved\\
+Actors IMDB Average &  Average of the IMDB Mean for all\\* & actors involved\\     &\\ 
+\end{tabular}
+\end{table}
+
+\begin{table}[h]
+\caption{Output Set}
+\label{table:datadict}
+\begin{tabular}{l|l}
+Output          & Description \\
+\hline
+\\
+Gross & The log of the movie's revenue in dollars\\
+\end{tabular}
+\end{table}
+
+The \textbf{Hot Season} is set to 1 if a film was released in the months of either May to August OR November-December. It is set to 0 otherwise. May to August is generally referred to as the summer blockbuster season when movie revenues are higher. This is due to schools being closed during that time and release of higher budget movies being concentrated around that period. November and December coincide with the holiday season and sees the release of award-season movies and critical favorites.
+
+A crucial point to note is that this feature set is derived from the training data we have. If we change the number of data points for the training data then the values in the ratings file for director, producer, screenwriter and actor will change. As a result so will the average people ratings for movies in "full\_raw\_features.csv".
 
 
 % that's all folks

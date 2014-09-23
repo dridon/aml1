@@ -6,6 +6,7 @@ import random
 import math
 from itertools import chain
 import ridge_lasso as rl
+import grad_descent as gd
 
 def partition(l, k):
   n  = int(len(l) / k)
@@ -22,7 +23,7 @@ def transform_train_set(training):
   t = fl.list2ordered_dict(training)
   return fl.get_data2(t)
 
-def train_regression(training): 
+def train_regression(training, params={}): 
   # get data
   # t = fl.list2ordered_dict(training)
   # data,ds = fl.get_data2(t)
@@ -41,7 +42,23 @@ def train_regression(training):
 
   return (w, ds, terror)
 
-def train_ridge(training): 
+def train_grad_descent(training, params): 
+  data,ds = transform_train_set(training)
+
+  # generate regression
+  m = rg.iter2matrix(data)
+  x = m.T[:-1].T
+  x = rg.append_ones(x)
+  y =  m.T[-1:].T
+
+  init_weight = np.ones((x.shape[1],1))
+  w = gd.grad_descent(x,y,init_weight,params["alpha"],params["iterations"])
+  # get training error
+  terror = rg.mse_error(x,y,w)
+
+  return (w, ds, terror)
+
+def train_ridge(training, params={}): 
   # get data
   # t = fl.list2ordered_dict(training)
   # data,ds = fl.get_data2(t)
@@ -54,12 +71,12 @@ def train_ridge(training):
   w = rl.ridge_reg(x,y)
 
   # get training error
+  x = rg.append_ones(x)
   terror = rg.mse_error(x,y,w)
 
   return (w, ds, terror)
 
-
-def train_lasso(training): 
+def train_lasso(training, params={}): 
   # get data
   # t = fl.list2ordered_dict(training)
   # data,ds = fl.get_data2(t)
@@ -72,6 +89,7 @@ def train_lasso(training):
   w = rl.lasso_reg(x,y)
 
   # get training error
+  x = rg.append_ones(x)
   terror = rg.mse_error(x,y,w)
 
   return (w, ds, terror)
@@ -94,7 +112,7 @@ def k_random_folds(l, k):
   random.shuffle(p)
   return partition(p, k)
 
-def k_fold_cvalidation(l, k, trainer, tester):
+def k_fold_cvalidation(l, k, trainer, tester, params={}):
   rdf = k_random_folds(l, k)
   errors = []
   terrors = [] 
@@ -103,7 +121,7 @@ def k_fold_cvalidation(l, k, trainer, tester):
     training = merge(rdf[0:i] + rdf[i+1:])
     test = rdf[i]
 
-    predictor, formatters, terror  = trainer(training)
+    predictor, formatters, terror  = trainer(training, params)
     terrors.append(terror)
     errors.append(tester(predictor, test, formatters))
 
@@ -118,23 +136,25 @@ raw_datac = csv.reader(raw_dataf)
 next(raw_datac)
 raw_datal = [row for row in raw_datac]
 
-k = 25
+k = 10 
+gdp = {"alpha": 0.00004, "iterations":10000}
 
 errors, terrors = k_fold_cvalidation(raw_datal, k, train_regression, test_regression)
 error = mean_error(errors) 
 terror = mean_error(terrors)
-print "The MSE with standard regression is " + str(k) + " validation is " + str(error)  + " and " + "the training error is " + str(terror) 
-# errors = [float(a) for a in errors ] 
-# error = np.average(errors)
-# terrors = [float(a) for a in terrors ] 
-# terror = np.average(terrors)
+print "The MSE with standard regression with " + str(k) + "-fold validation is " + str(error)  + " and " + "the training error is " + str(terror) 
+
+errors, terrors = k_fold_cvalidation(raw_datal, k, train_grad_descent, test_regression, gdp)
+error = mean_error(errors) 
+terror = mean_error(terrors)
+print "The MSE with gradient descent with " + str(k) + "-fold validation is " + str(error)  + " and " + "the training error is " + str(terror) 
 
 errors, terrors = k_fold_cvalidation(raw_datal, k, train_ridge, test_regression)
 error = mean_error(errors) 
 terror = mean_error(terrors)
-print "The MSE with ridge regression is " + str(k) + " validation is " + str(error)  + " and " + "the training error is " + str(terror) 
+print "The MSE with ridge regression with " + str(k) + "-fold validation is " + str(error)  + " and " + "the training error is " + str(terror) 
 
 errors, terrors = k_fold_cvalidation(raw_datal, k, train_lasso, test_regression)
 error = mean_error(errors) 
 terror = mean_error(terrors)
-print "The MSE with lasso regression is " + str(k) + " validation is " + str(error)  + " and " + "the training error is " + str(terror) 
+print "The MSE with lasso regression with " + str(k) + "-fold validation is " + str(error)  + " and " + "the training error is " + str(terror) 

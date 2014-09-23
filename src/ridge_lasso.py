@@ -14,7 +14,7 @@ def ridge_reg(x, y):
   w = np.zeros(x.shape[1] + 1)
   w[0:-1] = ridge.coef_[0] 
   w[-1] = ridge.intercept_
-  return w
+  return np.matrix(w).T
 
 #Returns weight vector for lasso regularization
 #pass X that doesn't have 1s appended
@@ -24,4 +24,4 @@ def lasso_reg(x, y):
   w = np.zeros(x.shape[1] + 1)
   w[0:-1] = lasso.coef_ 
   w[-1] = lasso.intercept_
-  return w
+  return np.matrix(w).T

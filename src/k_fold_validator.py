@@ -66,9 +66,9 @@ raw_datal = [row for row in raw_datac]
 
 k = 25
 errors, terrors = k_fold_cvalidation(raw_datal, k, train_regression, test_regression)
-errors = [ math.pow(10, float(a)) for a in errors ] 
+errors = [float(a) for a in errors ] 
 error = np.average(errors)
-terrors = [ math.pow(10, float(a)) for a in terrors ] 
+terrors = [float(a) for a in terrors ] 
 terror = np.average(terrors)
 
-print "The MSE error with " + str(k) + " validation is $" + str(error)  + " and " + "the training error is $" + str(terror) 
+print "The MSE error with " + str(k) + " validation is " + str(error)  + " and " + "the training error is " + str(terror) 

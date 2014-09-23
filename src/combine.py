@@ -47,7 +47,8 @@ def load_dic_list(d, k, v):
   k = k.strip()
   if not k in d: 
     d[k] = [] 
-  d[k].append(v) 
+  v = [v]
+  d[k] = list(set(d[k]) | set(v))
 
 movied = csv_dict(moviesc, moviesf) 
 tomatord = csv_dict(tomatorc, tomatorf)  

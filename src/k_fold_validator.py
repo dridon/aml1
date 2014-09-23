@@ -5,6 +5,7 @@ import scipy as sp
 import random
 import math
 from itertools import chain
+import ridge_lasso as rl
 
 def partition(l, k):
   n  = int(len(l) / k)
@@ -16,10 +17,16 @@ def partition(l, k):
 def merge(l): 
   return list(chain.from_iterable(l))
 
+
+def transform_train_set(training):
+  t = fl.list2ordered_dict(training)
+  return fl.get_data2(t)
+
 def train_regression(training): 
   # get data
-  t = fl.list2ordered_dict(training)
-  data,ds = fl.get_data2(t)
+  # t = fl.list2ordered_dict(training)
+  # data,ds = fl.get_data2(t)
+  data,ds = transform_train_set(training)
 
   # generate regression
   m = rg.iter2matrix(data)
@@ -28,6 +35,41 @@ def train_regression(training):
   y =  m.T[-1:].T
 
   w = rg.regression_weights(x,y)
+
+  # get training error
+  terror = rg.mse_error(x,y,w)
+
+  return (w, ds, terror)
+
+def train_ridge(training): 
+  # get data
+  # t = fl.list2ordered_dict(training)
+  # data,ds = fl.get_data2(t)
+  data,ds = transform_train_set(training)
+
+  # generate regression
+  m = rg.iter2matrix(data)
+  x = m.T[:-1].T
+  y =  m.T[-1:].T
+  w = rl.ridge_reg(x,y)
+
+  # get training error
+  terror = rg.mse_error(x,y,w)
+
+  return (w, ds, terror)
+
+
+def train_lasso(training): 
+  # get data
+  # t = fl.list2ordered_dict(training)
+  # data,ds = fl.get_data2(t)
+  data,ds = transform_train_set(training)
+
+  # generate regression
+  m = rg.iter2matrix(data)
+  x = m.T[:-1].T
+  y =  m.T[-1:].T
+  w = rl.lasso_reg(x,y)
 
   # get training error
   terror = rg.mse_error(x,y,w)
@@ -67,6 +109,9 @@ def k_fold_cvalidation(l, k, trainer, tester):
 
   return (errors, terror)
 
+def mean_error(errors): 
+  return np.average([float(a) for a in errors])
+
 import unicodecsv as csv
 raw_dataf = open("data/features/full_raw_features.csv", "r")
 raw_datac = csv.reader(raw_dataf)
@@ -74,10 +119,22 @@ next(raw_datac)
 raw_datal = [row for row in raw_datac]
 
 k = 25
-errors, terrors = k_fold_cvalidation(raw_datal, k, train_regression, test_regression)
-errors = [float(a) for a in errors ] 
-error = np.average(errors)
-terrors = [float(a) for a in terrors ] 
-terror = np.average(terrors)
 
-print "The MSE error with " + str(k) + " validation is " + str(error)  + " and " + "the training error is " + str(terror) 
+errors, terrors = k_fold_cvalidation(raw_datal, k, train_regression, test_regression)
+error = mean_error(errors) 
+terror = mean_error(terrors)
+print "The MSE with standard regression is " + str(k) + " validation is " + str(error)  + " and " + "the training error is " + str(terror) 
+# errors = [float(a) for a in errors ] 
+# error = np.average(errors)
+# terrors = [float(a) for a in terrors ] 
+# terror = np.average(terrors)
+
+errors, terrors = k_fold_cvalidation(raw_datal, k, train_ridge, test_regression)
+error = mean_error(errors) 
+terror = mean_error(terrors)
+print "The MSE with ridge regression is " + str(k) + " validation is " + str(error)  + " and " + "the training error is " + str(terror) 
+
+errors, terrors = k_fold_cvalidation(raw_datal, k, train_lasso, test_regression)
+error = mean_error(errors) 
+terror = mean_error(terrors)
+print "The MSE with lasso regression is " + str(k) + " validation is " + str(error)  + " and " + "the training error is " + str(terror) 

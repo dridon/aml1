@@ -8,8 +8,8 @@ dataf = open('data/features/feature_data.csv', 'rt')
 datac = csv.reader(dataf)
 next(datac)
 m = rg.iter2matrix(datac) 
-x = m.T[:-1].T
-x = rg.append_ones(x)
+x1 = m.T[:-1].T
+x = rg.append_ones(x1)
 y =  m.T[-1:].T
 w = rg.regression_weights(x,y)
 lse = rg.lse_error(x, y, w) 

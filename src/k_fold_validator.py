@@ -18,15 +18,12 @@ def partition(l, k):
 def merge(l): 
   return list(chain.from_iterable(l))
 
-
 def transform_train_set(training):
   t = fl.list2ordered_dict(training)
   return fl.get_data2(t)
 
 def train_regression(training, params={}): 
   # get data
-  # t = fl.list2ordered_dict(training)
-  # data,ds = fl.get_data2(t)
   data,ds = transform_train_set(training)
 
   # generate regression
@@ -130,31 +127,3 @@ def k_fold_cvalidation(l, k, trainer, tester, params={}):
 def mean_error(errors): 
   return np.average([float(a) for a in errors])
 
-import unicodecsv as csv
-raw_dataf = open("data/features/full_raw_features.csv", "r")
-raw_datac = csv.reader(raw_dataf)
-next(raw_datac)
-raw_datal = [row for row in raw_datac]
-
-k = 10 
-gdp = {"alpha": 0.00004, "iterations":10000}
-
-errors, terrors = k_fold_cvalidation(raw_datal, k, train_regression, test_regression)
-error = mean_error(errors) 
-terror = mean_error(terrors)
-print "The MSE with standard regression with " + str(k) + "-fold validation is " + str(error)  + " and " + "the training error is " + str(terror) 
-
-errors, terrors = k_fold_cvalidation(raw_datal, k, train_grad_descent, test_regression, gdp)
-error = mean_error(errors) 
-terror = mean_error(terrors)
-print "The MSE with gradient descent with " + str(k) + "-fold validation is " + str(error)  + " and " + "the training error is " + str(terror) 
-
-errors, terrors = k_fold_cvalidation(raw_datal, k, train_ridge, test_regression)
-error = mean_error(errors) 
-terror = mean_error(terrors)
-print "The MSE with ridge regression with " + str(k) + "-fold validation is " + str(error)  + " and " + "the training error is " + str(terror) 
-
-errors, terrors = k_fold_cvalidation(raw_datal, k, train_lasso, test_regression)
-error = mean_error(errors) 
-terror = mean_error(terrors)
-print "The MSE with lasso regression with " + str(k) + "-fold validation is " + str(error)  + " and " + "the training error is " + str(terror) 

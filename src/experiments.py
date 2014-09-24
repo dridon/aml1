@@ -80,22 +80,20 @@ raw_datal = [row for row in raw_datac]
 
 trainers = {
     "standard": kfv.train_regression, 
-    # "gradient descent": kfv.train_grad_descent, 
+    "gradient descent": kfv.train_grad_descent, 
     "ridge": kfv.train_ridge, 
     "lasso": kfv.train_lasso
     }
-# alphas = [1/math.pow(10, i) for i in range(5,9)]
-# vary_alpha_e = vary_alpha(raw_datal, 10, alphas, 100000)
-# print_vary_alpha(vary_alpha_e)
+alphas = [1/math.pow(10, i) for i in range(5,9)]
+vary_alpha_e = vary_alpha(raw_datal, 10, alphas, 100000)
+print_vary_alpha(vary_alpha_e)
 
-# iterations = [int(math.pow(10, i)) for i in range(1,6)]
-# vary_iter_e = vary_iterations(raw_datal, 10, 0.00001, iterations)
-# print_vary_iter(vary_iter_e)
+iterations = [int(math.pow(10, i)) for i in range(1,6)]
+vary_iter_e = vary_iterations(raw_datal, 10, 0.00001, iterations)
+print_vary_iter(vary_iter_e)
 
-# k_val_e = k_validation(raw_datal, trainers, 10, gdp)
-# p_e1 = print_valdiate_k(10, k_val_e)
+k_val_e = k_validation(raw_datal, trainers, 10, gdp)
+p_e1 = print_valdiate_k(10, k_val_e)
 
 vary_k_e = vary_k(raw_datal, trainers, 10, 33, 1, gdp)
 p_e2 =  print_vary_k(vary_k_e)
-
-# iterw = csv.writer(open("gd_iteration_variation.csv", "w+"))

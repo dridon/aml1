@@ -1,2 +1,5 @@
 *.pyc
 *.pyo
+*.aux
+*.log
+*.syntex.gz

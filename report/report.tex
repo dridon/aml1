@@ -208,8 +208,11 @@
 % http://www.ctan.org/tex-archive/macros/latex/contrib/misc/
 % Read the url.sty source comments for usage information. Basically,
 % \url{my_url_here}.
+\usepackage{graphicx}
 \usepackage{xcolor}
+\usepackage{varwidth}
 \newcommand{\dofocus}[1]{\textcolor{red}{#1}}
+
 
 
 % *** Do not adjust lengths that control margins, column widths, etc. ***
@@ -220,6 +223,7 @@
 
 
 % correct bad hyphenation here
+\pagenumbering{roman}
 \hyphenation{op-tical net-works semi-conduc-tor}
 
 
@@ -287,11 +291,23 @@ Email: faiz.khan@mail.mcgill.ca}}
 \maketitle
 
 
-\begin{abstract}
+%\begin{abstract}
 %\boldmath
-Abstract is necessary, please put abstract. The complete code and data set is 
-available at https://github.com/dridon/aml1/. 
-\end{abstract}
+We explored the potential of predicting movie gross revenues using the average ratings of the main
+cast/crew involved, budget size and the season it was released in. We created a data set by parsing and 
+combining movie data from The-Numbers and IMDB. We created maps to take the cast and crew to a real value indicative 
+of the average rating that they achieved over all their movies. Using this we created regression predictors
+that yield the revenue of the movie given our mappings. We tested four different types of 
+regression: standard regression, gradient descent, ridge regression and lasso regression. We determined 
+an optimal step size for gradient descent as being 0.00001 for 100,000 iterations and a k = 10 number 
+of folds for validation. The standard regression had the best performance being able to predict movie budges with nearly 90\% accuracy.
+
+Our code and data is available at :
+\begin{itemize}
+\item https://github.com/dridon/aml1/
+\item https://github.com/dridon/aml1/tree/master/src/data/features 
+\end{itemize}
+%\end{abstract}
 % IEEEtran.cls defaults to using nonbold math in the Abstract.
 % This preserves the distinction between vectors and scalars. However,
 % if the conference you are submitting to favors bold math in the abstract,
@@ -317,18 +333,18 @@ available at https://github.com/dridon/aml1/.
 \section{Introduction}
 \subsection{Problem Description}
 Modern day movie budgets are now reaching near the half billion dollar 
-mark. Estimates for James Cameron's Avatar Budget reach up to
-\$425,000,000\cite{topmovies}. As movie budgets grow, so does their
-required revenue to yield an acceptable profit for the investment size.
-and presents an interesting problem. It is important to know the potential 
-success of a movie in order to valuate its investment potential. However, 
+mark. Estimates for the budget of James Cameron's Avatar reach up to
+\$425,000,000\cite{topmovies}. As movie budgets grow, so do their
+required revenue to yield an acceptable profit for the investment size
+presenting an interesting problem. It is important to know the potential 
+success of a movie in order to evaluate its investment potential. However, 
 movies are complex products shaped by various commercial
 and artistic constraints, and require the involvement of
 a diverse group of people (cast and crew). In addition to these factors 
 a movie's success is affected by marketing, public perception 
 and critical ratings. This makes predicting the potential 
 revenue for a potential movie a challenge. We describe this more formally 
-as follows: 
+as follows:
 
  ``\textit{Produce a predictor using some feature set that allows us 
 to accurately estimate the gross revenue for a potential movie.}''
@@ -338,26 +354,26 @@ several regression models. We apply our feature set constructed from parsing two
 major online movie databases.
 
 \section{Related Work}
-\subsection{The-numbers Bankability Index}
+\subsection{The Numbers Bankability Index}
 The "Hollywood Creative Graph" represents films using 
 information about 80,000 people from the movie industry 
 and attempts to measure each individual's influence 
-on that graph by assigining a "bankability" value 
+on that graph by assigning a "bankability" value 
 to them \cite{numbersbank}. This "bankability index" 
 is essentially aimed at understanding how much an individual 
 should be paid for working on a film using box-office data by 
 estimating how much value they bring in to the industry each
 year. One may be able to generate the potential revenues by using 
 this data. However, this index is commercial and their methodology
-private. 
+private.
 
 \subsection{Word Of Mouth}
-Dellarocas et al\cite{dellarocas} leveraged data about a films's initial commercial 
+Dellarocas et al\cite{dellarocas} leveraged data about a film's initial commercial 
 performance, marketing campaign, and early public reaction (word of mouth) 
 to forecast revenue. They used a data set of 80 movies with reviews
-frmo over 1,000 critics and nearly 35,000 individuals and fit it to a modified Bass equation. 
+from over 1,000 critics and nearly 35,000 individuals and fit it to a modified Bass equation. 
 They divide the movie into two sets, fit on one and test on the other. They saw a remarkable
-success with an error less than 3\%. 
+success with an error of less than 3\%. 
 
 In a similar vein Rui et al.\cite{rui} and Asur et al.\cite{asur} have tried to gauge the 
 influence of "online word of mouth" on movie sales by analysing Twitter data. Rui et al
@@ -383,10 +399,10 @@ performed well in local regions.
 Zhang et al\cite{zhang} employ a BP neural-network to predict revenues. They bin
 movies in to 6 ordered-categories for classification targets. 
 Each representing a different ranges of movie revenues. They
-had a maximum of 40 movies per category. Several variables variables were trained
+had a maximum of 40 movies per category. Several variables were trained,
 some examples being nationality, advertising, content and showing time. They used 
 6-fold cross validation and were able to classify a movie correctly with 68.1\%
-accuracy and within one class difference with 97.1\% acuracy. 
+accuracy and within one class difference with 97.1\% accuracy. 
 
 Their data is also limited by the number of movies they use to train. Also,
 their results represent the Chinese market and includes a mixture of Hollywood
@@ -396,28 +412,27 @@ and Chinese movies. This data may not be fully reflective of Hollywood earnings.
 Dellarocas \cite{dellarocas} describes the forecasting of motion picture 
 revenues to be discernable in to two approaches. The first using 
 econometric factors that predict motion picture revenues such 
-as the-numbers bankability index. The second using factors that 
+as The Numbers bankability index. The second using factors that 
 influence an individual's decision to watch a movie such as the 
 Word Of Mouth approaches. There has been a large amount of work done 
 in the prediction of movie revenues and a comprehensive review is out
-of th scope for this document. We refer interested readers to \cite{litman-kohl},
-\cite{el-el}, \cite{sawhey}, \cite{sochay} and \cite{}
+of the scope for this document. We refer interested readers to \cite{litman-kohl},
+\cite{el-el}, \cite{sawhey} and \cite{sochay}.
 
 Most of these approaches use budget and revenue of a film as items in the 
 dataset, none factor in the historical critical and audience ratings 
-from aggregate movie sites when trying to predict revenue. 
+from aggregate movie siteThis suggests our space is linear when trying to predict revenue. 
 
 \section{Dataset Description}
 The data set we use to train should be viewed in two parts. The first is the raw data set that 
 is generated from mining, parsing, filtering and concatenation that is discussed further
-below. The second is the formatted movie set along the actor, director, studio and screenwriter dictionaries. 
+below. The second is the formatted movie set along the actors, directors, producers and screenwriter dictionaries. 
 
 The formatted movie set contains a data point for each movie in the raw set. For each movie we present a boolean 
 indicating if they were released during a "hot season". We also present a measure of ratings
-by critics and audiences for the directors, studios, screen writers and main actors of the movie. 
+by critics and audiences for the directors, producers, screen writers and main actors of the movie. 
 Lastly, we have the budget of the movie and the target value, gross revenue for a movie. The dictionaries for 
 the cast and crew show their average ratings over all their movies and are used for prediction.
-
 
 See the appendix for more details.
 
@@ -444,7 +459,7 @@ scikit-learn\cite{scikit-learn}     & implementations of ridge and lasso regress
 \end{tabular}
 \end{table}
 
-A number of libraries were used in our implementations. We describe them briefly in \ref{table:pylibs}: 
+A number of libraries were used in our implementations. We describe them briefly in Table \ref{table:pylibs}. 
 
 \subsection{Data Collection}
 We extracted our data from two major movie sites: The Numbers \cite{thenumbers} and IMDB\cite{imdb}.
@@ -483,29 +498,28 @@ the set of screen writers giving us a total of 12 features.
 
 We then label the summer months between May and August (inclusive) and the 
 holiday season of November and December together to be the 6 months giving
-us the "hot season". We then convert the Release Dates to indiciate a 1 
+us the "hot season". We then convert the Release Dates to indicate a 1 
 for being released during the hot season and 0 otherwise. 
 
 Lastly, since movie budgets and revenues can range from thousands
 to hundreds of millions, we take the base 10 logarithms of each to
 compress the possible inputs and outputs. For some cases we had a 
-few cases (< 50) where there were \$0 revenues. For these we used a 
+few cases (less than 50) where there were \$0 revenues. For these we used a 
 revenue of \$1, a small increment considering the rest are many orders
 of magnitudes higher, that helps smoothen out the transformation.
 
 We are thus left with 14 features and a target value all in real numbers making 
-regression an optimal choice
+regression an optimal choice.
 
 \subsection{Algorithms}
 We investigated four regression algorithms in our study: 
-Standard Linear Regress, Gradient Descent, Ride Regression and 
-Lasso Regression. We apply a standard k-fold cross validation 
-scheme in order to generate estimates of true errors.
+Standard Linear Regression, Gradient Descent, Ridge Regression and 
+Lasso Regression.
 
 \subsubsection{Standard Linear Regression}
 We apply the standard form of linear regression with the least-squared error 
-closed form. We initially investigate a 10-fold validation and present the results
-for each of the test set along with the mean squared error. We then 
+in closed form. We initially investigate a 10-fold validation and present the results
+for each of the test sets along with the mean squared error. We then 
 range k from 10 to 33, bounding the size of the test set below by atleast 100 movies, 
 and present the mean squared error for each k. 
 
@@ -513,10 +527,11 @@ and present the mean squared error for each k.
 We apply gradient descent using the least squared error. We first vary alpha and 
 use cross validation error to obtain an estimate for an optimal alpha with 100,000 iterations.
 The alphas vary from 10\textsuperscript{-5} to 10\textsuperscript{-8} with one order of magnitude increments. 
-We then use that alpha to determine an optimal iteration. We then use the optimal alpha
-and iteration values in our general analysis of our predictability. We vary iterations from
+We then use that alpha to determine an optimal iteration. After that we use the optimal alpha
+and iteration values in the general analysis of our predictability. We vary iterations from
 10\textsuperscript{1} to 10\textsuperscript{5} increments, simply because execution time becomes unfeasible.
-We also use these values to train the predictor for the full feature set.
+We also use these values to train the predictor for the full feature set. We use 10,000 iterations 
+for varying the k parameter because the processing time was not available. 
 
 \subsubsection{Ridge and Lasso}
 We apply the ridge and lasso from the scikit-learn library. We repeat the experiments
@@ -527,8 +542,8 @@ In order to test on a prediction we need a method to map a given set of actors, 
 their average rating. We cannot create this prior to cross validation because we will be using the test set 
 and potentially corrupting our data. Thus we have to generate these mappings from an individual to rating 
 each time for during each fold in cross validation and essentially regenerate the entire feature set. 
-In the case that an actor, director, producer or screen writer is not present in a mapping, we simply assing 
-them a 50\% rating for rotten tomato and 5.0 for imdb. That is we do not assume any information for missing cases.
+In the case that an actor, director, producer or screen writer is not present in a mapping, we simply assign 
+them a 50\% rating for Rotten Tomatoes and 5.0 for IMDB. That is we do not assume any information for missing cases.
 
 The cross validation scheme is done as follows: 
 \begin{enumerate}
@@ -541,47 +556,152 @@ The cross validation scheme is done as follows:
 \item Then we take the mean of all the errors from the k runs to estimate the true error 
 \end{enumerate}
 
-% add how we messed with different parameters and stuff here 
-
 \section{Results}
-We first present the results for the determination of an optimal alpha for gradient descent in : 
 
+We present the results of our experiments in this section and expand 
+on them in the next. It should be noted that all errors are mean square errors of
+the log10 of the revenue. This means that a mean square error of 
+one means that there is a one order of magnitude difference between the true estimate 
+of revenue and our predicted value. 
 
+\begin{center}
 
-We then present the results for the determination of an optimal iteration for gradient descent in : 
+%Error chart for Gradient Descent with varying alpha
+\begin{figure}[ht!]
+\includegraphics[width=90mm]{gdAlpha.png}
+\caption{}\label{fig:alphahist}
+\end{figure}
 
+%Error chart for Gradient Descent with varying number of iterations
+\begin{figure}[ht!]
+\includegraphics[width=90mm]{gdIteration.png}
+\caption{}\label{fig:iterhist}
+\end{figure}
+\end{center}
 
-We then show the weights of the predictors for all of our regression algorithms, using the optimal alpha and 
-iteration values in:
+We first present the results for the determination of an optimal alpha for gradient descent in Figure \ref{fig:alphahist}. 
+The training error and true error estimate are shown with the variation of the step size. Similar results are in Figure \ref{fig:iterhist} for the variation of the iteration size for gradient descent. 
 
+We determine the optimal value for alpha to be around 0.0001 with an iteration count of 100,000. We then use this 
+to estimate gradient descent weights along with the other regressions under consideration. Table \ref{table:regweights} shows
+the prediction weights using the entire data set for training. It should be noted, the weights in the cross validation
+would be slightly different. 
 
-We show the true error estimates of using our predictor with our cross validation strategy with k = 10: 
+\begin{table}[h]
+\caption{Regression Weights for different predictors}
+\label{table:regweights}
+\begin{tabular}{lllll}
+                                 &SR       & GD & Ridge  & Lasso\\
+Hot Season                       & 0.015        & 0.634            & 0.016  & 0.0000  \\
+Budget                           & 1.081        & 0.393            & 1.080  & 0.0000  \\
+Director RT Critical Average     & -0.005       & -0.006           & -0.005 & 0.0000  \\
+Director RT Public Average       & 0.006        & 0.004            & 0.006  & 0.0032  \\
+Director IMDB Average            & 0.043        & 0.147            & 0.043  & 0.0000  \\
+Producer RT Critical Average     & -0.004       & -0.008           & -0.004 & -0.0074 \\
+Producer RT Public Average       & 0.005        & 0.004            & 0.005  & 0.0010  \\
+Producer IMDB Average            & 0.129        & 0.184            & 0.128  & 0.0000  \\
+Screenwriter RT Critical Average & 0.003        & -0.001           & 0.003  & 0.0000  \\
+Screenwriter RT Public Average   & 0.010        & 0.002            & 0.010  & 0.0031  \\
+Screenwriter IMDB Average        & -0.155       & 0.103            & -0.154 & 0.0000  \\
+Actors RT Critical Average       & 0.003        & -0.009           & 0.003  & 0.0000  \\
+Actors RT Public Average         & -0.002       & -0.006           & -0.002 & 0.0000  \\
+Actors IMDB Average              & -0.145       & -0.102           & -0.145 & 0.0003  \\
+Intercept                        & -0.178       & -0.132           & -0.178 & 0.0003 
+\end{tabular}
+\\
+SR and GD stand for standard regression and gradient descent, respectively.
+\end{table}
 
+The error for each k for each regression is shown in Figure \ref{fig:foldgraph}. This figure shows how
+the error changes as we increase the value of k. Standard and Ridge regression were essentially the same 
+thus their curves overlap on the figure. Noticing the k value does 
+not seem to affect the error estimate after k = 10, we simply use it as our cross validation
+number. The results for true and training error for 10-fold validation are then presented in 
+the histogram in Figure \ref{fig:errorhist}.
 
-We then vary k from 10 to 33 to show the results of varying the hyper parameter k on our true error estimates: 
+\begin{center}
 
+%Error chart for all methods with varying fold size
+\begin{figure}[ht!]
+\includegraphics[width=90mm]{errFoldSize.png}
+\caption{}\label{fig:foldgraph}
+\end{figure}
 
+%Error chart for all methods. Has 10-fold cross validation
+\begin{figure}[ht!]
+\includegraphics[width=90mm]{errorHistogramWith10fold.png}
+\caption{}\label{fig:errorhist}
+\end{figure}
 \section{Discussion}
+\end{center}
+Although our results seem to show that our predictor is fairly 
+successful, there are some cases such as Gradient Descent that 
+are alarming and raise questions. To discuss these further we now 
+proceed to analyze the results presented in the previous section. 
 
 \subsection{Analysis}
+In our analysis for gradient descent from Figure \ref{fig:alphahist}, we notice that for an iteration
+count of 100,000 the error increases after 0.00001. This means 
+that more iterations are needed to improve the error after this step size. 
+However, iteration sizes of 100,000 and higher did not terminate in a feasible 
+amount of time for us to perform experiments on, thus 0.00001 was optimal for
+our needs.
 
-\subsection{Applications}
+The iteration count however showed the opposite trend in Figure \ref{fig:iterhist}. 
+The higher the iteration count the better the error estimate proved to be. However, again,
+our resources were limited and we chose 100,000 for our experiments apart from the 
+variation of the size of folds on which we used 10,000 as our iteration size. 
+
+Gradient descent proved problematic because it constantly showed a better test error 
+over a training error in Figure \ref{fig:alphahist}, Figure~\ref{fig:iterhist} and Figure \ref{fig:errorhist}. 
+We were not able to isolate the reason as to why this seems to be the case in only this 
+regression. The data is always randomly shuffled before a validation and this phenomenon repeated 
+multiple times thus we don't believe that the test error is performing better simply because 
+of a local distribution. Other predictors did not show this issue thus we are still able to draw
+important insights from them. 
+
+The weights shown in Table \ref{table:regweights} vary significantly depending on the regression task. Standard and 
+Ridge Regression both produce the same results. Figure \ref{fig:errorhist} also shows these to be the best
+estimators of our data with error values of around 1, which results in around a 90\% success rate since its 
+a log10 of the revenue. As one would expect the highest weight seems to be on the budget. Taking in to account the IMDB ratings being out of 10 and RottenTomato ratings are out of 100, it seems that the IMDB ratings still reflect
+the revenue a bit more strongly then the RottenTomato ratings. Gradient Descent on the other hand places 
+the most weight on the season the movie is released on. Lasso seems to suggest that the majority of the 
+weights are small enough to be ignored. 
+
+It is also reflected that our k-fold validation did not change with the k parameter as shown in Figure \ref{fig:foldgraph}.
+This could be due to the size of our small data set. A fold size of k = 10 will produce a test set of size around 330
+and k = 33 will produce a size around 100. This means the training set was, the same for the most part. We were unable to explore smaller sizes due to time constraints. 
+
+Overall the best performer is standard regression with an error of around 1 and the worst performer is Lasso with an error of around 1.4. Thus our best predictor shows an accuracy around 90\%. Since our results seem to be successful over the majority of our experiments we also feel that the movie prediction space is linear in nature. 
+
+\subsection{Applications }
+The most immediate application would be to implement the predictor as a tool that allows an user to choose the different parameters for a movie (budget, actors, directors) and get an estimate of the revenue. Training the tool
+on a larger database consisting of a more complete list of movies such as the entire IMDB website. Using this
+financial decisions may be made that include the initiation of a movie production, cancellation or budget change. 
+
+Even if a studio does not use the tool for the initial planning of a film it might turn out useful when it's trying to determine the final parameters of the film. For example, a scenario where all the cast and crew of a film have been hired and the lead actor still needs to be chosen. The studio may be able to generate a list of likely candidates using this predictor to determine the most optimal choices. The tool would go through the entire database of actors and list the ones whose involvement would result in the highest revenue.
 
 \subsection{Future Perspectives}
+Our initial data set of 20,000 films had to be drastically reduced when we aimed to discard incomplete entries. As a first
+step, a larger dataset of complete data points would give more insights about the model. More ratings for existing entries 
+could be added from another major aggregate site called Metacritic. This could lead to more accurate results or give us an idea
+of which site's rating model is better.
 
-
+Finally, another interesting prediction question would be to calculate a movie's potential critical rating or reception. Tweaking parameters
+for high critical success could be one application. But a more interesting one would be to have a model which tries to optimize both critical
+and commercial success simultaneously.
 
 \section{Conclusion}
-The conclusion goes here. \cite{kopka}
-\section*{Acknowledgment}
-
-
-The authors would like to thank...
+We explored the potential of predicting movie gross revenues using the average ratings of the main
+cast/crew involved, budget size and the season it was released in. We tested four different types of 
+regression: standard regression, gradient descent, ridge regression and lasso regression. We determined 
+an optimal step size for gradient descent as being 0.00001 for 100,000 iterations and a k = 10 number 
+of folds for validation. The largest discrepancy was with gradient descent that consistently showed 
+a higher training error as compared to a test error. However, none of the other regressions presented this issue and results showed that standard regression had the best performance, being able to predict movie budges with nearly 90\% accuracy.
 
 \section*{Statement Of Original Work}
 
-We hereby state that all the work presented in 
-this report is that of the authors.
+We hereby state that all the work presented in this report is that of the authors.
 
 
 \begin{thebibliography}{1}
@@ -646,11 +766,6 @@ F. Zufryden, 1996, "Linking advertising to box office performance of new film re
 \bibitem{scikit-learn}
 "scikit-learn: machine learning in Python" (scikit-learn) [online], http://scikit-learn.org/stable/ (Accessed: 15 September 2014)
 
-
-\bibitem{kopka}
-H.~Kopka and P.~W. Daly, \emph{A Guide to \LaTeX}, 3rd~ed.\hskip 1em plus
-  0.5em minus 0.4em\relax Harlow, England: Addison-Wesley, 1999.
-
 \end{thebibliography}
 
 \newpage
@@ -661,7 +776,7 @@ H.~Kopka and P.~W. Daly, \emph{A Guide to \LaTeX}, 3rd~ed.\hskip 1em plus
 Initially we downloaded the indexed movie pages from The Numbers. After filtering out the entries that were missing too many relevant fields we queried the IMDB search engine for the remaining movies. We downloaded these pages and used the information there to add the IMDB score and fill in whatever fields were empty in the remaining movie list. The "full\_raw\_features.csv" contains the data parsed from The Numbers movie pages and the IMDB page. Each entry is a movie and contains the following information:
 
 Movie Name, Release Date, Genre, Budget, Gross, RT Critic Label, RT Critic Rating, RT Audience Label, RT Audience Rating, IMDB Rating, Directors, Producers, Sreenwriters, and Actors.
-\\*\textbf{RT Critic Rating} - This is the "Critical Rating" given to a movie on Rotten Tomatoes. Rotten Tomatoes aggregates movie reviews from major critics and publications and gives them a quantative value. It then takes the average of those values to produce the Critical Rating.
+\\*\textbf{RT Critic Rating} - This is the "Critical Rating" given to a movie on Rotten Tomatoes. Rotten Tomatoes aggregates movie reviews from major critics and publications and gives them a quantitative value. It then takes the average of those values to produce the Critical Rating.
 \\*\textbf{RT Audience Rating} - This is the average of the ratings given to a movie by registered users on the Rotten Tomatoes website.
 \\*\textbf{RT Critic Label and RT Audience Label} - We do not end up using these in the final feature set. 
 \\*\textbf{IMDB Rating} - This is the average of the ratings given to a movie by registered users on the IMDB website.
@@ -669,7 +784,7 @@ Movie Name, Release Date, Genre, Budget, Gross, RT Critic Label, RT Critic Ratin
 \\*\textbf{Producers} - Names of the studio that produced the movie.
 \\*\textbf{Screenwriters} - Names of all the screenwriters of the movie.
 \\*\textbf{Actors} - The first 3 names from the actor lists on The Numbers and the IMDB movie pages. These lists are in order of importance of the actor in the movie.\\
-From this file we calculated the three kinds of ratings for every unique director, producer, screenwriter and actor. These are listed in four seperate data files for each type of the four mentioned types.\\*
+From this file we calculated the three kinds of ratings for every unique director, producer, screenwriter and actor. These are listed in four separate data files for each type of the four mentioned types.\\*
 
 \textbf{Person's RTC Mean} - The average of the Critical Ratings for all the movies the person is listed in. If a person has been in the role of both a director and an actor then her values for each role are independent and mutually exclusive.\\*
 \textbf{Person's RTA Mean} - The average of the Audience Ratings for all the movies the person is listed in.\\*

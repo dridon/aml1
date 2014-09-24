@@ -14,7 +14,11 @@ All the code has been developed in Python 2.7 and following Python libraries are
 5. scipy
 6. scikit-learn
 
-For running each Python module developed in the project, module's directory should be the current directory. Besides that no change is required in the modules because all the paths used within modules are relative to its location. Following are different Python Modules included in the project along with their brief description:
+For running each Python module developed in the project, module's directory should be the current directory. Besides that no change is required in the modules because all the paths used within modules are relative to its location. experiments.py is the main module which can be modified to supply different values for the paramters and it runs all the implemented algorithms on the dataset using those parameters.
+
+
+
+Following are different Python Modules included in the project along with their brief description:
 
 Learning Modules (src\):
 

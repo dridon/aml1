@@ -1,5 +1,5 @@
 #Forecasting Hollywood: Can Movie Revenues Be Predicted?
-###Python code and Data Set developed as part of first mini-project for Applied Machine Learning Course.
+####Python code and Data Set developed as part of first mini-project for Applied Machine Learning Course.
 
 ##Group Members
 Faiz Khan, Muntasir Chowdhury, Kashif Javed
